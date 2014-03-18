@@ -1,0 +1,64 @@
+@import url("foundation-icons.css");
+/* WEBFONTS */
+/* VARIABLES
+=================================================================
+*/
+/* LAYOUT
+=================================================================
+*/
+/* GENERAL STUFF */
+.row {
+  max-width: 74.5rem; }
+
+input:focus {
+  outline: none; }
+
+/*
+
+body{
+  padding:    0;
+  margin:     0;
+  font-size:  14px;
+  font-family:'roboto', Helvetica, Arial, sans-serif;
+  background-color: $background;
+}
+
+h1, h2, h3{
+  font-family: 'manteka', Helvetica, Arial, sans-serif;
+  //color: $light-blue;
+}
+
+small{
+  font-family: 'roboto', Helvetica, Arial, sans-serif;
+}
+
+.inline-list>li {
+  margin-left: 0.375rem;
+}
+
+p{
+  color: $dark-grey;
+}
+a{
+  text-decoration: none;
+  color: $dark-grey;
+}
+a:hover, a:active{
+  color: $light-grey;
+}
+a.language{
+  padding: 4px;
+}
+a.language.active{
+  background: #555555;
+  color: #f9f9f9;
+}
+ul{
+  margin-left: 0;
+  margin-bottom: 0;
+}
+li{
+  list-style: none;
+}
+
+/* LAYOUT */
