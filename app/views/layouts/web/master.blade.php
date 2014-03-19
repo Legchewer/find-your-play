@@ -5,15 +5,21 @@ $version = [
 ];
 ?>
 <html>
-@include('layouts.admin.head')
+@include('layouts.web.head')
 <body>
 
 {{-- TODO : LAYOUT --}}
-
+<div id="header">
+    <div class="row">
+        <div class="large-12 columns">
+            <h1>Find your Play</h1>
+        </div>
+    </div>
+</div>
 <div class="main row">
-
-    @yield('content')
-
+    <div class="large-12 columns">
+        @yield('content')
+    </div>
 </div>
 
 @include('layouts.admin.scripts')

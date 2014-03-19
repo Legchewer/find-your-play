@@ -1,7 +1,6 @@
-@extends('layouts.admin.master')
+@extends('layouts.web.master')
 
 @section('content')
-
-INDEX
+TEST CONTENT
 
 @stop

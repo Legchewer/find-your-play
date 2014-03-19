@@ -1,11 +1,6 @@
 (function(){
     'use strict';
 
-    $(document).ready(function()
-    {
-        alert("Hello world!");
-    });
-
     /*
      * FOUNDATION MODAL WARNING EVENTS
      */

@@ -1,0 +1,18 @@
+/* WEBFONTS */
+@import url("foundation-icons.css");
+/* VARIABLES
+=================================================================
+*/
+/* LAYOUT
+=================================================================
+*/
+/* GENERAL STUFF */
+.row {
+  max-width: 74.5rem; }
+
+input:focus {
+  outline: none; }
+
+/* HEADER */
+#header {
+  background: #f2f2f2; }

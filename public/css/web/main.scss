@@ -1,0 +1,29 @@
+/* WEBFONTS */
+// @import url(http://fonts.googleapis.com/css?family=Roboto:400,700|Jura);
+@import url('foundation-icons.css');
+
+/* VARIABLES
+=================================================================
+*/
+
+$header : #f2f2f2;
+$header_title_font : 'Oxygen';
+
+/* LAYOUT
+=================================================================
+*/
+
+/* GENERAL STUFF */
+
+.row{
+  max-width: 74.5rem;
+}
+
+input:focus {
+  outline:none;
+}
+
+/* HEADER */
+#header{
+  background: $header;
+}
