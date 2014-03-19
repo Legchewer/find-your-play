@@ -22,7 +22,7 @@ $version = [
     </div>
 </div>
 
-@include('layouts.admin.scripts')
+@include('layouts.web.scripts')
 
 </body>
 </html>
