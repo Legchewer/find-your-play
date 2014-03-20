@@ -21,6 +21,17 @@ class Person extends Eloquent {
      */
     public $timestamps = false;
 
+    /*
+     * The variables that are mass-fillable
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'person_email',
+        'person_givenname',
+        'person_surname'
+    ];
+
     /**
      * @return array
      */

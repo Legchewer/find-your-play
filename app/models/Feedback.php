@@ -26,7 +26,7 @@ class Feedback extends Eloquent {
      */
     public function member()
     {
-        return $this->hasOne('Member');
+        return $this->belongsTo('Member');
     }
 
     /**
@@ -34,7 +34,7 @@ class Feedback extends Eloquent {
      */
     public function game()
     {
-        return $this->hasOne('Game');
+        return $this->belongsTo('Game');
     }
 
 }

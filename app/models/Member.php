@@ -37,17 +37,6 @@ class Member extends Eloquent implements UserInterface, RemindableInterface {
         'member_deleted'
     ];
 
-    /*
-     * The variables that are mass-fillable
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'user_email',
-        'user_givenname',
-        'user_surname'
-    ];
-
     /**
      * Get the unique identifier for the user.
      *

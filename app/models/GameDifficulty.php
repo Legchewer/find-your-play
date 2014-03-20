@@ -13,7 +13,7 @@ class GameDifficulty extends Eloquent {
      *
      * @var string
      */
-    protected $primaryKey = "game_audience_id";
+    protected $primaryKey = "game_difficulty_id";
 
     /**
      * Disable timestamps.

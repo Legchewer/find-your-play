@@ -1,28 +1,47 @@
 <?php
 
-class ProblemAreaModelTest extends TestCase
+class GameModelTest extends TestCase
 {
 
     /**
-     * Test voor het model ProblemArea
-     * @group problemarea
+     * Test voor het model Game
+     * @group game
      */
-    public function testProblemAreaModel()
+    public function testGameModel()
     {
+        $difficulty = GameDifficulty::find(1);
+        $budgetgroup = BudgetGroup::find(1);
+        $theme = Theme::find(1);
+        $therapy = Therapy::find(2);
 
-        $area1 = new ProblemArea();
-        $area1->problemarea_name_nl = 'longen';
-        $area1->problemarea_name_en = 'lungs';
+        $assign1 = [
+            'game_title' => 'spel titel',
+            'game_producer' => 'producent naam',
+            'game_rules' => 'regels',
+            'game_duration' => '3-4 uur',
+            'game_players' => '1-2 spelers'
+        ];
 
-        $area2 = new ProblemArea();
-        $area2->problemarea_name_nl = 'neus';
-        $area2->problemarea_name_en = 'nose';
+        $game1 = new Game($assign1);
 
-        $area1->save();
-        $area2->save();
+        // assign foreign keys
+        $game1->game_difficulty()->associate($difficulty);
+        $game1->budget_group()->associate($budgetgroup);
+        $game1->theme()->associate($theme);
+        $game1->therapy()->associate($therapy);
 
-        $this->assertGreaterThan(0, $area1->problemarea_id);
-        $this->assertGreaterThan(0, $area2->problemarea_id);
+        $game1->save();
+
+        // attach many to many's
+        $game1->game_types()->attach(1);
+        $game1->game_types()->attach(2);
+
+        $game1->game_audiences()->attach(1);
+
+        $game1->age_groups()->attach(1);
+
+        $this->assertGreaterThan(0, $game1->game_id);
+
 
     }
 }
