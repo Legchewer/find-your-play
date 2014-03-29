@@ -78,7 +78,7 @@ Route::group(['prefix' => 'admin'], function() {
     /*
      * Dashboard
      */
-    Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'DashboardController@index']);
+    Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'AdminDashboardController@index']);
         //->before('auth');
 
 });
@@ -104,21 +104,3 @@ Route::get('/info', ['as' =>'info', function()
 }
 ]);*/
 
-/*
- * Change language
- *
-Route::get('/language/{lang}', ['as'   => 'admin.dashboard', function($lang)
-{
-    //App::setLocale($lang); // niet persistent
-    //return View::make('admin/dashboard');
-
-    Session::put('my.locale', $lang);
-
-    if (Auth::check()){
-        return Redirect::to('admin/dashboard');
-    } else {
-        return Redirect::to('/');
-    }
-
-}
-]);*/

@@ -2,6 +2,6 @@
 
 @section('content')
 
-DASHBOARD
+<h1>Dashboard <small>general info</small></h1>
 
 @stop
