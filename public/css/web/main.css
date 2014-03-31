@@ -163,9 +163,8 @@ body {
   #profiel .paddingfix2 li a {
     padding: 10px 10px 10px 0;
     display: block;
-    color: #ffffff; }
+    color: #222222; }
   #profiel .paddingfix2 li ul li a {
-    color: #222222;
     padding: 5px; }
 #profiel .panel_blue {
   background: #b9d9dc; }
