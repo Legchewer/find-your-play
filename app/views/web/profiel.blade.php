@@ -31,7 +31,7 @@
                 <div class="panel_title">
                     <h3>Fiches <i class="right fi-torso"></i></h3>
                 </div>
-                <ul class="paddingfix2">
+                <ul class="liststyle">
                     <li>
                         <a href="#" data-dropdown="drop">Voornaam Achternaam &raquo;</a>
                         <ul id="drop" class="tiny f-dropdown" data-dropdown-content>
@@ -64,11 +64,10 @@
                 <div class="panel_title">
                     <h3>Verlanglijst <i class="right fi-star"></i></h3>
                 </div>
-                <ul class="paddingfix2">
+                <ul class="liststyle">
                     <li>
                         <a href="#" data-dropdown="drop3">Voornaam Achternaam &raquo;</a>
                         <ul id="drop3" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
                             <li><a href="#">Naam spel</a></li>
                             <li><a href="#">Naam spel 2</a></li>
                         </ul>
@@ -76,7 +75,6 @@
                     <li>
                         <a href="#" data-dropdown="drop4">Voornaam Achternaam &raquo;</a>
                         <ul id="drop4" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
                             <li><a href="#">Naam spel</a></li>
                             <li><a href="#">Naam spel 2</a></li>
                         </ul>
@@ -84,7 +82,6 @@
                     <li>
                         <a href="#" data-dropdown="drop5">Voornaam Achternaam &raquo;</a>
                         <ul id="drop5" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
                             <li><a href="#">Naam spel</a></li>
                             <li><a href="#">Naam spel 2</a></li>
                         </ul>

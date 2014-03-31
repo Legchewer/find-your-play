@@ -19,10 +19,10 @@
             <h2>Spel zoeken</h2>
             <form>
                 <div class="row collapse">
-                    <div class="small-1 columns">
+                    <div class="small-2 medium-1 columns">
                         <span class="prefix"><i class="fi-page-search"></i></span>
                     </div>
-                    <div class="small-11 columns">
+                    <div class="small-10 medium-11 columns">
                         <input type="text" placeholder="bvb. spelnaam">
                     </div>
                 </div>
@@ -35,18 +35,18 @@
         <div class="medium-7 widthfix">
             <form>
                 <div class="row collapse">
-                    <div class="small-1 columns">
+                    <div class="small-2 medium-1 columns">
                         <span class="prefix"><i class="fi-torso"></i></span>
                     </div>
-                    <div class="small-11 columns">
+                    <div class="small-10 medium-11 columns">
                         <input type="text" placeholder="Gebruikersnaam">
                     </div>
                 </div>
                 <div class="row collapse">
-                    <div class="small-1 columns">
+                    <div class="small-2 medium-1 columns">
                         <span class="prefix"><i class="fi-lock"></i></span>
                     </div>
-                    <div class="small-11 columns">
+                    <div class="small-10 medium-11 columns">
                         <input type="text" placeholder="Wachtwoord">
                     </div>
                 </div>

@@ -214,7 +214,7 @@ body{
   .alignfix{
     text-align: right;
   }
-  .paddingfix2 li{
+  .liststyle li{
     list-style: none;
     a{
       padding:10px 10px 10px 0;
@@ -258,4 +258,22 @@ body{
 /* DETAIL SPEL */
 .detailspel{
   margin-bottom:50px;
+}
+
+
+/* RESPONSIVE */
+@media only screen
+and (max-width : 768px) {
+  .row .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #profiel .alignfix {
+    text-align: left;
+  }
+  .page_navigation .spelzoeken .widthfix,.page_navigation .aanmelden .widthfix {
+    width: 100%;
+    padding-left:15px;
+    padding-right:15px;
+  }
 }
