@@ -12,7 +12,17 @@ $version = [
 <div id="header">
     <div class="row">
         <div class="large-12 columns">
+            <div class="logo">
+            {{ HTML::image('css/images/logo.png', 'Find your Play', array('id' => 'logo')) }}
             <h1>Find your Play</h1>
+            </div>
+            <div class="profile">
+                <p><i class="fi-torso"></i> <a href="#">Liesbeth</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
+            </div>
+            <div class="navigation">
+                <a href="#">Spellen zoeken</a>
+                <a href="#">Over ons</a>
+            </div>
         </div>
     </div>
 </div>

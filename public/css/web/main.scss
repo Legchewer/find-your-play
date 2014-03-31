@@ -1,13 +1,13 @@
 /* WEBFONTS */
-// @import url(http://fonts.googleapis.com/css?family=Roboto:400,700|Jura);
-@import url('foundation-icons.css');
+@import url('../fonts/fonts.css');
 
 /* VARIABLES
 =================================================================
 */
 
-$header : #f2f2f2;
-$header_title_font : 'Oxygen';
+$header_background : #f2f2f2;
+$header_title_font : 'oxygen-bold';
+$header_font : 'corbert';
 
 /* LAYOUT
 =================================================================
@@ -25,5 +25,55 @@ input:focus {
 
 /* HEADER */
 #header{
-  background: $header;
+  background: $header_background;
+  position:relative;
+  padding-bottom: 20px;
+
+  h1 {
+    font-family: $header_title_font;
+    font-size: 3.3em;
+    text-align: left;
+    position: absolute;
+    left: 85px;
+    top: 51px;
+  }
+
+  #logo{
+    float:left;
+    margin:37px 0 10px 0;
+    height:70px;
+  }
+
+  .profile{
+    position:absolute;
+    right:0;
+    p{
+      font-family: $header_font;
+      font-size:18px;
+      i{
+        font-size: 1.2em;
+      }
+      .seperator{
+        font-size:29px;
+      }
+    }
+  }
+
+  .navigation{
+    position: absolute;
+    right:0;
+    bottom:5px;
+    a{
+      padding:20px;
+      font-family: $header_title_font;
+      font-size:24px;
+      color: #222222;
+    }
+    a:hover{
+      color: #008cba;
+    }
+    a:last-of-type{
+      padding-right:0;
+    }
+  }
 }

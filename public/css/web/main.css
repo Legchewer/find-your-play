@@ -1,5 +1,5 @@
 /* WEBFONTS */
-@import url("foundation-icons.css");
+@import url("../fonts/fonts.css");
 /* VARIABLES
 =================================================================
 */
@@ -15,4 +15,40 @@ input:focus {
 
 /* HEADER */
 #header {
-  background: #f2f2f2; }
+  background: #f2f2f2;
+  position: relative;
+  padding-bottom: 20px; }
+  #header h1 {
+    font-family: "oxygen-bold";
+    font-size: 3.3em;
+    text-align: left;
+    position: absolute;
+    left: 85px;
+    top: 51px; }
+  #header #logo {
+    float: left;
+    margin: 37px 0 10px 0;
+    height: 70px; }
+  #header .profile {
+    position: absolute;
+    right: 0; }
+    #header .profile p {
+      font-family: "corbert";
+      font-size: 18px; }
+      #header .profile p i {
+        font-size: 1.2em; }
+      #header .profile p .seperator {
+        font-size: 29px; }
+  #header .navigation {
+    position: absolute;
+    right: 0;
+    bottom: 5px; }
+    #header .navigation a {
+      padding: 20px;
+      font-family: "oxygen-bold";
+      font-size: 24px;
+      color: #222222; }
+    #header .navigation a:hover {
+      color: #008cba; }
+    #header .navigation a:last-of-type {
+      padding-right: 0; }

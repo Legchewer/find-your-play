@@ -1,18 +1,57 @@
-/* 
- * Foundation Icons v 3.0
- * Made by ZURB 2013 http://zurb.com/playground/foundation-icon-fonts-3
- * MIT License
- */
+@font-face {
+    font-family: 'oxygen-bold';
+    src: url('Oxygen/oxygen-bold-webfont.eot');
+    src: url('Oxygen/oxygen-bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Oxygen/oxygen-bold-webfont.woff') format('woff'),
+    url('Oxygen/oxygen-bold-webfont.ttf')  format('truetype'),
+    url('Oxygen/oxygen-bold-webfont.svg#svgoxygen-bold') format('svg');
+}
 
 @font-face {
-  font-family: "foundation-icons";
-  src: url("foundation-icons.eot");
-  src: url("foundation-icons.eot?#iefix") format("embedded-opentype"),
-       url("foundation-icons.woff") format("woff"),
-       url("foundation-icons.ttf") format("truetype"),
-       url("foundation-icons.svg#fontcustom") format("svg");
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'oxygen-italic';
+    src: url('Oxygen/oxygen-italic-webfont.eot');
+    src: url('Oxygen/oxygen-italic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Oxygen/oxygen-italic-webfont.woff') format('woff'),
+    url('Oxygen/oxygen-italic-webfont.ttf')  format('truetype'),
+    url('Oxygen/oxygen-italic-webfont.svg#svgoxygen-italic') format('svg');
+}
+
+@font-face {
+    font-family: 'oxygen';
+    src: url('Oxygen/oxygen-webfont.eot');
+    src: url('Oxygen/oxygen-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Oxygen/oxygen-webfont.woff') format('woff'),
+    url('Oxygen/oxygen-webfont.ttf')  format('truetype'),
+    url('Oxygen/oxygen-webfont.svg#svgoxygen') format('svg');
+}
+
+@font-face {
+    font-family: 'corbert-italic';
+    src: url('Corbert/corbert-italic-webfont.eot');
+    src: url('Corbert/corbert-italic-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Corbert/corbert-italic-webfont.woff') format('woff'),
+    url('Corbert/corbert-italic-webfont.ttf')  format('truetype'),
+    url('Corbert/corbert-italic-webfont.svg#svgcorbert-italic') format('svg');
+}
+
+@font-face {
+    font-family: 'corbert';
+    src: url('Corbert/corbert-regular-webfont.eot');
+    src: url('Corbert/corbert-regular-webfont.eot?#iefix') format('embedded-opentype'),
+    url('Corbert/corbert-regular-webfont.woff') format('woff'),
+    url('Corbert/corbert-regular-webfont.ttf')  format('truetype'),
+    url('Corbert/corbert-regular-webfont.svg#svgcorbert') format('svg');
+}
+
+@font-face {
+    font-family: "foundation-icons";
+    src: url("Foundation icons/foundation-icons.eot");
+    src: url("Foundation icons/foundation-icons.eot?#iefix") format("embedded-opentype"),
+    url("Foundation icons/foundation-icons.woff") format("woff"),
+    url("Foundation icons/foundation-icons.ttf") format("truetype"),
+    url("Foundation icons/foundation-icons.svg#fontcustom") format("svg");
+    font-weight: normal;
+    font-style: normal;
 }
 
 .fi-address-book:before,
@@ -298,15 +337,15 @@
 .fi-yen:before,
 .fi-zoom-in:before,
 .fi-zoom-out:before {
-  font-family: "foundation-icons";
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  display: inline-block;
-  text-decoration: inherit;
+    font-family: "foundation-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-decoration: inherit;
 }
 
 .fi-address-book:before { content: "\f100"; }
