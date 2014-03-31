@@ -7,7 +7,10 @@
 
 $header_background : #f2f2f2;
 $header_title_font : 'oxygen-bold';
-$header_font : 'corbert';
+$font : 'corbert';
+$font2: 'oxygen';
+$blue : #b9d9dc;
+$green : #a2e1ac;
 
 /* LAYOUT
 =================================================================
@@ -22,13 +25,16 @@ $header_font : 'corbert';
 input:focus {
   outline:none;
 }
+body{
+  font-family: $font;
+}
 
 /* HEADER */
 #header{
   background: $header_background;
   position:relative;
   padding-bottom: 20px;
-
+  margin-bottom:50px;
   h1 {
     font-family: $header_title_font;
     font-size: 3.3em;
@@ -48,7 +54,7 @@ input:focus {
     position:absolute;
     right:0;
     p{
-      font-family: $header_font;
+      font-family: $font;
       font-size:18px;
       i{
         font-size: 1.2em;
@@ -74,6 +80,80 @@ input:focus {
     }
     a:last-of-type{
       padding-right:0;
+    }
+  }
+}
+
+.intro{
+  margin-bottom:30px !important;
+  .paddingfix{
+    padding-right:0;
+  }
+}
+.page_navigation{
+
+  .spelzoeken{
+    background:$blue;
+    height: 226px;
+    .widthfix{
+      width:62.66667%;
+    }
+    .paddingfix{
+      padding-right:0;
+    }
+    h2{
+      font-family:$font2;
+      color:#fff;
+    }
+    p,a{
+      color:#fff;
+    }
+    a:first-child{
+      text-decoration: underline;
+    }
+    i{
+      margin: 4px;
+      display: block;
+      font-size: 2em;
+    }
+    .button{
+      background:#86A6A9;
+      font-size:18px;
+      font-family: $font2;
+      padding: 0px 20px;
+    }
+    .button:hover{
+      background: #537376;
+    }
+  }
+  .aanmelden{
+    background:$green;
+    .widthfix{
+      width:62.33333%;
+    }
+    h2{
+      font-family:$font2;
+      color:#fff;
+    }
+    i{
+      margin: 4px;
+      display: block;
+      font-size: 2em;
+    }
+    p,a{
+      color:#fff;
+    }
+    a:first-child{
+      text-decoration: underline;
+    }
+    .button{
+      background:#7fc98b;
+      font-size:18px;
+      font-family: $font2;
+      padding: 0px 20px;
+    }
+    .button:hover{
+      background: #4C9658;
     }
   }
 }

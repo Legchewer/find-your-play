@@ -13,11 +13,15 @@
 input:focus {
   outline: none; }
 
+body {
+  font-family: "corbert"; }
+
 /* HEADER */
 #header {
   background: #f2f2f2;
   position: relative;
-  padding-bottom: 20px; }
+  padding-bottom: 20px;
+  margin-bottom: 50px; }
   #header h1 {
     font-family: "oxygen-bold";
     font-size: 3.3em;
@@ -52,3 +56,56 @@ input:focus {
       color: #008cba; }
     #header .navigation a:last-of-type {
       padding-right: 0; }
+
+.intro {
+  margin-bottom: 30px !important; }
+  .intro .paddingfix {
+    padding-right: 0; }
+
+.page_navigation .spelzoeken {
+  background: #b9d9dc;
+  height: 226px; }
+  .page_navigation .spelzoeken .widthfix {
+    width: 62.66667%; }
+  .page_navigation .spelzoeken .paddingfix {
+    padding-right: 0; }
+  .page_navigation .spelzoeken h2 {
+    font-family: "oxygen";
+    color: #fff; }
+  .page_navigation .spelzoeken p, .page_navigation .spelzoeken a {
+    color: #fff; }
+  .page_navigation .spelzoeken a:first-child {
+    text-decoration: underline; }
+  .page_navigation .spelzoeken i {
+    margin: 4px;
+    display: block;
+    font-size: 2em; }
+  .page_navigation .spelzoeken .button {
+    background: #86A6A9;
+    font-size: 18px;
+    font-family: "oxygen";
+    padding: 0px 20px; }
+  .page_navigation .spelzoeken .button:hover {
+    background: #537376; }
+.page_navigation .aanmelden {
+  background: #a2e1ac; }
+  .page_navigation .aanmelden .widthfix {
+    width: 62.33333%; }
+  .page_navigation .aanmelden h2 {
+    font-family: "oxygen";
+    color: #fff; }
+  .page_navigation .aanmelden i {
+    margin: 4px;
+    display: block;
+    font-size: 2em; }
+  .page_navigation .aanmelden p, .page_navigation .aanmelden a {
+    color: #fff; }
+  .page_navigation .aanmelden a:first-child {
+    text-decoration: underline; }
+  .page_navigation .aanmelden .button {
+    background: #7fc98b;
+    font-size: 18px;
+    font-family: "oxygen";
+    padding: 0px 20px; }
+  .page_navigation .aanmelden .button:hover {
+    background: #4C9658; }

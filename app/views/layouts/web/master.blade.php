@@ -26,11 +26,18 @@ $version = [
         </div>
     </div>
 </div>
-<div class="main row">
+<div class="row">
     <div class="large-12 columns">
         @yield('content')
     </div>
 </div>
+@yield('page_navigation')
+<div class="row">
+    <div class="large-12 columns">
+        @yield('contact')
+    </div>
+</div>
+@yield('footer')
 
 @include('layouts.web.scripts')
 
