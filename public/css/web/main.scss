@@ -27,6 +27,7 @@ input:focus {
 }
 body{
   font-family: $font;
+  color:#999;
 }
 
 /* HEADER */
@@ -84,12 +85,15 @@ body{
   }
 }
 
+/* INTRO */
 .intro{
   margin-bottom:30px !important;
   .paddingfix{
     padding-right:0;
   }
 }
+
+/* PAGE NAVIGATION*/
 .page_navigation{
 
   .spelzoeken{
@@ -155,5 +159,39 @@ body{
     .button:hover{
       background: #4C9658;
     }
+  }
+}
+
+/* CONTACT */
+#contact{
+  margin-top:50px;
+  margin-bottom:50px;
+  h2,a{
+    color: #999999;
+    transition-duration:0.5s;
+    -moz-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    -webkit-transition-duration: 0.5s;
+  }
+  a:hover{
+    color:#222222;
+    transition-duration:0.5s;
+    -moz-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    -webkit-transition-duration: 0.5s;
+  }
+  i{
+    font-size: 5em;
+  }
+  .inline-list>li{
+      margin-right:20px;
+  }
+}
+/* FOOTER */
+#footer{
+  background: $header_background;
+  p{
+    text-align: center;
+    padding:20px 0;
   }
 }

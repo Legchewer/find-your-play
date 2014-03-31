@@ -11,6 +11,7 @@
     </div>
 </div>
 @stop
+
 @section('page_navigation')
 <div class="page_navigation">
     <div class="medium-6 columns spelzoeken">
@@ -53,5 +54,29 @@
             </form>
         </div>
     </div>
+</div>
+@stop
+
+@section('contact')
+<div id="contact" class="row">
+    <div class="medium-6 columns">
+        <h2>Contact</h2>
+        <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken.</p>
+    </div>
+    <div class="medium-6 columns">
+        <h2>Vind ons op</h2>
+        <ul class="inline-list">
+            <li><a href="#"><i class="fi-social-youtube"></i></a></li>
+            <li><a href="#"><i class="fi-social-facebook"></i></a></li>
+            <li><a href="#"><i class="fi-social-twitter"></i></a></li>
+            <li><a href="#"><i class="fi-social-linkedin"></i></a></li>
+        </ul>
+    </div>
+</div>
+@stop
+
+@section('footer')
+<div id="footer">
+    <p>&copy; 2014 MMP</p>
 </div>
 @stop
