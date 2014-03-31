@@ -149,6 +149,41 @@ body {
     text-align: center;
     padding: 20px 0; }
 
-/* OVER ONS - BREADCRUMB */
+/* BREADCRUMB */
 .breadcrumb .paddingfix {
   padding-right: 0; }
+
+/* PROFIEL */
+#profiel h2 {
+  color: #999999; }
+#profiel .alignfix {
+  text-align: right; }
+#profiel .paddingfix2 li {
+  list-style: none; }
+  #profiel .paddingfix2 li a {
+    padding: 10px 10px 10px 0;
+    display: block;
+    color: #ffffff; }
+  #profiel .paddingfix2 li ul li a {
+    color: #222222;
+    padding: 5px; }
+#profiel .panel_blue {
+  background: #b9d9dc; }
+  #profiel .panel_blue .panel_title {
+    border-bottom: 1px solid #ffffff; }
+  #profiel .panel_blue h3 {
+    color: #ffffff;
+    padding: 10px 15px 0; }
+    #profiel .panel_blue h3 i {
+      display: block;
+      margin-top: 6px; }
+#profiel .panel_green {
+  background: #a2e1ac; }
+  #profiel .panel_green .panel_title {
+    border-bottom: 1px solid #ffffff; }
+  #profiel .panel_green h3 {
+    color: #ffffff;
+    padding: 10px 15px 0; }
+    #profiel .panel_green h3 i {
+      display: block;
+      margin-top: 6px; }

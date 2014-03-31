@@ -19,3 +19,7 @@ Route::get('/about',function()
 {
     return View::make('web.overons');
 });
+Route::get('/profiel',function()
+{
+    return View::make('web.profiel');
+});

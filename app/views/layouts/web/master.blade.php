@@ -19,7 +19,7 @@ $version = [
 
             </div>
             <div class="profile">
-                <p><i class="fi-torso"></i> <a href="#">Liesbeth</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
+                <p><i class="fi-torso"></i> <a href="profiel">Liesbeth</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
             </div>
             <div class="navigation">
                 <a href="#">Spellen zoeken</a>

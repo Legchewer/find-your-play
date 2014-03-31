@@ -204,9 +204,59 @@ body{
   }
 }
 
-/* OVER ONS - BREADCRUMB */
+/* BREADCRUMB */
 .breadcrumb{
   .paddingfix{
     padding-right:0;
+  }
+}
+
+/* PROFIEL */
+#profiel{
+  h2{
+    color:#999999;
+  }
+  .alignfix{
+    text-align: right;
+  }
+  .paddingfix2 li{
+    list-style: none;
+    a{
+      padding:10px 10px 10px 0;
+      display: block;
+      color:#ffffff;
+    }
+    ul li a{
+      color:#222222;
+      padding:5px;
+    }
+  }
+  .panel_blue{
+    background:$blue;
+    .panel_title{
+      border-bottom:1px solid #ffffff;
+    }
+    h3{
+      color:#ffffff;
+      padding:10px 15px 0;
+      i{
+        display: block;
+        margin-top:6px;
+      }
+    }
+  }
+  .panel_green{
+    background:$green;
+    .panel_title{
+      border-bottom:1px solid #ffffff;
+    }
+    h3{
+      color:#ffffff;
+      padding:10px 15px 0;
+      i{
+        display: block;
+        margin-top:6px;
+      }
+    }
   }
 }
