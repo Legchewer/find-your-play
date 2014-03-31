@@ -23,3 +23,11 @@ Route::get('/profiel',function()
 {
     return View::make('web.profiel');
 });
+Route::get('/search',function()
+{
+    return View::make('web.spelzoeken');
+});
+Route::get('/game',function()
+{
+    return View::make('web.speldetail');
+});

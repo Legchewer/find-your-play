@@ -22,25 +22,23 @@ $version = [
                 <p><i class="fi-torso"></i> <a href="profiel">Liesbeth</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
             </div>
             <div class="navigation">
-                <a href="#">Spellen zoeken</a>
+                <a href="search">Spellen zoeken</a>
                 <a href="about">Over ons</a>
             </div>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="large-12 columns">
         @yield('content')
-    </div>
 </div>
 @yield('page_navigation')
 <div class="row">
-    <div class="large-12 columns">
         @yield('contact')
-    </div>
 </div>
 <div id="footer">
-    <p>&copy; 2014 MMP</p>
+    <div class="row">
+        <p>&copy; 2014 MMP</p>
+    </div>
 </div>
 
 @include('layouts.web.scripts')

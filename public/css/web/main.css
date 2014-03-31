@@ -17,6 +17,9 @@ body {
   font-family: "corbert";
   color: #999; }
 
+.breadcrumbs {
+  border-radius: 0; }
+
 /* HEADER */
 #header {
   background: #f2f2f2;
@@ -28,11 +31,11 @@ body {
     font-size: 3.3em;
     text-align: left;
     position: absolute;
-    left: 85px;
+    left: 65px;
     top: 51px; }
   #header #logo {
     float: left;
-    margin: 37px 0 10px 0;
+    margin: 37px 0 10px -20px;
     height: 70px; }
   #header .profile {
     position: absolute;
@@ -69,17 +72,13 @@ body {
 /* INTRO */
 .intro {
   margin-bottom: 30px !important; }
-  .intro .paddingfix {
-    padding-right: 0; }
 
 /* PAGE NAVIGATION*/
 .page_navigation .spelzoeken {
   background: #b9d9dc;
   height: 226px; }
   .page_navigation .spelzoeken .widthfix {
-    width: 62.66667%; }
-  .page_navigation .spelzoeken .paddingfix {
-    padding-right: 0; }
+    width: 64.66667%; }
   .page_navigation .spelzoeken h2 {
     font-family: "oxygen";
     color: #fff; }
@@ -99,7 +98,8 @@ body {
   .page_navigation .spelzoeken .button:hover {
     background: #537376; }
 .page_navigation .aanmelden {
-  background: #a2e1ac; }
+  background: #a2e1ac;
+  padding-left: 30px; }
   .page_navigation .aanmelden .widthfix {
     width: 62.33333%; }
   .page_navigation .aanmelden h2 {
@@ -125,6 +125,8 @@ body {
 #contact {
   margin-top: 50px;
   margin-bottom: 50px; }
+  #contact .contact {
+    padding-left: 30px; }
   #contact h2, #contact a {
     color: #999999;
     transition-duration: 0.5s;
@@ -147,11 +149,8 @@ body {
   background: #f2f2f2; }
   #footer p {
     text-align: center;
-    padding: 20px 0; }
-
-/* BREADCRUMB */
-.breadcrumb .paddingfix {
-  padding-right: 0; }
+    padding: 20px 0;
+    margin-bottom: 0; }
 
 /* PROFIEL */
 #profiel h2 {
@@ -186,3 +185,7 @@ body {
     #profiel .panel_green h3 i {
       display: block;
       margin-top: 6px; }
+
+/* DETAIL SPEL */
+.detailspel {
+  margin-bottom: 50px; }

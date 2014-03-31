@@ -29,6 +29,9 @@ body{
   font-family: $font;
   color:#999;
 }
+.breadcrumbs{
+  border-radius: 0;
+}
 
 /* HEADER */
 #header{
@@ -41,13 +44,13 @@ body{
     font-size: 3.3em;
     text-align: left;
     position: absolute;
-    left: 85px;
+    left: 65px;
     top: 51px;
   }
 
   #logo{
     float:left;
-    margin:37px 0 10px 0;
+    margin:37px 0 10px -20px;
     height:70px;
   }
 
@@ -96,9 +99,6 @@ body{
 /* INTRO */
 .intro{
   margin-bottom:30px !important;
-  .paddingfix{
-    padding-right:0;
-  }
 }
 
 /* PAGE NAVIGATION*/
@@ -108,10 +108,7 @@ body{
     background:$blue;
     height: 226px;
     .widthfix{
-      width:62.66667%;
-    }
-    .paddingfix{
-      padding-right:0;
+      width:64.66667%;
     }
     h2{
       font-family:$font2;
@@ -140,6 +137,7 @@ body{
   }
   .aanmelden{
     background:$green;
+    padding-left:30px;
     .widthfix{
       width:62.33333%;
     }
@@ -174,6 +172,9 @@ body{
 #contact{
   margin-top:50px;
   margin-bottom:50px;
+  .contact{
+    padding-left:30px;
+  }
   h2,a{
     color: #999999;
     transition-duration:0.5s;
@@ -201,13 +202,7 @@ body{
   p{
     text-align: center;
     padding:20px 0;
-  }
-}
-
-/* BREADCRUMB */
-.breadcrumb{
-  .paddingfix{
-    padding-right:0;
+    margin-bottom:0;
   }
 }
 
@@ -258,4 +253,9 @@ body{
       }
     }
   }
+}
+
+/* DETAIL SPEL */
+.detailspel{
+  margin-bottom:50px;
 }
