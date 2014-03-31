@@ -74,9 +74,3 @@
     </div>
 </div>
 @stop
-
-@section('footer')
-<div id="footer">
-    <p>&copy; 2014 MMP</p>
-</div>
-@stop

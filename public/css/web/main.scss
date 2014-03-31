@@ -74,10 +74,18 @@ body{
       padding:20px;
       font-family: $header_title_font;
       font-size:24px;
-      color: #222222;
+      color:#999999;
+      transition-duration:0.5s;
+      -moz-transition-duration:0.5s;
+      -o-transition-duration:0.5s;
+      -webkit-transition-duration: 0.5s;
     }
     a:hover{
-      color: #008cba;
+      color: #222222;
+      transition-duration:0.5s;
+      -moz-transition-duration:0.5s;
+      -o-transition-duration:0.5s;
+      -webkit-transition-duration: 0.5s;
     }
     a:last-of-type{
       padding-right:0;
@@ -193,5 +201,12 @@ body{
   p{
     text-align: center;
     padding:20px 0;
+  }
+}
+
+/* OVER ONS - BREADCRUMB */
+.breadcrumb{
+  .paddingfix{
+    padding-right:0;
   }
 }

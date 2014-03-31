@@ -15,3 +15,7 @@ Route::get('/', function()
 {
 	return View::make('web.index');
 });
+Route::get('/about',function()
+{
+    return View::make('web.overons');
+});
