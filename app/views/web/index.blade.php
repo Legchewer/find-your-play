@@ -14,8 +14,9 @@
 
 @section('page_navigation')
 <div class="page_navigation">
-    <div class="medium-6 columns spelzoeken">
-        <div class="medium-8 columns right paddingfix widthfix">
+    <div class="row">
+    <div class="row">
+        <div class="medium-6 columns spelzoeken">
             <h2>Spel zoeken</h2>
             <form>
                 <div class="row collapse">
@@ -29,10 +30,8 @@
                 <p><a href="#">Geavanceerd zoeken</a> <a href="#" class="button tiny right">Zoeken</a></p>
             </form>
         </div>
-    </div>
-    <div class="medium-6 columns aanmelden">
-        <h2>Meld je aan</h2>
-        <div class="medium-7 widthfix">
+        <div class="medium-6 columns aanmelden">
+            <h2>Meld je aan</h2>
             <form>
                 <div class="row collapse">
                     <div class="small-2 medium-1 columns">
@@ -52,6 +51,7 @@
                 </div>
                 <p>Nog geen account? <a href="#">Registreer</a> <a href="#" class="button tiny right">Inloggen</a></p>
             </form>
+        </div>
         </div>
     </div>
 </div>

@@ -103,13 +103,16 @@ body{
 
 /* PAGE NAVIGATION*/
 .page_navigation{
-
+  background: #b9d9dc; /* Old browsers */
+  background: -moz-linear-gradient(left,  #b9d9dc 49%, #a2e1ac 50%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(49%,#b9d9dc), color-stop(50%,#a2e1ac)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left,  #b9d9dc 49%,#a2e1ac 50%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left,  #b9d9dc 49%,#a2e1ac 50%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left,  #b9d9dc 49%,#a2e1ac 50%); /* IE10+ */
+  background: linear-gradient(to right,  #b9d9dc 49%,#a2e1ac 50%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b9d9dc', endColorstr='#a2e1ac',GradientType=1 ); /* IE6-9 */
   .spelzoeken{
-    background:$blue;
     height: 226px;
-    .widthfix{
-      width:64.66667%;
-    }
     h2{
       font-family:$font2;
       color:#fff;
@@ -136,11 +139,6 @@ body{
     }
   }
   .aanmelden{
-    background:$green;
-    padding-left:30px;
-    .widthfix{
-      width:62.33333%;
-    }
     h2{
       font-family:$font2;
       color:#fff;
