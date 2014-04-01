@@ -34,7 +34,7 @@ class Client extends Eloquent {
      */
     public function members()
     {
-        return $this->belongsToMany('Member','members_clients', 'client_id', 'member_id');
+        return $this->belongsToMany('Member','members_has_clients', 'client_id', 'member_id');
     }
 
     /**

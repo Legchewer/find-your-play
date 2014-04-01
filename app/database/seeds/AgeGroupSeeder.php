@@ -1,42 +1,37 @@
 <?php
 
-class GameTypeSeeder extends Seeder{
+class AgeGroupSeeder extends Seeder{
 
     public function run(){
 
-        GameType::create([
-            'game_type_name_nl' => 'vormenstoof',
-            'game_type_name_en' => ''
+        // NL EN ?
+
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 3 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'schuifpuzzel',
-            'game_type_name_en' => ''
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 4 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'nopjespuzzel',
-            'game_type_name_en' => ''
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 5 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'vloerpuzzel',
-            'game_type_name_en' => 'floor puzzle'
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 6 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'schuifpuzzel',
-            'game_type_name_en' => 'sliding puzzle'
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 7 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'legpuzzel',
-            'game_type_name_en' => ''
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 10 jaar'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => '3D puzzel',
-            'game_type_name_en' => '3D puzzle'
+        AgeGroup::create([
+            'age_group_value' => 'vanaf 12 jaar'
         ]);
 
     }

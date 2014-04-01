@@ -1,42 +1,22 @@
 <?php
 
-class GameTypeSeeder extends Seeder{
+class GameDifficultySeeder extends Seeder{
 
     public function run(){
 
-        GameType::create([
-            'game_type_name_nl' => 'vormenstoof',
-            'game_type_name_en' => ''
+        GameDifficulty::create([
+            'game_difficulty_name_nl' => 'gemakkelijk',
+            'game_difficulty_name_en' => 'easy'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'schuifpuzzel',
-            'game_type_name_en' => ''
+        GameDifficulty::create([
+            'game_difficulty_name_nl' => 'gewoon',
+            'game_difficulty_name_en' => 'average'
         ]);
 
-        GameType::create([
-            'game_type_name_nl' => 'nopjespuzzel',
-            'game_type_name_en' => ''
-        ]);
-
-        GameType::create([
-            'game_type_name_nl' => 'vloerpuzzel',
-            'game_type_name_en' => 'floor puzzle'
-        ]);
-
-        GameType::create([
-            'game_type_name_nl' => 'schuifpuzzel',
-            'game_type_name_en' => 'sliding puzzle'
-        ]);
-
-        GameType::create([
-            'game_type_name_nl' => 'legpuzzel',
-            'game_type_name_en' => ''
-        ]);
-
-        GameType::create([
-            'game_type_name_nl' => '3D puzzel',
-            'game_type_name_en' => '3D puzzle'
+        GameDifficulty::create([
+            'game_difficulty_name_nl' => 'moeilijk',
+            'game_difficulty_name_en' => 'hard'
         ]);
 
     }

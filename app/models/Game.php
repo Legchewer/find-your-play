@@ -53,14 +53,6 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_audiences()
-    {
-        return $this->belongsToMany('GameAudience','games_has_game_audiences', 'game_id', 'game_audience_id');
-    }
-
-    /**
-     * @return array
-     */
     public function age_groups()
     {
         return $this->belongsToMany('AgeGroup','games_has_age_groups', 'game_id', 'age_group_id');

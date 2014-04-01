@@ -1,60 +1,34 @@
 <?php
 
-class MemberSeeder extends Seeder{
+class ClientSeeder extends Seeder{
 
     public function run(){
 
         $person1 = Person::create([
-           'person_givenname' => 'Thomas',
-           'person_surname' => 'Jacobs',
-           'person_email' => 'thomas.jacobs@student.arteveldehs.be'
+           'person_givenname' => 'Jonas',
+           'person_surname' => 'Van der Testen',
+           'person_email' => 'jonas-vdt@email.com'
 
         ]);
 
         $person2 = Person::create([
-            'person_givenname' => 'Jorn',
-            'person_surname' => 'Smits',
-            'person_email' => 'jorn.smits@student.arteveldehs.be'
+            'person_givenname' => 'Sara',
+            'person_surname' => 'Van der Testen',
+            'person_email' => 'sara-vdt@email.com'
 
         ]);
 
-        $person3 = Person::create([
-            'person_givenname' => 'Gertjan',
-            'person_surname' => 'Goetynck',
-            'person_email' => 'gertjan.goetynck@student.arteveldehs.be'
-
+        $client1 = Client::create([
+            'client_experience' => '<p>Heel obsessief bezig met de spelletjes.</p>',
+            'person_id' => 1
         ]);
 
-        $person4 = Person::create([
-            'person_givenname' => 'Frank',
-            'person_surname' => 'Testers',
-            'person_email' => 'frank.testers@email.com'
-
+        $client2 = Client::create([
+            'client_experience' => '<p>Kruipt vaak in haar schulp.</p>',
+            'person_id' => 2
         ]);
 
-        $admin1 = Member::create([
-            'member_password' => 'findyourplay' ,
-            'role_id' => 1
-        ]);
-        $admin1->person()->associate($person1);
-
-        $admin2 = Member::create([
-            'member_password' => 'findyourplay' ,
-            'role_id' => 1
-        ]);
-        $admin2->person()->associate($person2);
-
-        $admin3 = Member::create([
-            'member_password' => 'findyourplay' ,
-            'role_id' => 1
-        ]);
-        $admin3->person()->associate($person3);
-
-        $admin4 = Member::create([
-            'member_password' => 'test' ,
-            'role_id' => 2
-        ]);
-        $admin4->person()->associate($person4);
+        // TODO link games
 
     }
 

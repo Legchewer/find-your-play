@@ -95,6 +95,7 @@ li{
 /* LAYOUT */
 
 .header{
+
   .logo{
     padding: 12px;
     img{
@@ -113,22 +114,22 @@ li{
 
 .fw-container-nav{
   width: 100%;
-  background: $green;
+  // background: $green;
   .main-nav{
     height: 48px;
     .nav-list{
       text-align: center;
       li.first{
-        border-right: 3px solid $green - 30;
-        padding-right: 0;
+        //border-right: 3px solid $green - 30;
+        //padding-right: 0;
       }
       li.second{
-        padding-left: 0;
-        padding-right: 0;
+        //padding-left: 0;
+        //padding-right: 0;
       }
       li.last{
-        border-left: 3px solid $green - 30;
-        padding-left: 0;
+        //border-left: 3px solid $green - 30;
+        //padding-left: 0;
       }
       li{
         .active{
@@ -139,6 +140,7 @@ li{
           display: block;
           width: 100%;
           height: 100%;
+          background: $green;
           font-family: 'Oxygen', Helvetica, Arial, sans-serif;
           font-size: 1.4em;
           font-weight: 700;
@@ -159,7 +161,11 @@ li{
   }
 }
 
-.footer{
-  padding-top: 8px;
-  text-align: center;
+.fw-container-footer{
+  width: 100%;
+  background: $background;
+  .footer{
+    padding-top: 8px;
+    text-align: center;
+  }
 }

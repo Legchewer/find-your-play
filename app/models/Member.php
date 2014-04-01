@@ -101,7 +101,7 @@ class Member extends Eloquent implements UserInterface, RemindableInterface {
      */
     public function clients()
     {
-        return $this->belongsToMany('Client','members_clients', 'member_id', 'client_id');
+        return $this->belongsToMany('Client','members_has_clients', 'member_id', 'client_id');
     }
 
 }

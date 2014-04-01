@@ -66,8 +66,10 @@ $version = [
     </div>
 </div>
 
-<div class="footer row">
-    <p>Copyright &copy; Find your Play. Alle rechten voorbehouden.</p>
+<div class="fw-container-footer">
+    <div class="footer row">
+        <p>Copyright &copy; Find your Play. Alle rechten voorbehouden.</p>
+    </div>
 </div>
 
 @include('layouts.admin.scripts')
