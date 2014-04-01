@@ -20,17 +20,26 @@ Route::get('/', function()
 
 Route::group(['prefix' => 'web'], function() {
 
-    Route::get('/', ['as' => 'web.index', function()
+    Route::get('/index', function()
     {
-        /*if (Auth::check()){
-            return Redirect::to('admin/dashboard');
-        } else {
-            return Redirect::to('admin/login');
-        }*/
-        return View::make('index');
-
-    }
-    ]);
+        return View::make('web.index');
+    });
+    Route::get('/about',function()
+    {
+        return View::make('web.overons');
+    });
+    Route::get('/profiel',function()
+    {
+        return View::make('web.profiel');
+    });
+    Route::get('/search',function()
+    {
+        return View::make('web.spelzoeken');
+    });
+    Route::get('/game',function()
+    {
+        return View::make('web.speldetail');
+    });
 
 });
 

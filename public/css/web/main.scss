@@ -1,0 +1,279 @@
+/* WEBFONTS */
+@import url('../fonts/fonts.css');
+
+/* VARIABLES
+=================================================================
+*/
+
+$header_background : #f2f2f2;
+$header_title_font : 'oxygen-bold';
+$font : 'corbert';
+$font2: 'oxygen';
+$blue : #b9d9dc;
+$green : #a2e1ac;
+
+/* LAYOUT
+=================================================================
+*/
+
+/* GENERAL STUFF */
+
+.row{
+  max-width: 74.5rem;
+}
+
+input:focus {
+  outline:none;
+}
+body{
+  font-family: $font;
+  color:#999;
+}
+.breadcrumbs{
+  border-radius: 0;
+}
+
+/* HEADER */
+#header{
+  background: $header_background;
+  position:relative;
+  padding-bottom: 20px;
+  margin-bottom:50px;
+  h1 {
+    font-family: $header_title_font;
+    font-size: 3.3em;
+    text-align: left;
+    position: absolute;
+    left: 65px;
+    top: 51px;
+  }
+
+  #logo{
+    float:left;
+    margin:37px 0 10px -20px;
+    height:70px;
+  }
+
+  .profile{
+    position:absolute;
+    right:0;
+    p{
+      font-family: $font;
+      font-size:18px;
+      i{
+        font-size: 1.2em;
+      }
+      .seperator{
+        font-size:29px;
+      }
+    }
+  }
+
+  .navigation{
+    position: absolute;
+    right:0;
+    bottom:5px;
+    a{
+      padding:20px;
+      font-family: $header_title_font;
+      font-size:24px;
+      color:#999999;
+      transition-duration:0.5s;
+      -moz-transition-duration:0.5s;
+      -o-transition-duration:0.5s;
+      -webkit-transition-duration: 0.5s;
+    }
+    a:hover{
+      color: #222222;
+      transition-duration:0.5s;
+      -moz-transition-duration:0.5s;
+      -o-transition-duration:0.5s;
+      -webkit-transition-duration: 0.5s;
+    }
+    a:last-of-type{
+      padding-right:0;
+    }
+  }
+}
+
+/* INTRO */
+.intro{
+  margin-bottom:30px !important;
+}
+
+/* PAGE NAVIGATION*/
+.page_navigation{
+
+  .spelzoeken{
+    background:$blue;
+    height: 226px;
+    .widthfix{
+      width:64.66667%;
+    }
+    h2{
+      font-family:$font2;
+      color:#fff;
+    }
+    p,a{
+      color:#fff;
+    }
+    a:first-child{
+      text-decoration: underline;
+    }
+    i{
+      margin: 4px;
+      display: block;
+      font-size: 2em;
+    }
+    .button{
+      background:#86A6A9;
+      font-size:18px;
+      font-family: $font2;
+      padding: 0px 20px;
+    }
+    .button:hover{
+      background: #537376;
+    }
+  }
+  .aanmelden{
+    background:$green;
+    padding-left:30px;
+    .widthfix{
+      width:62.33333%;
+    }
+    h2{
+      font-family:$font2;
+      color:#fff;
+    }
+    i{
+      margin: 4px;
+      display: block;
+      font-size: 2em;
+    }
+    p,a{
+      color:#fff;
+    }
+    a:first-child{
+      text-decoration: underline;
+    }
+    .button{
+      background:#7fc98b;
+      font-size:18px;
+      font-family: $font2;
+      padding: 0px 20px;
+    }
+    .button:hover{
+      background: #4C9658;
+    }
+  }
+}
+
+/* CONTACT */
+#contact{
+  margin-top:50px;
+  margin-bottom:50px;
+  .contact{
+    padding-left:30px;
+  }
+  h2,a{
+    color: #999999;
+    transition-duration:0.5s;
+    -moz-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    -webkit-transition-duration: 0.5s;
+  }
+  a:hover{
+    color:#222222;
+    transition-duration:0.5s;
+    -moz-transition-duration:0.5s;
+    -o-transition-duration:0.5s;
+    -webkit-transition-duration: 0.5s;
+  }
+  i{
+    font-size: 5em;
+  }
+  .inline-list>li{
+      margin-right:20px;
+  }
+}
+/* FOOTER */
+#footer{
+  background: $header_background;
+  p{
+    text-align: center;
+    padding:20px 0;
+    margin-bottom:0;
+  }
+}
+
+/* PROFIEL */
+#profiel{
+  h2{
+    color:#999999;
+  }
+  .alignfix{
+    text-align: right;
+  }
+  .liststyle li{
+    list-style: none;
+    a{
+      padding:10px 10px 10px 0;
+      display: block;
+      color:#222222;
+    }
+    ul li a{
+      padding:5px;
+    }
+  }
+  .panel_blue{
+    background:$blue;
+    .panel_title{
+      border-bottom:1px solid #ffffff;
+    }
+    h3{
+      color:#ffffff;
+      padding:10px 15px 0;
+      i{
+        display: block;
+        margin-top:6px;
+      }
+    }
+  }
+  .panel_green{
+    background:$green;
+    .panel_title{
+      border-bottom:1px solid #ffffff;
+    }
+    h3{
+      color:#ffffff;
+      padding:10px 15px 0;
+      i{
+        display: block;
+        margin-top:6px;
+      }
+    }
+  }
+}
+
+/* DETAIL SPEL */
+.detailspel{
+  margin-bottom:50px;
+}
+
+
+/* RESPONSIVE */
+@media only screen
+and (max-width : 768px) {
+  .row .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  #profiel .alignfix {
+    text-align: left;
+  }
+  .page_navigation .spelzoeken .widthfix,.page_navigation .aanmelden .widthfix {
+    width: 100%;
+    padding-left:15px;
+    padding-right:15px;
+  }
+}

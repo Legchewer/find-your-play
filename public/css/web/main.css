@@ -1,0 +1,205 @@
+/* WEBFONTS */
+@import url("../fonts/fonts.css");
+/* VARIABLES
+=================================================================
+*/
+/* LAYOUT
+=================================================================
+*/
+/* GENERAL STUFF */
+.row {
+  max-width: 74.5rem; }
+
+input:focus {
+  outline: none; }
+
+body {
+  font-family: "corbert";
+  color: #999; }
+
+.breadcrumbs {
+  border-radius: 0; }
+
+/* HEADER */
+#header {
+  background: #f2f2f2;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 50px; }
+  #header h1 {
+    font-family: "oxygen-bold";
+    font-size: 3.3em;
+    text-align: left;
+    position: absolute;
+    left: 65px;
+    top: 51px; }
+  #header #logo {
+    float: left;
+    margin: 37px 0 10px -20px;
+    height: 70px; }
+  #header .profile {
+    position: absolute;
+    right: 0; }
+    #header .profile p {
+      font-family: "corbert";
+      font-size: 18px; }
+      #header .profile p i {
+        font-size: 1.2em; }
+      #header .profile p .seperator {
+        font-size: 29px; }
+  #header .navigation {
+    position: absolute;
+    right: 0;
+    bottom: 5px; }
+    #header .navigation a {
+      padding: 20px;
+      font-family: "oxygen-bold";
+      font-size: 24px;
+      color: #999999;
+      transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      -webkit-transition-duration: 0.5s; }
+    #header .navigation a:hover {
+      color: #222222;
+      transition-duration: 0.5s;
+      -moz-transition-duration: 0.5s;
+      -o-transition-duration: 0.5s;
+      -webkit-transition-duration: 0.5s; }
+    #header .navigation a:last-of-type {
+      padding-right: 0; }
+
+/* INTRO */
+.intro {
+  margin-bottom: 30px !important; }
+
+/* PAGE NAVIGATION*/
+.page_navigation .spelzoeken {
+  background: #b9d9dc;
+  height: 226px; }
+  .page_navigation .spelzoeken .widthfix {
+    width: 64.66667%; }
+  .page_navigation .spelzoeken h2 {
+    font-family: "oxygen";
+    color: #fff; }
+  .page_navigation .spelzoeken p, .page_navigation .spelzoeken a {
+    color: #fff; }
+  .page_navigation .spelzoeken a:first-child {
+    text-decoration: underline; }
+  .page_navigation .spelzoeken i {
+    margin: 4px;
+    display: block;
+    font-size: 2em; }
+  .page_navigation .spelzoeken .button {
+    background: #86A6A9;
+    font-size: 18px;
+    font-family: "oxygen";
+    padding: 0px 20px; }
+  .page_navigation .spelzoeken .button:hover {
+    background: #537376; }
+.page_navigation .aanmelden {
+  background: #a2e1ac;
+  padding-left: 30px; }
+  .page_navigation .aanmelden .widthfix {
+    width: 62.33333%; }
+  .page_navigation .aanmelden h2 {
+    font-family: "oxygen";
+    color: #fff; }
+  .page_navigation .aanmelden i {
+    margin: 4px;
+    display: block;
+    font-size: 2em; }
+  .page_navigation .aanmelden p, .page_navigation .aanmelden a {
+    color: #fff; }
+  .page_navigation .aanmelden a:first-child {
+    text-decoration: underline; }
+  .page_navigation .aanmelden .button {
+    background: #7fc98b;
+    font-size: 18px;
+    font-family: "oxygen";
+    padding: 0px 20px; }
+  .page_navigation .aanmelden .button:hover {
+    background: #4C9658; }
+
+/* CONTACT */
+#contact {
+  margin-top: 50px;
+  margin-bottom: 50px; }
+  #contact .contact {
+    padding-left: 30px; }
+  #contact h2, #contact a {
+    color: #999999;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; }
+  #contact a:hover {
+    color: #222222;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; }
+  #contact i {
+    font-size: 5em; }
+  #contact .inline-list > li {
+    margin-right: 20px; }
+
+/* FOOTER */
+#footer {
+  background: #f2f2f2; }
+  #footer p {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 0; }
+
+/* PROFIEL */
+#profiel h2 {
+  color: #999999; }
+#profiel .alignfix {
+  text-align: right; }
+#profiel .liststyle li {
+  list-style: none; }
+  #profiel .liststyle li a {
+    padding: 10px 10px 10px 0;
+    display: block;
+    color: #222222; }
+  #profiel .liststyle li ul li a {
+    padding: 5px; }
+#profiel .panel_blue {
+  background: #b9d9dc; }
+  #profiel .panel_blue .panel_title {
+    border-bottom: 1px solid #ffffff; }
+  #profiel .panel_blue h3 {
+    color: #ffffff;
+    padding: 10px 15px 0; }
+    #profiel .panel_blue h3 i {
+      display: block;
+      margin-top: 6px; }
+#profiel .panel_green {
+  background: #a2e1ac; }
+  #profiel .panel_green .panel_title {
+    border-bottom: 1px solid #ffffff; }
+  #profiel .panel_green h3 {
+    color: #ffffff;
+    padding: 10px 15px 0; }
+    #profiel .panel_green h3 i {
+      display: block;
+      margin-top: 6px; }
+
+/* DETAIL SPEL */
+.detailspel {
+  margin-bottom: 50px; }
+
+/* RESPONSIVE */
+@media only screen and (max-width: 768px) {
+  .row .row {
+    margin-left: 0;
+    margin-right: 0; }
+
+  #profiel .alignfix {
+    text-align: left; }
+
+  .page_navigation .spelzoeken .widthfix, .page_navigation .aanmelden .widthfix {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px; } }

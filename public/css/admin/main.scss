@@ -1,21 +1,6 @@
 /* WEBFONTS */
-@import url(http://fonts.googleapis.com/css?family=Oxygen:400,700);
-@font-face {
-  font-family: 'corbert-regular';
-  src: url('../../fonts/corbert-regular-webfont.eot');
-  src: url('../../fonts/corbert-regular-webfont.woff') format('woff'), url('../../fonts/corbert-regular-webfont.ttf') format('truetype'), url('../../fonts/corbert-regular-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'corbert-italic';
-  src: url('../../fonts/corbert-italic-webfont.eot');
-  src: url('../../fonts/corbert-italic-webfont.woff') format('woff'),
-  url('../../fonts/corbert-italic-webfont.ttf') format('truetype'), url('../../fonts/corbert-italic-webfont.svg') format('svg');
-  font-weight: normal;
-  font-style: italic;
-}
-@import url('foundation-icons.css');
+
+@import url('fonts/fonts.css');
 
 /* VARIABLES
 =================================================================
