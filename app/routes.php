@@ -49,32 +49,34 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', ['as' => 'admin.root', function()
     {
-        /*if (Auth::check()){
+        if (Auth::check()){
+
             return Redirect::to('admin/dashboard');
+
         } else {
+
             return Redirect::to('admin/login');
-        }*/
-        return Redirect::to('admin/dashboard');
+        }
 
     }
     ]);
 
-    Route::get('/login', ['as' => 'login', function()
+    Route::get('/login', ['as' => 'admin.login', function()
     {
-        //return View::make('login');
+        return View::make('admin.login');
 
     }
     ]);
 
     /*
      * Authentication
-     *
-    Route::post('/auth', ['as'   => 'admin.auth', 'uses' => 'UserController@auth'])
+     */
+    Route::post('/auth', ['as'   => 'admin.auth', 'uses' => 'AdminMemberController@auth'])
         ->before('guest');
 
     /*
      * Logout
-     *
+     */
     Route::get('/logout', ['as'   => 'admin.logout',
         function () {
 
@@ -82,34 +84,19 @@ Route::group(['prefix' => 'admin'], function() {
 
             return Redirect::to('/');
         }
-    ])->before('auth');
+    ])->before('auth-admin');
 
     /*
      * Dashboard
      */
-    Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'AdminDashboardController@index']);
-        //->before('auth');
+    Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'AdminDashboardController@index'])
+        ->before('auth-admin');
 
 });
 
-Route::get('/login', ['as' => 'login', function()
-{
-    return View::make('login');
-
-}
-]);
-
-/*Route::get('/404', ['as' => '404', function()
+Route::get('/404', ['as' => '404', function()
 {
     return View::make('404');
 
 }
 ]);
-
-Route::get('/info', ['as' =>'info', function()
-{
-
-    return View::make('info');
-}
-]);*/
-

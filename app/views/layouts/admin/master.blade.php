@@ -16,11 +16,11 @@ $version = [
     <div class="subnav large-4 medium-4 small-4 columns">
         <ul class="inline-list right">
             <li>
-                Welkom terug gebruiker
+                Welkom {{ Auth::user()->person->person_givenname }}
             </li>
             <li class="divider">&nbsp;</li>
             <li>
-                <a href="" >Uitloggen</a>
+                {{ HTML::link('/admin/logout', 'Logout', ['' => '']), PHP_EOL }}
             </li>
         </ul>
     </div>
