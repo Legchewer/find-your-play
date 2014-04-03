@@ -33,7 +33,7 @@
         <div class="medium-6 columns aanmelden">
             <h2>Meld je aan</h2>
             @if ($errors->any())
-            <div class="alert-box alert" data-alert>
+            <div class="alert-box alert alert-global" data-alert>
                 <ul class="no-bullet">
                     @foreach ($errors->all('<li>:message</li>' . PHP_EOL) as $message)
                     {{ $message }}
@@ -44,7 +44,7 @@
             @endif
 
             @if(Session::has('auth-error-message'))
-            <div class="alert-box alert" data-alert>
+            <div class="alert-box alert alert-global" data-alert>
                 <span class="alert-msg">{{ Session::get('auth-error-message') }}</span>
                 <a href="#" class="close">&times;</a>
             </div>

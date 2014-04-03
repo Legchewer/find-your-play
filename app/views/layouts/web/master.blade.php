@@ -2,6 +2,7 @@
 $version = [
     'select' => '3.4.5',
     'foundation' => '5.1.1',
+    'fontawesome' => '4.0.3',
 ];
 ?>
 <html>
@@ -11,25 +12,30 @@ $version = [
 {{-- TODO : LAYOUT --}}
 <div id="header">
     <div class="row">
-        <div class="large-12 columns">
-            <div class="logo">
-                <a href="{{url('/')}}">{{ HTML::image('css/images/logo.png', 'Find your Play', array('id' => 'logo')) }}
-                    <h1>Find your Play</h1>
-                </a>
-
-            </div>
-            <div class="profile">
-                @if (Auth::User())
-                <p><i class="fi-torso"></i> <a href="profiel">{{ Auth::user()->person->person_givenname }}</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
-                @else
-                <p>NL &#124; EN</p>
-                @endif
-            </div>
-            <div class="navigation">
-                <a href="search">Spellen zoeken</a>
-                <a href="about">Over ons</a>
-            </div>
+        <div class="logo small-8 columns clearfix">
+            <a href="{{url('/')}}">
+                {{ HTML::image('css/images/logo.png', 'Find your Play', ['class' => 'left', 'id' => 'logo', 'title' => 'Find your Play']) }}
+                <h1>Find Your Play</h1>
+            </a>
         </div>
+        <div class="subnav small-4 columns">
+            <ul class="inline-list right">
+                @if(Auth::User())
+                <li>
+                    <a href="#" data-dropdown="drop">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
+                    <ul id="drop" class="tiny f-dropdown" data-dropdown-content>
+                        <li><a href="{{url('/web/profiel')}}">Profiel</a></li>
+                        <li><a href="{{url('/web/logout')}}">Uitloggen</a></li>
+                    </ul>
+                </li>
+                <li class="divider">&nbsp;</li>
+                @endif
+                <li>
+                    NL / EN
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>
 <div class="row">

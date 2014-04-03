@@ -32,42 +32,39 @@ body {
     text-align: left;
     position: absolute;
     left: 65px;
-    top: 51px; }
+    top: 51px;
+    color: #777777; }
   #header #logo {
-    float: left;
     margin: 37px 0 10px -20px;
     height: 70px; }
-  #header .profile {
-    position: absolute;
-    right: 0; }
-    #header .profile p {
-      font-family: "corbert";
-      font-size: 18px; }
-      #header .profile p i {
-        font-size: 1.2em; }
-      #header .profile p .seperator {
-        font-size: 29px; }
-  #header .navigation {
-    position: absolute;
-    right: 0;
-    bottom: 5px; }
-    #header .navigation a {
-      padding: 20px;
-      font-family: "oxygen-bold";
-      font-size: 24px;
-      color: #999999;
-      transition-duration: 0.5s;
-      -moz-transition-duration: 0.5s;
-      -o-transition-duration: 0.5s;
-      -webkit-transition-duration: 0.5s; }
-    #header .navigation a:hover {
-      color: #222222;
-      transition-duration: 0.5s;
-      -moz-transition-duration: 0.5s;
-      -o-transition-duration: 0.5s;
-      -webkit-transition-duration: 0.5s; }
-    #header .navigation a:last-of-type {
-      padding-right: 0; }
+  #header .subnav {
+    padding-left: 2em; }
+    #header .subnav .divider {
+      border-right: 1px solid #9f9f9f; }
+  #header .inline-list > li > * {
+    display: inline; }
+
+.navigation {
+  position: absolute;
+  right: 0;
+  bottom: 5px; }
+  .navigation a {
+    padding: 20px;
+    font-family: "oxygen-bold";
+    font-size: 24px;
+    color: #999999;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; }
+  .navigation a:hover {
+    color: #222222;
+    transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s; }
+  .navigation a:last-of-type {
+    padding-right: 0; }
 
 /* INTRO */
 .intro {
