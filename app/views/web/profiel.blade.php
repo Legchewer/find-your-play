@@ -13,7 +13,7 @@
 <div id="profiel">
     <div class="row">
         <div class="small-12 columns">
-            <h2>Wijzigen <i class="fa fa-pencil"></i></h2>
+            <h2>Wijzig uw gegevens</h2>
             {{ Form::open(['route' => 'web.edit']), PHP_EOL }}
 
                 {{ Form::label('givenname', Lang::get('validation.attributes.givenname'),['class' => ($errors->has('givenname') ? 'error' : '' )])}}
@@ -29,7 +29,7 @@
                 @endif
 
                 {{ Form::label('email', Lang::get('validation.attributes.email'),['class' => ($errors->has('email') ? 'error' : '' ),])}}
-                {{ Form::email('email', $user->person_email,['class' => ($errors->has('givenname') ? 'error' : '' )]) }}
+                {{ Form::email('email', $user->person_email,['class' => ($errors->has('email') ? 'error' : '' )]) }}
                 @if ($errors->has('email'))
                 {{ $errors->first('email', '<small class="error">:message</small>') }}
                 @endif

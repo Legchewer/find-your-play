@@ -154,6 +154,10 @@ body{
       font-family:$font2;
       color:#fff;
     }
+    h3{
+      font-family:$font2;
+      color:#fff;
+    }
     i{
       margin: 4px;
       display: block;
@@ -174,6 +178,42 @@ body{
     .button:hover{
       background: #4C9658;
     }
+    small.error{
+      margin-top: 0px;
+      margin-left: -47px;
+      margin-right: 1px;
+    }
+  }
+}
+.page_nav{
+  background:$blue;
+  .button{
+    background:#86A6A9;
+    font-size:18px;
+    font-family: $font2;
+    padding: 0px 20px;
+  }
+  .button:hover{
+    background: #537376;
+  }
+  h2{
+    font-family:$font2;
+    color:#fff;
+  }
+  p,a{
+    color:#fff;
+  }
+  a:first-child{
+    text-decoration: underline;
+  }
+  i{
+    margin: 4px;
+    display: block;
+    font-size: 2em;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
   }
 }
 

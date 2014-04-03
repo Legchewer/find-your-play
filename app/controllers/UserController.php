@@ -43,7 +43,7 @@ class UserController extends \BaseController {
         } else {
             return Redirect::route('web.index')
                 ->withInput()
-                ->withErrors($validator); // Maakt $errors in View.
+                ->withErrors($validator);
         }
     }
 

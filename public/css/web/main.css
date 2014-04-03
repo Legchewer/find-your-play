@@ -129,6 +129,9 @@ body {
   .page_navigation .aanmelden h2 {
     font-family: "oxygen";
     color: #fff; }
+  .page_navigation .aanmelden h3 {
+    font-family: "oxygen";
+    color: #fff; }
   .page_navigation .aanmelden i {
     margin: 4px;
     display: block;
@@ -144,6 +147,35 @@ body {
     padding: 0px 20px; }
   .page_navigation .aanmelden .button:hover {
     background: #4C9658; }
+  .page_navigation .aanmelden small.error {
+    margin-top: 0px;
+    margin-left: -47px;
+    margin-right: 1px; }
+
+.page_nav {
+  background: #b9d9dc; }
+  .page_nav .button {
+    background: #86A6A9;
+    font-size: 18px;
+    font-family: "oxygen";
+    padding: 0px 20px; }
+  .page_nav .button:hover {
+    background: #537376; }
+  .page_nav h2 {
+    font-family: "oxygen";
+    color: #fff; }
+  .page_nav p, .page_nav a {
+    color: #fff; }
+  .page_nav a:first-child {
+    text-decoration: underline; }
+  .page_nav i {
+    margin: 4px;
+    display: block;
+    font-size: 2em;
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1); }
 
 /* CONTACT */
 #contact {
