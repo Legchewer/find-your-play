@@ -20,10 +20,11 @@ Route::get('/', function()
 
 Route::group(['prefix' => 'web'], function() {
 
-    Route::get('/index', function()
+    Route::get('/index',['as' => 'web.index',function()
     {
         return View::make('web.index');
-    });
+    }]);
+
     Route::get('/about',function()
     {
         return View::make('web.overons');
@@ -40,6 +41,24 @@ Route::group(['prefix' => 'web'], function() {
     {
         return View::make('web.speldetail');
     });
+
+    /*
+     * Authentication
+     */
+    Route::post('/auth', ['as'   => 'web.auth', 'uses' => 'UserController@auth'])
+        ->before('guest');
+
+    /*
+     * Logout
+     */
+    Route::get('/logout', ['as'   => 'admin.logout',
+        function () {
+
+            Auth::logout();
+
+            return Redirect::to('/');
+        }
+    ])->before('auth-web');
 
 });
 

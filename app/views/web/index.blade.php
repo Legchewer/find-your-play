@@ -32,25 +32,45 @@
         </div>
         <div class="medium-6 columns aanmelden">
             <h2>Meld je aan</h2>
-            <form>
-                <div class="row collapse">
-                    <div class="small-2 medium-1 columns">
-                        <span class="prefix"><i class="fi-torso"></i></span>
-                    </div>
-                    <div class="small-10 medium-11 columns">
-                        <input type="text" placeholder="Gebruikersnaam">
-                    </div>
+            @if ($errors->any())
+            <div class="alert-box alert" data-alert>
+                <ul class="no-bullet">
+                    @foreach ($errors->all('<li>:message</li>' . PHP_EOL) as $message)
+                    {{ $message }}
+                    @endforeach
+                </ul>
+                <a href="#" class="close">&times;</a>
+            </div>
+            @endif
+
+            @if(Session::has('auth-error-message'))
+            <div class="alert-box alert" data-alert>
+                <span class="alert-msg">{{ Session::get('auth-error-message') }}</span>
+                <a href="#" class="close">&times;</a>
+            </div>
+            @endif
+
+            {{ Form::open(['route' => 'web.auth']), PHP_EOL }}
+
+            <div class="row collapse">
+                <div class="small-2 medium-1 columns">
+                    <span class="prefix"><i class="fi-torso"></i></span>
                 </div>
-                <div class="row collapse">
-                    <div class="small-2 medium-1 columns">
-                        <span class="prefix"><i class="fi-lock"></i></span>
-                    </div>
-                    <div class="small-10 medium-11 columns">
-                        <input type="text" placeholder="Wachtwoord">
-                    </div>
+                <div class="small-10 medium-11 columns">
+                    {{ Form::email('email', '', ['placeholder' => 'Email adres']) }}
                 </div>
-                <p>Nog geen account? <a href="#">Registreer</a> <a href="#" class="button tiny right">Inloggen</a></p>
-            </form>
+            </div>
+            <div class="row collapse">
+                <div class="small-2 medium-1 columns">
+                    <span class="prefix"><i class="fi-lock"></i></span>
+                </div>
+                <div class="small-10 medium-11 columns">
+                    {{ Form::password('password', ['placeholder' => 'Wachtwoord']) }}
+                </div>
+            </div>
+            <p>Nog geen account? <a href="#">Registreer</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
+
+            {{ Form::close(), PHP_EOL }}
         </div>
         </div>
     </div>

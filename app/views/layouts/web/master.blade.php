@@ -19,7 +19,11 @@ $version = [
 
             </div>
             <div class="profile">
-                <p><i class="fi-torso"></i> <a href="profiel">Liesbeth</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
+                @if (Auth::User())
+                <p><i class="fi-torso"></i> <a href="profiel">{{ Auth::user()->person->person_givenname }}</a> <span class="seperator">&#124;</span> NL &#124; EN</p>
+                @else
+                <p>NL &#124; EN</p>
+                @endif
             </div>
             <div class="navigation">
                 <a href="search">Spellen zoeken</a>
@@ -40,6 +44,7 @@ $version = [
         <p>&copy; 2014 MMP</p>
     </div>
 </div>
+@yield('login')
 
 @include('layouts.web.scripts')
 
