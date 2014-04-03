@@ -37,6 +37,8 @@ Route::group(['prefix' => 'web'], function() {
         return View::make('web.profiel', ['user' => $user]);
     });
 
+    Route::post('/gebruiker/profiel',['as' => 'web.edit','uses' => 'UserController@edit']);
+
     Route::get('/search',function()
     {
         return View::make('web.spelzoeken');

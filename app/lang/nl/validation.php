@@ -55,7 +55,7 @@ return array(
 	"not_in"           => " Geselecteerde :attribute is ongeldig.",
 	"numeric"          => " :attribute moet een getal zijn.",
 	"regex"            => " :attribute is een ongeldig formaat.",
-	"required"         => " :attribute veld is vereist.",
+	"required"         => " Het :attribute veld is vereist.",
 	"required_if"      => " :attribute veld is vereist wanneer when :or of :value.",
 	"required_with"    => " :attribute veld is vereist wanneer :values aanwezig zijn.",
 	"required_without" => " :attribute veld is vereist wanneer :values niet aanwezig zijn.",
@@ -93,6 +93,12 @@ return array(
 	|
 	*/
 
-	'attributes' => array(),
+	'attributes' => array(
+        'givenname'       => 'voornaam',
+        'surname'         => 'achternaam',
+        'email'           => 'email adres',
+        'password'        => 'wachtwoord',
+        'password_repeat' => 'wachtwoord herhalen'
+    ),
 
 );

@@ -15,7 +15,20 @@ input:focus {
 
 body {
   font-family: "corbert";
-  color: #999; }
+  color: #999;
+  height: 100%; }
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -66px; }
+
+.page-wrap:after {
+  content: "";
+  display: block; }
+
+#footer, .page-wrap:after {
+  height: 66px; }
 
 .breadcrumbs {
   border-radius: 0; }
@@ -168,8 +181,6 @@ body {
 /* PROFIEL */
 #profiel h2 {
   color: #999999; }
-#profiel .alignfix {
-  text-align: right; }
 #profiel .liststyle li {
   list-style: none; }
   #profiel .liststyle li a {
@@ -178,6 +189,14 @@ body {
     color: #222222; }
   #profiel .liststyle li ul li a {
     padding: 5px; }
+#profiel .button {
+  background: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  color: #777777; }
+#profiel .button:hover {
+  background: #DBDBDB;
+  border: 1px solid #999999;
+  color: #444444; }
 #profiel .panel_blue {
   background: #b9d9dc; }
   #profiel .panel_blue .panel_title {
@@ -198,6 +217,8 @@ body {
     #profiel .panel_green h3 i {
       display: block;
       margin-top: 6px; }
+#profiel label:first-letter {
+  text-transform: capitalize; }
 
 /* DETAIL SPEL */
 .detailspel {

@@ -33,12 +33,12 @@ class UserController extends \BaseController {
                 } else {
                     return Redirect::route('web.index')
                         ->withInput()
-                        ->with('auth-error-message', 'Incorrect username/password combination.');
+                        ->with('auth-error-message', 'Het email adres of wachtwoord is ongeldig.');
                 }
             } else {
                 return Redirect::route('web.index')
                     ->withInput()
-                    ->with('auth-error-message', 'User not found.');
+                    ->with('auth-error-message', 'De gebruiker werd niet gevonden');
             }
         } else {
             return Redirect::route('web.index')
@@ -47,5 +47,30 @@ class UserController extends \BaseController {
         }
     }
 
+    public function edit()
+    {
+        $rules = [
+            'givenname' => 'required',
+            'surname'   => 'required',
+            'email'     => 'required|email'
+        ];
 
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $person = Person::find(Auth::user()->person_id);
+            $person->person_givenname = Input::get('givenname');
+            $person->person_surname = Input::get('surname');
+            $person->person_email = Input::get('email');
+
+            $person->save();
+
+            return Redirect::to('web/gebruiker/profiel');
+
+        } else {
+            return Redirect::to('web/gebruiker/profiel')
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
 }
