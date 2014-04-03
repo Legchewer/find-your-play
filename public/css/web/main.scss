@@ -5,7 +5,7 @@
 =================================================================
 */
 
-$header_background : #f2f2f2;
+$header_background : #f4f4f4;
 $header_title_font : 'oxygen-bold';
 $font : 'corbert';
 $font2: 'oxygen';
@@ -40,6 +40,7 @@ body{
   position:relative;
   padding-bottom: 20px;
   margin-bottom:50px;
+  border-bottom:1px solid #dcdcdc;
   h1 {
     font-family: $header_title_font;
     font-size: 3.3em;
@@ -121,6 +122,10 @@ body{
       margin: 4px;
       display: block;
       font-size: 2em;
+      -moz-transform: scaleX(-1);
+      -o-transform: scaleX(-1);
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
     }
     .button{
       background:#86A6A9;
@@ -182,7 +187,8 @@ body{
     -webkit-transition-duration: 0.5s;
   }
   i{
-    font-size: 5em;
+    margin-top:10px;
+    font-size: 3em;
   }
   .inline-list>li{
       margin-right:20px;
@@ -191,6 +197,7 @@ body{
 /* FOOTER */
 #footer{
   background: $header_background;
+  border-top:1px solid #dcdcdc;
   p{
     text-align: center;
     padding:20px 0;

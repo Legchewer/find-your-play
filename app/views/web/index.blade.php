@@ -21,7 +21,7 @@
             <form>
                 <div class="row collapse">
                     <div class="small-2 medium-1 columns">
-                        <span class="prefix"><i class="fi-page-search"></i></span>
+                        <span class="prefix"><i class="fa fa-search"></i></span>
                     </div>
                     <div class="small-10 medium-11 columns">
                         <input type="text" placeholder="bvb. spelnaam">
@@ -54,7 +54,7 @@
 
             <div class="row collapse">
                 <div class="small-2 medium-1 columns">
-                    <span class="prefix"><i class="fi-torso"></i></span>
+                    <span class="prefix"><i class="fa fa-user"></i></span>
                 </div>
                 <div class="small-10 medium-11 columns">
                     {{ Form::email('email', '', ['placeholder' => 'Email adres']) }}
@@ -62,7 +62,7 @@
             </div>
             <div class="row collapse">
                 <div class="small-2 medium-1 columns">
-                    <span class="prefix"><i class="fi-lock"></i></span>
+                    <span class="prefix"><i class="fa fa-lock"></i></span>
                 </div>
                 <div class="small-10 medium-11 columns">
                     {{ Form::password('password', ['placeholder' => 'Wachtwoord']) }}
@@ -86,10 +86,10 @@
     <div class="medium-6 columns contact">
         <h2>Vind ons op</h2>
         <ul class="inline-list">
-            <li><a href="#"><i class="fi-social-youtube"></i></a></li>
-            <li><a href="#"><i class="fi-social-facebook"></i></a></li>
-            <li><a href="#"><i class="fi-social-twitter"></i></a></li>
-            <li><a href="#"><i class="fi-social-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
     </div>
 </div>

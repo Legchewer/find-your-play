@@ -15,17 +15,17 @@ $version = [
         <div class="logo small-8 columns clearfix">
             <a href="{{url('/')}}">
                 {{ HTML::image('css/images/logo.png', 'Find your Play', ['class' => 'left', 'id' => 'logo', 'title' => 'Find your Play']) }}
-                <h1>Find Your Play</h1>
+                <h1>Find your Play</h1>
             </a>
         </div>
         <div class="subnav small-4 columns">
             <ul class="inline-list right">
                 @if(Auth::User())
                 <li>
-                    <a href="#" data-dropdown="drop">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
-                    <ul id="drop" class="tiny f-dropdown" data-dropdown-content>
-                        <li><a href="{{url('/web/profiel')}}">Profiel</a></li>
-                        <li><a href="{{url('/web/logout')}}">Uitloggen</a></li>
+                    <a href="#" data-dropdown="dr0p">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
+                    <ul id="dr0p" class="tiny f-dropdown" data-dropdown-content>
+                        <li><a href="{{ URL::to('/web/gebruiker/profiel')}}">Profiel</a></li>
+                        <li><a href="{{ URL::to('/web/logout')}}">Uitloggen</a></li>
                     </ul>
                 </li>
                 <li class="divider">&nbsp;</li>

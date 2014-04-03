@@ -6,7 +6,7 @@
         <ul class="breadcrumbs">
             <li><a href="{{ url('/')}}">Home</a></li>
             <li class="unactive">Profiel</li>
-            <li class="current"><a href="#">Liesbeth</a></li>
+            <li class="current"><a href="#">{{$user->person_givenname}}</a></li>
         </ul>
     </div>
 </div>
@@ -17,10 +17,10 @@
             <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken.</p>
         </div>
         <div class="small-12 medium-6 columns">
-            <h2 class="alignfix">Aanpassen <i class="fi-page-edit"></i></h2>
+            <h2 class="alignfix">Aanpassen <i class="fa fa-pencil"></i></h2>
             <ul>
-                <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
-                <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
+                <li>{{$user->person_email}}</li>
+                <li>{{$user->person_givenname}}</li>
                 <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
             </ul>
         </div>
@@ -29,7 +29,7 @@
         <div class="small-12 medium-6 columns">
             <div class="panel_blue">
                 <div class="panel_title">
-                    <h3>Fiches <i class="right fi-torso"></i></h3>
+                    <h3>Fiches <i class="right fa fa-user"></i></h3>
                 </div>
                 <ul class="liststyle">
                     <li>
@@ -62,7 +62,7 @@
         <div class="small-12 medium-6 columns">
             <div class="panel_green">
                 <div class="panel_title">
-                    <h3>Verlanglijst <i class="right fi-star"></i></h3>
+                    <h3>Verlanglijst <i class="right fa fa-star"></i></h3>
                 </div>
                 <ul class="liststyle">
                     <li>

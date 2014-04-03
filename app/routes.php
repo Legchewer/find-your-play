@@ -29,14 +29,19 @@ Route::group(['prefix' => 'web'], function() {
     {
         return View::make('web.overons');
     });
-    Route::get('/profiel',function()
+
+    Route::get('/gebruiker/profiel',function()
     {
-        return View::make('web.profiel');
+        $user = Auth::user()->person;
+
+        return View::make('web.profiel', ['user' => $user]);
     });
+
     Route::get('/search',function()
     {
         return View::make('web.spelzoeken');
     });
+
     Route::get('/game',function()
     {
         return View::make('web.speldetail');
