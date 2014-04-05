@@ -33,8 +33,8 @@ Route::group(['prefix' => 'web'], function() {
     Route::group(['prefix' => 'gebruiker'], function() {
         Route::get('/registreren',function()
         {
-            //$roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
-            $roles = DB::table('roles')->lists('role_name_nl','role_id');
+            $roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
+            //$roles = DB::table('roles')->lists('role_name_nl','role_id');
 
             return View::make('web.registreren',compact('roles'));
         });
