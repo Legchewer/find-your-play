@@ -65,29 +65,32 @@
                         @endif
                     </div>
                 </div>
-                <p>Nog geen account? <a href="#">Registreer</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
+                <p>Nog geen account? <a href="{{ URL::to('web/gebruiker/registreren')}}">Registreer</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
 
                 {{ Form::close(), PHP_EOL }}
             </div>
         @else
-            <div class="columns">
-                <h2>Spel zoeken</h2>
-                <p>
-                    Maak gebruik van onze zoekfunctie en vindt zo gemakkelijk wat u zoekt. Geef een zoekterm op en de spellen worden voor u weergegeven.
-                    Als u gebruik wil maken van verschillende filters, klik dan op geavanceerd zoeken!
-                </p>
-                <form>
-                    <div class="row collapse">
-                        <div class="small-1 columns">
-                            <span class="prefix"><i class="fa fa-search"></i></span>
+                <div class="medium-6 columns">
+                    <h2>Spel zoeken</h2>
+                    <p>
+                        Maak gebruik van onze zoekfunctie en vindt zo gemakkelijk wat u zoekt. Geef een zoekterm op en de spellen worden voor u weergegeven.
+                        Als u gebruik wil maken van verschillende filters, klik dan op geavanceerd zoeken!
+                    </p>
+                </div>
+                <div class="medium-6 columns small-search">
+                    <h2 class="show-for-medium-up">&nbsp;</h2>
+                    <form>
+                        <div class="row collapse">
+                            <div class="small-2 medium-1 columns">
+                                <span class="prefix"><i class="fa fa-search"></i></span>
+                            </div>
+                            <div class="small-10 medium-11 columns">
+                                <input type="text" placeholder="bvb. spelnaam">
+                            </div>
                         </div>
-                        <div class="small-11 columns">
-                            <input type="text" placeholder="bvb. spelnaam">
-                        </div>
-                    </div>
-                    <p><a href="#">Geavanceerd zoeken</a> <a href="#" class="button tiny right">Zoeken</a></p>
-                </form>
-            </div>
+                        <p><a href="#">Geavanceerd zoeken</a> <a href="#" class="button tiny right">Zoeken</a></p>
+                    </form>
+                </div>
         @endif
         </div>
     </div>

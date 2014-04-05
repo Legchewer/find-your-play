@@ -6,7 +6,7 @@
         <ul class="breadcrumbs">
             <li><a href="{{ url('/')}}">Home</a></li>
             <li class="unactive">Profiel</li>
-            <li class="current"><a href="#">{{$user->person_givenname}}</a></li>
+            <li class="current">{{$user->person_givenname}}</li>
         </ul>
     </div>
 </div>

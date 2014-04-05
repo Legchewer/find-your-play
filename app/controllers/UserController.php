@@ -73,4 +73,39 @@ class UserController extends \BaseController {
                 ->withErrors($validator);
         }
     }
+
+    public function register()
+    {
+        $rules = [
+            'givenname'       => 'required',
+            'surname'         => 'required',
+            'email'           => 'required|email|unique:persons,person_email',
+            'password'        => 'required',
+            'password_repeat' => 'same:password',
+            'role'            => 'required'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $person = new Person;
+            $person->person_givenname = Input::get('givenname');
+            $person->person_surname = Input::get('surname');
+            $person->person_email = Input::get('email');
+            $person->save();
+
+            $member = new Member;
+            $member->member_password = Input::get('password');
+            $member->person_id = $person->person_id;
+            $member->role_id = Input::get('role');
+            $member->save();
+
+            return Redirect::to('web/index');
+
+        } else {
+            return Redirect::to('web/gebruiker/registreren')
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
 }

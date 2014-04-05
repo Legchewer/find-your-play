@@ -98,7 +98,8 @@ return array(
         'surname'         => 'achternaam',
         'email'           => 'email adres',
         'password'        => 'wachtwoord',
-        'password_repeat' => 'wachtwoord herhalen'
+        'password_repeat' => 'wachtwoord herhalen',
+        'role'            => 'gebruiker'
     ),
 
 );

@@ -321,6 +321,23 @@ body{
   margin-bottom:50px;
 }
 
+/* REGISTREREN */
+#registreren{
+  .button{
+    background:$header_background;
+    border:1px solid #dcdcdc;
+    color:$dark-grey;
+  }
+  .button:hover{
+    background:#DBDBDB;
+    border:1px solid #999999;
+    color:#444444;
+  }
+  label:first-letter{
+    text-transform: capitalize;
+  }
+}
+
 
 /* RESPONSIVE */
 @media only screen
@@ -336,5 +353,8 @@ and (max-width : 768px) {
     width: 100%;
     padding-left:15px;
     padding-right:15px;
+  }
+  #contact .contact{
+    padding-left: 15px;
   }
 }

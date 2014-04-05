@@ -256,6 +256,18 @@ body {
 .detailspel {
   margin-bottom: 50px; }
 
+/* REGISTREREN */
+#registreren .button {
+  background: #f4f4f4;
+  border: 1px solid #dcdcdc;
+  color: #777777; }
+#registreren .button:hover {
+  background: #DBDBDB;
+  border: 1px solid #999999;
+  color: #444444; }
+#registreren label:first-letter {
+  text-transform: capitalize; }
+
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {
   .row .row {
@@ -268,4 +280,7 @@ body {
   .page_navigation .spelzoeken .widthfix, .page_navigation .aanmelden .widthfix {
     width: 100%;
     padding-left: 15px;
-    padding-right: 15px; } }
+    padding-right: 15px; }
+
+  #contact .contact {
+    padding-left: 15px; } }

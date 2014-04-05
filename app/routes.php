@@ -30,14 +30,26 @@ Route::group(['prefix' => 'web'], function() {
         return View::make('web.overons');
     });
 
-    Route::get('/gebruiker/profiel',function()
-    {
-        $user = Auth::user()->person;
+    Route::group(['prefix' => 'gebruiker'], function() {
+        Route::get('/registreren',function()
+        {
+            //$roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
+            $roles = DB::table('roles')->lists('role_name_nl','role_id');
 
-        return View::make('web.profiel', ['user' => $user]);
+            return View::make('web.registreren',compact('roles'));
+        });
+
+        Route::post('/registreren',['as' => 'web.register', 'uses' => 'UserController@register']);
+
+        Route::get('/profiel',function()
+        {
+            $user = Auth::user()->person;
+            return View::make('web.profiel', ['user' => $user]);
+        });
+
+        Route::post('/profiel',['as' => 'web.edit','uses' => 'UserController@edit']);
+
     });
-
-    Route::post('/gebruiker/profiel',['as' => 'web.edit','uses' => 'UserController@edit']);
 
     Route::get('/search',function()
     {
