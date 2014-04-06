@@ -1,19 +1,19 @@
 <?php
 
-class Therapy extends Eloquent {
+class GameFeature extends Eloquent {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'therapies';
+    protected $table = 'game_features';
 
     /**
      * The primary key id.
      *
      * @var string
      */
-    protected $primaryKey = "therapy_id";
+    protected $primaryKey = "game_feature_id";
 
     /**
      * Disable timestamps.
@@ -26,15 +26,7 @@ class Therapy extends Eloquent {
      */
     public function games()
     {
-        return $this->hasMany('Game');
-    }
-
-    /**
-     * @return array
-     */
-    public function parent_therapy()
-    {
-        return $this->belongsTo('Therapy','parent_therapy_id');
+        return $this->belongsToMany('Game','games_has_game_features', 'game_feature_id', 'game_id');
     }
 
 }

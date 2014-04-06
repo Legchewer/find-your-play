@@ -17,10 +17,8 @@ $version = [
 
 </div>
 <div class="fw-container-main">
-    <div class="main row">
-        <div class="content large-12 columns">
+    <div class="content row">
             @yield('content')
-        </div>
     </div>
 </div>
 

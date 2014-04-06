@@ -71,13 +71,14 @@ li {
 .fw-container-nav {
   width: 100%; }
   .fw-container-nav .main-nav {
-    height: 48px; }
+    height: 48px;
+    margin-bottom: 24px; }
     .fw-container-nav .main-nav .nav-list {
       text-align: center; }
       .fw-container-nav .main-nav .nav-list li .active {
         color: #f4f4f4; }
       .fw-container-nav .main-nav .nav-list li a {
-        padding-top: 4px;
+        padding-top: 6px;
         display: block;
         width: 100%;
         height: 100%;
@@ -86,6 +87,8 @@ li {
         font-size: 1.4em;
         font-weight: 700;
         color: #84c38e; }
+    .fw-container-nav .main-nav .f-dropdown li a {
+      background: #fff; }
 
 .fw-container-main {
   width: 100%;
@@ -101,3 +104,80 @@ li {
   .fw-container-footer .footer {
     padding-top: 8px;
     text-align: center; }
+
+.login h1 {
+  display: block;
+  max-width: 400px;
+  margin: 0 auto 12px auto; }
+.login .alert {
+  opacity: 0;
+  max-width: 400px; }
+
+.login-form {
+  max-width: 400px;
+  margin: 0 auto 4em auto; }
+  .login-form input[type="text"], .login-form input[type="submit"] {
+    height: 60px;
+    font-size: 1.2em; }
+  .login-form input[type="checkbox"] {
+    margin-top: 0.3em;
+    margin-left: 0.4em; }
+  .login-form input:focus {
+    background-color: #ffffff; }
+  .login-form label {
+    line-height: 0;
+    color: #999; }
+
+/**
+ * Checkbox Five
+ */
+.checkboxFive {
+  width: 25px;
+  position: relative; }
+
+/**
+ * Create the box for the checkbox
+ */
+.checkboxFive label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  left: -5px;
+  background: #eee;
+  border: 1px solid #ddd; }
+
+/**
+ * Display the tick inside the checkbox
+ */
+.checkboxFive label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  font-size: 2em;
+  background: transparent;
+  top: 6px;
+  left: 5px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+/**
+ * Create the hover event of the tick
+ */
+.checkboxFive label:hover::after {
+  opacity: 0.5; }
+
+/**
+ * Create the checkbox state for the tick
+ */
+.checkboxFive input[type=checkbox]:checked + label:after {
+  opacity: 1; }

@@ -1,19 +1,19 @@
 <?php
 
-class AgeGroup extends Eloquent {
+class GameFunction extends Eloquent {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'age_groups';
+    protected $table = 'game_functions';
 
     /**
      * The primary key id.
      *
      * @var string
      */
-    protected $primaryKey = "age_group_id";
+    protected $primaryKey = "game_function_id";
 
     /**
      * Disable timestamps.
@@ -26,7 +26,7 @@ class AgeGroup extends Eloquent {
      */
     public function games()
     {
-        return $this->belongsToMany('Game','games_has_age_groups', 'age_group_id', 'game_id');
+        return $this->belongsToMany('Game','games_has_game_functions', 'game_function_id', 'game_id');
     }
 
 }

@@ -1,19 +1,19 @@
 <?php
 
-class GameType extends Eloquent {
+class GameTag extends Eloquent {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'game_types';
+    protected $table = 'game_tags';
 
     /**
      * The primary key id.
      *
-     * @var string
+     * @var int
      */
-    protected $primaryKey = "game_type_id";
+    protected $primaryKey = "game_tag_id";
 
     /**
      * Disable timestamps.
@@ -24,17 +24,9 @@ class GameType extends Eloquent {
     /**
      * @return array
      */
-    public function game_kind()
-    {
-        return $this->belongsTo('GameKind');
-    }
-
-    /**
-     * @return array
-     */
     public function games()
     {
-        return $this->hasMany('Game');
+        return $this->belongsToMany('Game','games_has_game_tags', 'game_tag_id', 'game_id');
     }
 
 }

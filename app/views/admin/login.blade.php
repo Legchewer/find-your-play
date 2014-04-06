@@ -2,9 +2,9 @@
 
 @section('content')
 
-<h1>Login</h1>
-
 <div class="large-12 columns login">
+
+    <h1>Login</h1>
 
     @if ($errors->any())
     <div class="alert-box alert" data-alert>

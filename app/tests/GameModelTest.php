@@ -12,14 +12,22 @@ class GameModelTest extends TestCase
         $difficulty = GameDifficulty::find(1);
         $budgetgroup = BudgetGroup::find(1);
         $theme = Theme::find(1);
-        $therapy = Therapy::find(2);
+        $type = GameType::find(1);
 
         $assign1 = [
-            'game_title' => 'spel titel',
-            'game_producer' => 'producent naam',
-            'game_rules' => 'regels',
-            'game_duration' => '3-4 uur',
-            'game_players' => '1-2 spelers'
+            'game_title_nl' => 'Nijntje vormenstoof',
+            'game_title_en' => 'Nijntje shape puzzle',
+            'game_description_nl' => 'Een vormenstoof van Nijntje',
+            'game_description_en' => 'A shape puzzle from Nijntje',
+            'game_producer' => 'Ravensburger',
+            'game_availability' => 'www.ravensburger.com',
+            'game_price' => '15 EUR',
+            'game_rules_nl' => 'de regels',
+            'game_rules_en' => 'the rules',
+            'game_duration_nl' => '3-4 uur',
+            'game_duration_en' => '3-4 hour',
+            'game_players' => '1-2',
+            'game_therapeutic_nl' => 'therapeutische fiche'
         ];
 
         $game1 = new Game($assign1);
@@ -28,17 +36,22 @@ class GameModelTest extends TestCase
         $game1->game_difficulty()->associate($difficulty);
         $game1->budget_group()->associate($budgetgroup);
         $game1->theme()->associate($theme);
-        $game1->therapy()->associate($therapy);
+        $game1->game_type()->associate($type);
 
         $game1->save();
 
         // attach many to many's
-        $game1->game_types()->attach(1);
-        $game1->game_types()->attach(2);
+        $game1->game_features()->attach(1);
+        $game1->game_features()->attach(2);
+        $game1->game_features()->attach(3);
 
-        $game1->game_audiences()->attach(1);
+        $game1->game_functions()->attach(1);
+        $game1->game_functions()->attach(2);
 
-        $game1->age_groups()->attach(1);
+        $game1->game_tags()->attach(1);
+        $game1->game_tags()->attach(2);
+        $game1->game_tags()->attach(3);
+        $game1->game_tags()->attach(4);
 
         $this->assertGreaterThan(0, $game1->game_id);
 

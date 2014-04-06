@@ -10,9 +10,9 @@ class ThemeModelTest extends TestCase
     public function testThemeModel()
     {
 
-        $theme1 = new Theme(); // wss slecht vb
-        $theme1->theme_name_nl = 'Middeleeuwen';
-        $theme1->theme_name_en = 'Medieval';
+        $theme1 = new Theme();
+        $theme1->theme_name_nl = 'Boerderij';
+        $theme1->theme_name_en = 'Farm';
 
         $theme1->save();
 

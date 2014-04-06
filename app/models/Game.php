@@ -27,11 +27,19 @@ class Game extends Eloquent {
      * @var array
      */
     protected $fillable = [
-        'game_title',
+        'game_title_nl',
+        'game_title_en',
+        'game_description_nl',
+        'game_description_en',
         'game_producer',
-        'game_rules',
-        'game_duration',
-        'game_players'
+        'game_availability',
+        'game_price',
+        'game_rules_nl',
+        'game_rules_en',
+        'game_duration_nl',
+        'game_duration_en',
+        'game_players',
+        'game_therapeutic_nl'
     ];
 
     /**
@@ -45,17 +53,33 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_types()
+    public function game_tags()
     {
-        return $this->belongsToMany('GameType','games_has_game_types', 'game_id', 'game_type_id');
+        return $this->belongsToMany('GameTag','games_has_game_tags', 'game_id', 'game_tag_id');
     }
 
     /**
      * @return array
      */
-    public function age_groups()
+    public function game_features()
     {
-        return $this->belongsToMany('AgeGroup','games_has_age_groups', 'game_id', 'age_group_id');
+        return $this->belongsToMany('GameFeature','games_has_game_features', 'game_id', 'game_feature_id');
+    }
+
+    /**
+     * @return array
+     */
+    public function game_functions()
+    {
+        return $this->belongsToMany('GameFunction','games_has_game_functions', 'game_id', 'game_function_id');
+    }
+
+    /**
+     * @return array
+     */
+    public function game_type()
+    {
+        return $this->belongsTo('GameType');
     }
 
     /**
@@ -80,14 +104,6 @@ class Game extends Eloquent {
     public function theme()
     {
         return $this->belongsTo('Theme');
-    }
-
-    /**
-     * @return array
-     */
-    public function therapy()
-    {
-        return $this->belongsTo('Therapy');
     }
 
 
