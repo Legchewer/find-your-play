@@ -87,8 +87,17 @@ li {
         font-size: 1.4em;
         font-weight: 700;
         color: #84c38e; }
-    .fw-container-nav .main-nav .f-dropdown li a {
-      background: #fff; }
+      .fw-container-nav .main-nav .nav-list li a:hover {
+        background: #98d7a2; }
+    .fw-container-nav .main-nav .f-dropdown {
+      max-width: none;
+      width: 92%; }
+      .fw-container-nav .main-nav .f-dropdown li a {
+        background: #fff;
+        font-size: 1.2em;
+        color: #777777; }
+      .fw-container-nav .main-nav .f-dropdown li a:hover {
+        background: #f0f0f0; }
 
 .fw-container-main {
   width: 100%;

@@ -42,7 +42,7 @@ class Client extends Eloquent {
      */
     public function games()
     {
-        return $this->belongsToMany('Game','clients_has_games', 'client_id', 'game_id')->withPivot('client_game_usedate', 'client_game_evaluation', 'client_game_duration', 'client_game_feedback', 'client_game_shared');
+        return $this->belongsToMany('Game','clients_has_games', 'client_id', 'game_id')->withPivot('client_game_usedate', 'client_game_evaluation', 'client_game_duration', 'client_game_log');
     }
 
 }

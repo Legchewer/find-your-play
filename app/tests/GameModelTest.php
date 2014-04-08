@@ -21,6 +21,8 @@ class GameModelTest extends TestCase
             'game_description_en' => 'A shape puzzle from Nijntje',
             'game_producer' => 'Ravensburger',
             'game_availability' => 'www.ravensburger.com',
+            'game_age_nl' => 'vanaf 3 jaar',
+            'game_age_en' => 'age 3 and up',
             'game_price' => '15 EUR',
             'game_rules_nl' => 'de regels',
             'game_rules_en' => 'the rules',

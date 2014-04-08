@@ -2,6 +2,7 @@
 $version = [
     'select' => '3.4.5',
     'foundation' => '5.1.1',
+    'fa' => '4.0.3'
 ];
 ?>
 <html>

@@ -24,6 +24,14 @@ class GameFunction extends Eloquent {
     /**
      * @return array
      */
+    public function game_function_category()
+    {
+        return $this->belongsTo('GameFunctionCategory');
+    }
+
+    /**
+     * @return array
+     */
     public function games()
     {
         return $this->belongsToMany('Game','games_has_game_functions', 'game_function_id', 'game_id');

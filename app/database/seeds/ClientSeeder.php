@@ -23,12 +23,14 @@ class ClientSeeder extends Seeder{
             'person_id' => 1
         ]);
 
+        $client1->games()->attach(1, ['client_game_usedate'=>date("Y-m-d H:i:s"), 'client_game_evaluation'=>4, 'client_game_duration'=>'30 min', 'client_game_log'=>'<p>Alles verloopt vlot. Er worden vorderingen gemaakt</p>']);
+
         $client2 = Client::create([
             'client_experience' => '<p>Kruipt vaak in haar schulp.</p>',
             'person_id' => 2
         ]);
 
-        // TODO link games
+        $client2->games()->attach(1, ['client_game_usedate'=>date("Y-m-d H:i:s"), 'client_game_evaluation'=>2, 'client_game_duration'=>'30 min', 'client_game_log'=>'<p>Ze vertoonde weinig interesse.</p>']);
 
     }
 

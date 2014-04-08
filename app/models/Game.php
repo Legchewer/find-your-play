@@ -39,7 +39,8 @@ class Game extends Eloquent {
         'game_duration_nl',
         'game_duration_en',
         'game_players',
-        'game_therapeutic_nl'
+        'game_therapeutic_nl',
+        'game_therapeutic_en'
     ];
 
     /**

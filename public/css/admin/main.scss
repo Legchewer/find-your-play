@@ -120,12 +120,22 @@ li{
           font-weight: 700;
           color: $green - 30;
         }
+        a:hover{
+          background: $green - 10;
+        }
       }
     }
     .f-dropdown{
+      max-width: none;
+      width: 92%; // niet perfect
       li{
         a{
           background: #fff;
+          font-size: 1.2em;
+          color: $dark-grey;
+        }
+        a:hover{
+          background: #f0f0f0;
         }
       }
     }
