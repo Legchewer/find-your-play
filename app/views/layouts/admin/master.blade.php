@@ -17,11 +17,11 @@ $version = [
     <div class="subnav large-4 medium-4 small-4 columns">
         <ul class="inline-list right">
             <li>
-                Welkom {{ Auth::user()->person->person_givenname }}
+                {{ Lang::get('admin-general.welcome') }} {{ Auth::user()->person->person_givenname }}
             </li>
             <li class="divider">&nbsp;</li>
             <li>
-                {{ HTML::link('/admin/logout', 'Logout', ['' => '']), PHP_EOL }}
+                {{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}
             </li>
         </ul>
     </div>
@@ -32,28 +32,28 @@ $version = [
         <nav>
             <ul class="nav-list">
                 <li class="large-4 medium-4 columns first">
-                    <a data-dropdown="drop1" class="dropdown active" href="">Spelletjes</a>
+                    <a data-dropdown="drop1" class="dropdown active" href="">{{ Lang::get('admin-pages.games') }}</a>
                     <ul id="drop1" data-dropdown-content class="f-dropdown">
-                        <li><a href="#">This is a link</a></li>
-                        <li><a href="#">This is another</a></li>
-                        <li><a href="#">Yet another</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.games') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.kinds') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.types') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.themes') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.functions') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.function-categories') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.difficulties') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.budget-groups') }}</a></li>
+                        <li><a href="#">Feedback</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns second">
-                    <a data-dropdown="drop2" class="dropdown" href="">Leden</a>
+                    <a data-dropdown="drop2" class="dropdown" href="">{{ Lang::get('admin-pages.members') }}</a>
                     <ul id="drop2" data-dropdown-content class="f-dropdown">
-                        <li><a href="#">This is a link</a></li>
-                        <li><a href="#">This is another</a></li>
-                        <li><a href="#">Yet another</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.members') }}</a></li>
+                        <li><a href="#">{{ Lang::get('admin-pages.roles') }}</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns last">
-                    <a data-dropdown="drop3" class="dropdown" href="">Therapieën</a>
-                    <ul id="drop3" data-dropdown-content class="f-dropdown">
-                        <li><a href="#">This is a link</a></li>
-                        <li><a href="#">This is another</a></li>
-                        <li><a href="#">Yet another</a></li>
-                    </ul>
+                    <a href="#">{{ Lang::get('admin-pages.settings') }}</a>
                 </li>
             </ul>
         </nav>

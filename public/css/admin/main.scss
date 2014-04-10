@@ -170,9 +170,10 @@ li{
     margin: 0 auto 12px auto;
   }
   .alert{
-    opacity: 0;
+    //opacity: 0;
     max-width: 400px;
-    //margin: 0 auto 1em auto;
+    margin: 0 auto 1em auto;
+    font-size: 1.2em;
   }
 }
 
@@ -182,6 +183,9 @@ li{
   input[type="text"], input[type="submit"] {
     height: 60px;
     font-size: 1.2em;
+  }
+  input[type="submit"] {
+    font-size: 1.4em;
   }
   input[type="checkbox"]{
     margin-top: 0.3em;
@@ -193,6 +197,12 @@ li{
   label {
     line-height: 0;
     color: #999;
+  }
+  .button{
+    background-color: $blue;
+  }
+  .button:hover{
+    background-color: $blue - 20;
   }
 }
 

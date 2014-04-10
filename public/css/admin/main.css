@@ -119,8 +119,9 @@ li {
   max-width: 400px;
   margin: 0 auto 12px auto; }
 .login .alert {
-  opacity: 0;
-  max-width: 400px; }
+  max-width: 400px;
+  margin: 0 auto 1em auto;
+  font-size: 1.2em; }
 
 .login-form {
   max-width: 400px;
@@ -128,6 +129,8 @@ li {
   .login-form input[type="text"], .login-form input[type="submit"] {
     height: 60px;
     font-size: 1.2em; }
+  .login-form input[type="submit"] {
+    font-size: 1.4em; }
   .login-form input[type="checkbox"] {
     margin-top: 0.3em;
     margin-left: 0.4em; }
@@ -136,6 +139,10 @@ li {
   .login-form label {
     line-height: 0;
     color: #999; }
+  .login-form .button {
+    background-color: #b9d9dc; }
+  .login-form .button:hover {
+    background-color: #a5c5c8; }
 
 /**
  * Checkbox Five

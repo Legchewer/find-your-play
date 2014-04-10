@@ -4,7 +4,7 @@
 
 <div class="large-12 columns login">
 
-    <h1>Login</h1>
+    <h1>{{ Lang::get('admin-forms.login-title') }}</h1>
 
     @if ($errors->any())
     <div class="alert-box alert" data-alert>
@@ -26,18 +26,18 @@
 
     {{ Form::open(['route' => 'admin.auth', 'class' => 'login-form']), PHP_EOL }}
 
-    {{ Form::email('email', '', ['placeholder' => 'Email address']) }}
+    {{ Form::email('email', '', ['placeholder' => Lang::get('admin-forms.login-email') ]) }}
 
-    {{ Form::password('password', ['placeholder' => 'Password']) }}
+    {{ Form::password('password', ['placeholder' => Lang::get('admin-forms.login-password') ]) }}
 
     <div class="checkboxFive">
         <input type="checkbox" value="1" id="checkboxFiveInput" name="remember" />
         <label for="checkboxFiveInput"></label>
     </div>
 
-    {{ Form::label('remember', 'Remember me', ['class' => 'inline left']); }}
+    {{ Form::label('remember', Lang::get('admin-forms.login-remember'), ['class' => 'inline left']); }}
 
-    {{ Form::submit('Enter', ['class' => 'button expand']), PHP_EOL }}
+    {{ Form::submit(Lang::get('admin-forms.login-enter'), ['class' => 'button expand']), PHP_EOL }}
     {{ Form::close(), PHP_EOL }}
 
 </div>

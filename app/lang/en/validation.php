@@ -93,6 +93,9 @@ return array(
 	|
 	*/
 
-	'attributes' => array(),
+    'attributes' => [
+        'email' => '<strong>Email</strong>',
+        'password' => '<strong>Password</strong>'
+    ],
 
 );
