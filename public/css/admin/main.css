@@ -90,8 +90,10 @@ li {
       .fw-container-nav .main-nav .nav-list li a:hover {
         background: #98d7a2; }
     .fw-container-nav .main-nav .f-dropdown {
+      text-align: left;
       max-width: none;
-      width: 92%; }
+      width: auto;
+      padding: 12px; }
       .fw-container-nav .main-nav .f-dropdown li a {
         background: #fff;
         font-size: 1.2em;

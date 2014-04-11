@@ -92,6 +92,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'AdminDashboardController@index'])
         ->before('auth-admin');
 
+    /*
+     * Themes
+     */
+
+    // themes list
+    Route::get('/themes', ['as'   => 'admin.themes', 'uses' => 'AdminThemeController@index'])
+        ->before('auth');
+
 });
 
 Route::get('/404', ['as' => '404', function()

@@ -126,8 +126,11 @@ li{
       }
     }
     .f-dropdown{
+      text-align: left;
       max-width: none;
-      width: 92%; // niet perfect
+      width: auto;
+      padding: 12px;
+      //width: 92%; // niet perfect
       li{
         a{
           background: #fff;

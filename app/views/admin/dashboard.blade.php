@@ -2,8 +2,14 @@
 
 @section('content')
 
-<div class="dashboard large-12 columns">
-    <h1>Dashboard <small>{{ Lang::get('admin-pages.dashboard-sub') }}</small></h1>
+<div class="content dashboard">
+    <div class="row">
+        <div class="large-12 columns content-header">
+
+            <h1><i class="fa fa-dashboard"></i> Dashboard <small>{{ Lang::get('admin-pages.dashboard-sub') }}</small></h1>
+
+        </div>
+    </div>
 </div>
 
 @stop
