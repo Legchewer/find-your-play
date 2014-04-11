@@ -20,26 +20,64 @@ Route::get('/', function()
 
 Route::group(['prefix' => 'web'], function() {
 
-    Route::get('/index', function()
+    Route::get('/index',['as' => 'web.index',function()
     {
         return View::make('web.index');
-    });
+    }]);
+
     Route::get('/about',function()
     {
         return View::make('web.overons');
     });
-    Route::get('/profiel',function()
-    {
-        return View::make('web.profiel');
+
+    Route::group(['prefix' => 'gebruiker'], function() {
+        Route::get('/registreren',function()
+        {
+            $roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
+            //$roles = DB::table('roles')->lists('role_name_nl','role_id');
+
+            return View::make('web.registreren',compact('roles'));
+        });
+
+        Route::post('/registreren',['as' => 'web.register', 'uses' => 'UserController@register']);
+
+        Route::get('/profiel',function()
+        {
+            $user = Auth::user()->person;
+            return View::make('web.profiel', ['user' => $user]);
+        });
+
+        Route::post('/profiel',['as' => 'web.edit','uses' => 'UserController@edit']);
+
     });
+
     Route::get('/search',function()
     {
         return View::make('web.spelzoeken');
     });
+
     Route::get('/game',function()
     {
         return View::make('web.speldetail');
     });
+
+    /*
+     * Authentication
+     */
+    Route::post('/auth', ['as'   => 'web.auth', 'uses' => 'UserController@auth'])
+        ->before('guest');
+
+    /*
+     * Logout
+     */
+    Route::get('/logout', ['as'   => 'admin.logout',
+        function () {
+
+            Auth::logout();
+
+            return Redirect::to('/');
+        }
+    ])->before('auth-web');
 
 });
 

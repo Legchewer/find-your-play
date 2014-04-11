@@ -6,30 +6,45 @@
         <ul class="breadcrumbs">
             <li><a href="{{ url('/')}}">Home</a></li>
             <li class="unactive">Profiel</li>
-            <li class="current"><a href="#">Liesbeth</a></li>
+            <li class="current">{{$user->person_givenname}}</li>
         </ul>
     </div>
 </div>
 <div id="profiel">
     <div class="row">
-        <div class="small-12 medium-6 columns">
-            <h2>Profiel</h2>
-            <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken.</p>
-        </div>
-        <div class="small-12 medium-6 columns">
-            <h2 class="alignfix">Aanpassen <i class="fi-page-edit"></i></h2>
-            <ul>
-                <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
-                <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
-                <li>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen.</li>
-            </ul>
+        <div class="small-12 columns">
+            <h2>Wijzig uw gegevens</h2>
+            {{ Form::open(['route' => 'web.edit']), PHP_EOL }}
+
+                {{ Form::label('givenname', Lang::get('validation.attributes.givenname'),['class' => ($errors->has('givenname') ? 'error' : '' )])}}
+                {{ Form::text('givenname', $user->person_givenname,['class' => ($errors->has('givenname') ? 'error' : '' )]) }}
+                @if ($errors->has('givenname'))
+                {{ $errors->first('givenname', '<small class="error">:message</small>') }}
+                @endif
+
+                {{ Form::label('surname', Lang::get('validation.attributes.surname'),['class' => ($errors->has('surname') ? 'error' : '' ),])}}
+                {{ Form::text('surname', $user->person_surname,['class' => ($errors->has('givenname') ? 'error' : '' )]) }}
+                @if ($errors->has('surname'))
+                {{ $errors->first('surname', '<small class="error">:message</small>') }}
+                @endif
+
+                {{ Form::label('email', Lang::get('validation.attributes.email'),['class' => ($errors->has('email') ? 'error' : '' ),])}}
+                {{ Form::email('email', $user->person_email,['class' => ($errors->has('email') ? 'error' : '' )]) }}
+                @if ($errors->has('email'))
+                {{ $errors->first('email', '<small class="error">:message</small>') }}
+                @endif
+
+                {{ Form::submit('Wijzigen', ['class' => 'button tiny']), PHP_EOL }}
+
+            {{ Form::close(), PHP_EOL }}
         </div>
     </div>
+    <br/>
     <div class="row">
         <div class="small-12 medium-6 columns">
             <div class="panel_blue">
                 <div class="panel_title">
-                    <h3>Fiches <i class="right fi-torso"></i></h3>
+                    <h3>Fiches <i class="right fa fa-user"></i></h3>
                 </div>
                 <ul class="liststyle">
                     <li>
@@ -62,7 +77,7 @@
         <div class="small-12 medium-6 columns">
             <div class="panel_green">
                 <div class="panel_title">
-                    <h3>Verlanglijst <i class="right fi-star"></i></h3>
+                    <h3>Verlanglijst <i class="right fa fa-star"></i></h3>
                 </div>
                 <ul class="liststyle">
                     <li>
