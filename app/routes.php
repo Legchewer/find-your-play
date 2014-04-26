@@ -125,9 +125,32 @@ Route::group(['prefix' => 'admin'], function() {
     ])->before('auth-admin');
 
     /*
+     * Change language
+     */
+    Route::get('/language/{lang}', ['as'   => 'admin.dashboard', function($lang)
+    {
+
+        Session::put('my.locale', $lang);
+
+        if (Auth::check()){
+            return Redirect::to('admin/dashboard');
+        } else {
+            return Redirect::to('/');
+        }
+
+    }
+    ]);
+
+    /*
      * Dashboard
      */
     Route::get('/dashboard', ['as'   => 'admin.dashboard', 'uses' => 'AdminDashboardController@index'])
+        ->before('auth-admin');
+
+    /*
+     * Games
+     */
+    Route::get('/games', ['as'   => 'admin.games', 'uses' => 'AdminGameController@index'])
         ->before('auth-admin');
 
     /*
@@ -137,6 +160,56 @@ Route::group(['prefix' => 'admin'], function() {
     // themes list
     Route::get('/themes', ['as'   => 'admin.themes', 'uses' => 'AdminThemeController@index'])
         ->before('auth');
+
+    /*
+     * Functions
+     */
+
+    // functions list
+    Route::get('/functions', ['as'   => 'admin.functions', 'uses' => 'AdminGameFunctionController@index'])
+        ->before('auth');
+
+    /*
+     * Function categories
+     */
+
+    // categories list
+    Route::get('/categories', ['as'   => 'admin.categories', 'uses' => 'AdminGameFunctionCategoryController@index'])
+        ->before('auth');
+
+    /*
+     * Game kinds
+     */
+
+    // game kinds list
+    Route::get('/kinds', ['as'   => 'admin.kinds', 'uses' => 'AdminGameKindController@index'])
+        ->before('auth');
+
+    /*
+     * Game types
+     */
+
+    // game types list
+    Route::get('/types', ['as'   => 'admin.types', 'uses' => 'AdminGameTypeController@index'])
+        ->before('auth');
+
+    /*
+     * Game difficulties
+     */
+
+    // game difficulties list
+    Route::get('/difficulties', ['as'   => 'admin.difficulties', 'uses' => 'AdminGameDifficultyController@index'])
+        ->before('auth');
+
+    /*
+     * Budget groups
+     */
+
+    // budget groups list
+    Route::get('/budget-groups', ['as'   => 'admin.budgetgroups', 'uses' => 'AdminBudgetGroupController@index'])
+        ->before('auth');
+
+    // FEEDBACK ANDERS DOEN (geen tabel)
 
 });
 

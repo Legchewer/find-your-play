@@ -24,7 +24,7 @@ class GameKind extends Eloquent {
     /**
      * @return array
      */
-    public function game_types()
+    public function gameTypes()
     {
         return $this->hasMany('GameType');
     }

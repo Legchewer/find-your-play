@@ -33,9 +33,8 @@
     <div class="checkboxFive">
         <input type="checkbox" value="1" id="checkboxFiveInput" name="remember" />
         <label for="checkboxFiveInput"></label>
+        <span class="remember-label">Remember me</span>
     </div>
-
-    {{ Form::label('remember', Lang::get('admin-forms.login-remember'), ['class' => 'inline left']); }}
 
     {{ Form::submit(Lang::get('admin-forms.login-enter'), ['class' => 'button expand']), PHP_EOL }}
     {{ Form::close(), PHP_EOL }}

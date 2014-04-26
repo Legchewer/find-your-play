@@ -23,6 +23,21 @@ $version = [
             <li>
                 {{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}
             </li>
+            <!-- TEMP -->
+            <li>
+                @if (App::getLocale() == 'nl')
+                {{ HTML::link('/admin/language/nl', 'NL', ['class' => 'language active']), PHP_EOL }}
+                @else
+                {{ HTML::link('/admin/language/nl', 'NL', ['class' => 'language']), PHP_EOL }}
+                @endif
+            </li>
+            <li>
+                @if (App::getLocale() == 'en')
+                {{ HTML::link('/admin/language/en', 'EN', ['class' => 'language active']), PHP_EOL }}
+                @else
+                {{ HTML::link('/admin/language/en', 'EN', ['class' => 'language']), PHP_EOL }}
+                @endif
+            </li>
         </ul>
     </div>
 
@@ -34,14 +49,14 @@ $version = [
                 <li class="large-4 medium-4 columns first">
                     <a data-dropdown="drop1" class="dropdown active" href=""><i class="fa fa-puzzle-piece fa-lg"></i> {{ Lang::get('admin-pages.games') }}</a>
                     <ul id="drop1" data-dropdown-content class="f-dropdown">
-                        <li><a href="#"><i class="fa fa-puzzle-piece"></i> {{ Lang::get('admin-pages.games') }}</a></li>
-                        <li><a href="#"><i class="fa fa-clipboard"></i> {{ Lang::get('admin-pages.kinds') }}</a></li>
-                        <li><a href="#"><i class="fa fa-folder-open"></i> {{ Lang::get('admin-pages.types') }}</a></li>
+                        <li><a href="{{ URL::route('admin.games') }}"><i class="fa fa-puzzle-piece"></i> {{ Lang::get('admin-pages.games') }}</a></li>
+                        <li><a href="{{ URL::route('admin.kinds') }}"><i class="fa fa-clipboard"></i> {{ Lang::get('admin-pages.kinds') }}</a></li>
+                        <li><a href="{{ URL::route('admin.types') }}"><i class="fa fa-folder-open"></i> {{ Lang::get('admin-pages.types') }}</a></li>
                         <li><a href="{{ URL::route('admin.themes') }}"><i class="fa fa-rocket"></i> {{ Lang::get('admin-pages.themes') }}</a></li>
-                        <li><a href="#"><i class="fa fa-lightbulb-o"></i> {{ Lang::get('admin-pages.functions') }}</a></li>
-                        <li><a href="#"><i class="fa fa-book"></i> {{ Lang::get('admin-pages.function-categories') }}</a></li>
-                        <li><a href="#"><i class="fa fa-bar-chart-o"></i> {{ Lang::get('admin-pages.difficulties') }}</a></li>
-                        <li><a href="#"><i class="fa fa-money"></i> {{ Lang::get('admin-pages.budget-groups') }}</a></li>
+                        <li><a href="{{ URL::route('admin.functions') }}"><i class="fa fa-lightbulb-o"></i> {{ Lang::get('admin-pages.functions') }}</a></li>
+                        <li><a href="{{ URL::route('admin.categories') }}"><i class="fa fa-book"></i> {{ Lang::get('admin-pages.function-categories') }}</a></li>
+                        <li><a href="{{ URL::route('admin.difficulties') }}"><i class="fa fa-bar-chart-o"></i> {{ Lang::get('admin-pages.difficulties') }}</a></li>
+                        <li><a href="{{ URL::route('admin.budgetgroups') }}"><i class="fa fa-money"></i> {{ Lang::get('admin-pages.budget-groups') }}</a></li>
                         <li><a href="#"><i class="fa fa-comments"></i> Feedback</a></li>
                     </ul>
                 </li>

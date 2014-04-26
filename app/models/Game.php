@@ -48,13 +48,13 @@ class Game extends Eloquent {
      */
     public function clients()
     {
-        return $this->belongsToMany('Client','clients_has_games', 'game_id', 'client_id')->withPivot('client_game_usedate', 'client_game_evaluation', 'client_game_duration', 'client_game_feedback', 'client_game_shared');
+        return $this->belongsToMany('Client','clients_has_games', 'game_id', 'client_id')->withPivot('client_game_usedate', 'client_game_evaluation', 'client_game_duration', 'client_game_log');
     }
 
     /**
      * @return array
      */
-    public function game_tags()
+    public function gameTags()
     {
         return $this->belongsToMany('GameTag','games_has_game_tags', 'game_id', 'game_tag_id');
     }
@@ -62,7 +62,7 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_features()
+    public function gameFeatures()
     {
         return $this->belongsToMany('GameFeature','games_has_game_features', 'game_id', 'game_feature_id');
     }
@@ -70,7 +70,7 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_functions()
+    public function gameFunctions()
     {
         return $this->belongsToMany('GameFunction','games_has_game_functions', 'game_id', 'game_function_id');
     }
@@ -78,7 +78,7 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_type()
+    public function gameType()
     {
         return $this->belongsTo('GameType');
     }
@@ -86,7 +86,7 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function game_difficulty()
+    public function gameDifficulty()
     {
         return $this->belongsTo('GameDifficulty');
     }
@@ -94,7 +94,7 @@ class Game extends Eloquent {
     /**
      * @return array
      */
-    public function budget_group()
+    public function budgetGroup()
     {
         return $this->belongsTo('BudgetGroup');
     }

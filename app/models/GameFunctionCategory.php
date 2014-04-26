@@ -24,7 +24,7 @@ class GameFunctionCategory extends Eloquent {
     /**
      * @return array
      */
-    public function game_functions()
+    public function gameFunctions()
     {
         return $this->hasMany('GameFunction');
     }

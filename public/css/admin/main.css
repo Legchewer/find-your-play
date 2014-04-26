@@ -67,6 +67,8 @@ li {
   padding-left: 2em; }
   .subnav .divider {
     border-right: 1px solid #9f9f9f; }
+  .subnav .active {
+    color: #91b1b4; }
 
 .fw-container-nav {
   width: 100%; }
@@ -151,7 +153,15 @@ li {
  */
 .checkboxFive {
   width: 25px;
-  position: relative; }
+  position: relative;
+  margin-bottom: 1em; }
+  .checkboxFive .remember-label {
+    display: block;
+    position: absolute;
+    left: 38px;
+    top: 6px;
+    width: 120px;
+    color: #777777; }
 
 /**
  * Create the box for the checkbox
@@ -199,3 +209,33 @@ li {
  */
 .checkboxFive input[type=checkbox]:checked + label:after {
   opacity: 1; }
+
+/* LIST */
+.no-translation {
+  color: #c0312e; }
+  .no-translation i {
+    margin-right: 0.4em; }
+
+.content {
+  padding-right: 0;
+  overflow-x: scroll; }
+  .content i {
+    font-size: 1.4em;
+    margin-right: 0.6em; }
+  .content .button {
+    padding: 12px;
+    margin-top: 1.6em; }
+    .content .button i {
+      font-size: 1.2em;
+      margin-right: 0.5em; }
+  .content table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    text-indent: 0px; }
+  .content th {
+    padding-right: 0;
+    background: #b9d9dc;
+    color: #fff;
+    font-family: 'Oxygen', Helvetica, Arial, sans-serif;
+    font-size: 1.1em; }

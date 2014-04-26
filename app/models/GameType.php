@@ -24,7 +24,7 @@ class GameType extends Eloquent {
     /**
      * @return array
      */
-    public function game_kind()
+    public function gameKind()
     {
         return $this->belongsTo('GameKind');
     }

@@ -80,6 +80,8 @@ App::down(function()
 
 require app_path().'/filters.php';
 
+// set locale from session variable
+App::setLocale(Session::get('my.locale', Config::get('app.locale')));
 
 // 404-error
 App::missing(function($exception)
