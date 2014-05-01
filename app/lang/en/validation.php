@@ -95,7 +95,9 @@ return array(
 
     'attributes' => [
         'email' => '<strong>Email</strong>',
-        'password' => '<strong>Password</strong>'
+        'password' => '<strong>Password</strong>',
+        'name_nl'            => '<strong>Name (Dutch)</strong>',
+        'name_en'            => '<strong>Name (English)</strong>'
     ],
 
 );

@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-puzzle-piece"></i> {{ Lang::get('admin-pages.games') }} <small>{{ Lang::get('admin-pages.games-sub') }}</small></h1>
+            <h1><i class="fa fa-puzzle-piece"></i> {{ Lang::choice('admin-pages.games',1) }} <small>{{ Lang::get('admin-pages.games-sub') }}</small></h1>
 
         </div>
     </div>
@@ -95,7 +95,7 @@
                                 <span data-tooltip class="has-tip" title="Edit spel"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.games.destroy', [$game->game_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.games.destroy', [$game->game_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete spel"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -159,7 +159,7 @@
                                 <span data-tooltip class="has-tip" title="Edit game"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.games.destroy', [$game->game_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.games.destroy', [$game->game_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete game"><i class="fa fa-trash-o"></i></span>
                             </a>
 

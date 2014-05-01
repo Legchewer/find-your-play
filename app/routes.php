@@ -153,12 +153,30 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/games', ['as'   => 'admin.games', 'uses' => 'AdminGameController@index'])
         ->before('auth-admin');
 
+    // hard delete theme
+    Route::get('/games/destroy/{id}', ['as' => 'admin.games.destroy', 'uses' => 'AdminGameController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
     /*
      * Themes
      */
 
     // themes list
     Route::get('/themes', ['as'   => 'admin.themes', 'uses' => 'AdminThemeController@index'])
+        ->before('auth');
+
+    // add theme form
+    Route::get('/themes/create', ['as' => 'admin.themes.create', 'uses' => 'AdminThemeController@create'])
+        ->before('auth');
+
+    // store new theme
+    Route::post('/themes/store', ['as' => 'admin.themes.store', 'uses' => 'AdminThemeController@store'])
+        ->before('auth','csrf');
+
+    // hard delete theme
+    Route::get('/themes/destroy/{id}', ['as' => 'admin.themes.destroy', 'uses' => 'AdminThemeController@destroy'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth');
 
     /*
@@ -169,12 +187,22 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/functions', ['as'   => 'admin.functions', 'uses' => 'AdminGameFunctionController@index'])
         ->before('auth');
 
+    // hard delete function
+    Route::get('/functions/destroy/{id}', ['as' => 'admin.functions.destroy', 'uses' => 'AdminGameFunctionController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
     /*
      * Function categories
      */
 
     // categories list
     Route::get('/categories', ['as'   => 'admin.categories', 'uses' => 'AdminGameFunctionCategoryController@index'])
+        ->before('auth');
+
+    // hard delete category
+    Route::get('/categories/destroy/{id}', ['as' => 'admin.categories.destroy', 'uses' => 'AdminGameFunctionController@destroy'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth');
 
     /*
@@ -185,12 +213,22 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/kinds', ['as'   => 'admin.kinds', 'uses' => 'AdminGameKindController@index'])
         ->before('auth');
 
+    // hard delete kind
+    Route::get('/kinds/destroy/{id}', ['as' => 'admin.kinds.destroy', 'uses' => 'AdminGameKindController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
     /*
      * Game types
      */
 
     // game types list
     Route::get('/types', ['as'   => 'admin.types', 'uses' => 'AdminGameTypeController@index'])
+        ->before('auth');
+
+    // hard delete type
+    Route::get('/types/destroy/{id}', ['as' => 'admin.types.destroy', 'uses' => 'AdminGameTypeController@destroy'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth');
 
     /*
@@ -201,12 +239,22 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/difficulties', ['as'   => 'admin.difficulties', 'uses' => 'AdminGameDifficultyController@index'])
         ->before('auth');
 
+    // hard delete difficulties
+    Route::get('/difficulties/destroy/{id}', ['as' => 'admin.difficulties.destroy', 'uses' => 'AdminGameDifficultyController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
     /*
      * Budget groups
      */
 
     // budget groups list
     Route::get('/budget-groups', ['as'   => 'admin.budgetgroups', 'uses' => 'AdminBudgetGroupController@index'])
+        ->before('auth');
+
+    // hard delete budget group
+    Route::get('/budget-groups/destroy/{id}', ['as' => 'admin.budgetgroups.destroy', 'uses' => 'AdminThemeController@destroy'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth');
 
     // FEEDBACK ANDERS DOEN (geen tabel)

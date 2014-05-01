@@ -57,8 +57,8 @@ return array(
 	"regex"            => " :attribute is een ongeldig formaat.",
 	"required"         => " Het :attribute veld is vereist.",
 	"required_if"      => " :attribute veld is vereist wanneer when :or of :value.",
-	"required_with"    => " :attribute veld is vereist wanneer :values aanwezig zijn.",
-	"required_without" => " :attribute veld is vereist wanneer :values niet aanwezig zijn.",
+	"required_with"    => " :attribute veld is vereist wanneer :values aanwezig is.",
+	"required_without" => " :attribute veld is vereist wanneer :values niet aanwezig is.",
 	"same"             => " :attribute en :or moeten hetzelfde zijn.",
 	"size"             => array(
 		"numeric" => " :attribute is gelijk aan :size.",
@@ -99,7 +99,9 @@ return array(
         'email'           => 'email adres',
         'password'        => 'wachtwoord',
         'password_repeat' => 'wachtwoord herhalen',
-        'role'            => 'gebruiker'
+        'role'            => 'gebruiker',
+        'name_nl'            => '<strong>Naam (Nederlands)</strong>',
+        'name_en'            => '<strong>Naam (Engels)</strong>'
     ),
 
 );

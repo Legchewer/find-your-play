@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-bar-chart-o"></i> {{ Lang::get('admin-pages.difficulties') }} <small>{{ Lang::get('admin-pages.difficulties-sub') }}</small></h1>
+            <h1><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties',1) }} <small>{{ Lang::get('admin-pages.difficulties-sub') }}</small></h1>
 
         </div>
     </div>
@@ -51,7 +51,7 @@
                                 <span data-tooltip class="has-tip" title="Edit moeilijkheidsgraad"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.difficulties.destroy', [$difficulty->game_difficulty_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.difficulties.destroy', [$difficulty->game_difficulty_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete moeilijkheidsgraad"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -76,7 +76,7 @@
                                 <span data-tooltip class="has-tip" title="Edit difficulty"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.difficulties.destroy', [$difficulty->game_difficulty_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.difficulties.destroy', [$difficulty->game_difficulty_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete difficulty"><i class="fa fa-trash-o"></i></span>
                             </a>
 

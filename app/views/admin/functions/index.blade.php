@@ -16,12 +16,10 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-lightbulb-o"></i> {{ Lang::get('admin-pages.function-categories') }} <small>{{ Lang::get('admin-pages.function-categories-sub') }}</small></h1>
+            <h1><i class="fa fa-lightbulb-o"></i> {{ Lang::choice('admin-pages.functions',1) }} <small>{{ Lang::get('admin-pages.functions-sub') }}</small></h1>
 
         </div>
     </div>
-
-    <?php // var_dump($functions[2]->game_function_category()); // can't go deeper? ?>
 
     <div class="row">
         <div class="large-12 columns content list">
@@ -62,7 +60,7 @@
                                 <span data-tooltip class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.function.destroy', [$function->function_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.functions.destroy', [$function->function_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -95,7 +93,7 @@
                             <span data-tooltip class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
                         </a>
 
-                        <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.function.destroy', [$function->function_id]) --}}" >
+                        <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.functions.destroy', [$function->function_id]) }}" >
                             <span data-tooltip class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
                         </a>
 

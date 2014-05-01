@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-rocket"></i> {{ Lang::get('admin-pages.themes') }} <small>{{ Lang::get('admin-pages.themes-sub') }}</small></h1>
+            <h1><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes',1) }} <small>{{ Lang::get('admin-pages.themes-sub') }}</small></h1>
 
         </div>
     </div>
@@ -51,7 +51,7 @@
                                 <span data-tooltip class="has-tip" title="Edit thema"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.themes.destroy', [$theme->theme_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.themes.destroy', [$theme->theme_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -76,7 +76,7 @@
                                 <span data-tooltip class="has-tip" title="Edit theme"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.themes.destroy', [$theme->theme_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.themes.destroy', [$theme->theme_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -93,6 +93,8 @@
             <div class="pagination-centered">
                 {{ $themes->links() }}
             </div>
+
+            <a href="{{ URL::route('admin.themes.create') }}" class="btn"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 1, ['type' => strtolower(Lang::choice('admin-pages.themes',0))]) }}</a>
 
         </div>
     </div>

@@ -30,4 +30,17 @@ class AdminGameFunctionController extends \BaseController {
             ->with('count',$count);
 	}
 
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        GameFunction::destroy($id);
+
+        return Redirect::route('admin.functions');
+    }
+
 }

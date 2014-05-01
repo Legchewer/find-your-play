@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-book"></i> {{ Lang::get('admin-pages.function-categories') }} <small>{{ Lang::get('admin-pages.function-categories-sub') }}</small></h1>
+            <h1><i class="fa fa-book"></i> {{ Lang::choice('admin-pages.function-categories',1) }} <small>{{ Lang::get('admin-pages.function-categories-sub') }}</small></h1>
 
         </div>
     </div>
@@ -51,7 +51,7 @@
                                 <span data-tooltip class="has-tip" title="Edit categorie"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.categories.destroy', [$category->game_function_category_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.categories.destroy', [$category->game_function_category_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete categorie"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -76,7 +76,7 @@
                             <span data-tooltip class="has-tip" title="Edit category"><i class="fa fa-pencil"></i></span>
                         </a>
 
-                        <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.categories.destroy', [$category->game_function_category_id]) --}}" >
+                        <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.categories.destroy', [$category->game_function_category_id]) }}" >
                             <span data-tooltip class="has-tip" title="Permadelete category"><i class="fa fa-trash-o"></i></span>
                         </a>
 

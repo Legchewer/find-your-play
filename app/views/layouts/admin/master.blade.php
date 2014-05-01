@@ -16,13 +16,6 @@ $version = [
     </div>
     <div class="subnav large-4 medium-4 small-4 columns">
         <ul class="inline-list right">
-            <li>
-                {{ Lang::get('admin-general.welcome') }} {{ Auth::user()->person->person_givenname }}
-            </li>
-            <li class="divider">&nbsp;</li>
-            <li>
-                {{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}
-            </li>
             <!-- TEMP -->
             <li>
                 @if (App::getLocale() == 'nl')
@@ -38,6 +31,16 @@ $version = [
                 {{ HTML::link('/admin/language/en', 'EN', ['class' => 'language']), PHP_EOL }}
                 @endif
             </li>
+            <li>
+                &nbsp;|&nbsp;
+            </li>
+            <li>
+                {{ Lang::get('admin-general.welcome') }} {{ Auth::user()->person->person_givenname }}
+            </li>
+            <li class="divider">&nbsp;</li>
+            <li>
+                {{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}
+            </li>
         </ul>
     </div>
 
@@ -47,24 +50,24 @@ $version = [
         <nav>
             <ul class="nav-list">
                 <li class="large-4 medium-4 columns first">
-                    <a data-dropdown="drop1" class="dropdown active" href=""><i class="fa fa-puzzle-piece fa-lg"></i> {{ Lang::get('admin-pages.games') }}</a>
+                    <a data-dropdown="drop1" class="dropdown active" href=""><i class="fa fa-puzzle-piece fa-lg"></i> {{ Lang::choice('admin-pages.games',1) }}</a>
                     <ul id="drop1" data-dropdown-content class="f-dropdown">
-                        <li><a href="{{ URL::route('admin.games') }}"><i class="fa fa-puzzle-piece"></i> {{ Lang::get('admin-pages.games') }}</a></li>
-                        <li><a href="{{ URL::route('admin.kinds') }}"><i class="fa fa-clipboard"></i> {{ Lang::get('admin-pages.kinds') }}</a></li>
-                        <li><a href="{{ URL::route('admin.types') }}"><i class="fa fa-folder-open"></i> {{ Lang::get('admin-pages.types') }}</a></li>
-                        <li><a href="{{ URL::route('admin.themes') }}"><i class="fa fa-rocket"></i> {{ Lang::get('admin-pages.themes') }}</a></li>
-                        <li><a href="{{ URL::route('admin.functions') }}"><i class="fa fa-lightbulb-o"></i> {{ Lang::get('admin-pages.functions') }}</a></li>
-                        <li><a href="{{ URL::route('admin.categories') }}"><i class="fa fa-book"></i> {{ Lang::get('admin-pages.function-categories') }}</a></li>
-                        <li><a href="{{ URL::route('admin.difficulties') }}"><i class="fa fa-bar-chart-o"></i> {{ Lang::get('admin-pages.difficulties') }}</a></li>
-                        <li><a href="{{ URL::route('admin.budgetgroups') }}"><i class="fa fa-money"></i> {{ Lang::get('admin-pages.budget-groups') }}</a></li>
+                        <li><a href="{{ URL::route('admin.games') }}"><i class="fa fa-puzzle-piece"></i> {{ Lang::choice('admin-pages.games',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.kinds') }}"><i class="fa fa-clipboard"></i> {{ Lang::choice('admin-pages.kinds',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.types') }}"><i class="fa fa-folder-open"></i> {{ Lang::choice('admin-pages.types',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.themes') }}"><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.functions') }}"><i class="fa fa-lightbulb-o"></i> {{ Lang::choice('admin-pages.functions',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.categories') }}"><i class="fa fa-book"></i> {{ Lang::choice('admin-pages.function-categories',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.difficulties') }}"><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.budgetgroups') }}"><i class="fa fa-money"></i> {{ Lang::choice('admin-pages.budget-groups',1) }}</a></li>
                         <li><a href="#"><i class="fa fa-comments"></i> Feedback</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns second">
-                    <a data-dropdown="drop2" class="dropdown" href=""><i class="fa fa-users fa-lg"></i> {{ Lang::get('admin-pages.members') }}</a>
+                    <a data-dropdown="drop2" class="dropdown" href=""><i class="fa fa-users fa-lg"></i> {{ Lang::choice('admin-pages.members',1) }}</a>
                     <ul id="drop2" data-dropdown-content class="f-dropdown">
-                        <li><a href="#"><i class="fa fa-users"></i> {{ Lang::get('admin-pages.members') }}</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> {{ Lang::get('admin-pages.roles') }}</a></li>
+                        <li><a href="#"><i class="fa fa-users"></i> {{ Lang::choice('admin-pages.members',1) }}</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> {{ Lang::choice('admin-pages.roles',1) }}</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns last">

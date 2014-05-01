@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-folder-open"></i> {{ Lang::get('admin-pages.types') }} <small>{{ Lang::get('admin-pages.types-sub') }}</small></h1>
+            <h1><i class="fa fa-folder-open"></i> {{ Lang::choice('admin-pages.types',1) }} <small>{{ Lang::get('admin-pages.types-sub') }}</small></h1>
 
         </div>
     </div>
@@ -60,7 +60,7 @@
                                 <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.types.destroy', [$type->game_type_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.types.destroy', [$type->game_type_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -93,7 +93,7 @@
                             <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                         </a>
 
-                        <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.types.destroy', [$type->game_type_id]) --}}" >
+                        <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.types.destroy', [$type->game_type_id]) }}" >
                             <span data-tooltip class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
                         </a>
 

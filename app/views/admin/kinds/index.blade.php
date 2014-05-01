@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-clipboard"></i> {{ Lang::get('admin-pages.kinds') }} <small>{{ Lang::get('admin-pages.kinds-sub') }}</small></h1>
+            <h1><i class="fa fa-clipboard"></i> {{ Lang::choice('admin-pages.kinds',1) }} <small>{{ Lang::get('admin-pages.kinds-sub') }}</small></h1>
 
         </div>
     </div>
@@ -51,7 +51,7 @@
                                 <span data-tooltip class="has-tip" title="Edit spelsoort"><i class="fa fa-pencil"></i></span>
                             </a>
 
-                            <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.kinds.destroy', [$kind->game_kind_id]) --}}" >
+                            <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.kinds.destroy', [$kind->game_kind_id]) }}" >
                                 <span data-tooltip class="has-tip" title="Permadelete spelsoort"><i class="fa fa-trash-o"></i></span>
                             </a>
 
@@ -76,7 +76,7 @@
                             <span data-tooltip class="has-tip" title="Edit kind"><i class="fa fa-pencil"></i></span>
                         </a>
 
-                        <a class="confirm" data-reveal-id="warning" href="{{-- URL::route('admin.kinds.destroy', [$kind->game_kind_id]) --}}" >
+                        <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.kinds.destroy', [$kind->game_kind_id]) }}" >
                             <span data-tooltip class="has-tip" title="Permadelete kind"><i class="fa fa-trash-o"></i></span>
                         </a>
 
