@@ -5,14 +5,17 @@ class SearchController extends \BaseController {
     public function NameAndDescriptionSearch()
     {
         $q = Input::get('game');
-        $games = DB::table('games');
+        $games = DB::table('games')->leftJoin('themes','games.theme_id','=','themes.theme_id');
 
         if (App::getLocale() == 'nl')
         {
             foreach($games as $s)
             {
-                $s = DB::table('games')->where('game_title_nl','LIKE','%' . $q . '%')
+                $s = DB::table('games')
+                    ->where('game_title_nl','LIKE','%' . $q . '%')
                     ->orWhere('game_description_nl','LIKE','%' . $q . '%')
+                    ->orWhere('game_producer','LIKE','%' . $q . '%')
+                    //->orWhere('theme_name_nl','LIKE','%' . $q . '%')
                     ->get();
             }
         }
@@ -20,8 +23,11 @@ class SearchController extends \BaseController {
         {
             foreach($games as $s)
             {
-                $s = DB::table('games')->where('game_title_en','LIKE','%' . $q . '%')
+                $s = DB::table('games')
+                    ->where('game_title_en','LIKE','%' . $q . '%')
                     ->orWhere('game_description_en','LIKE','%' . $q . '%')
+                    ->orWhere('game_producer','LIKE','%' . $q . '%')
+                    //->orWhere('theme_name_en','LIKE','%' . $q . '%')
                     ->get();
             }
         }
