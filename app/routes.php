@@ -40,8 +40,8 @@ Route::group(['prefix' => 'web'], function() {
         return View::make('web.overons');
     });
 
-    Route::group(['prefix' => 'gebruiker'], function() {
-        Route::get('/registreren',function()
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('/register',function()
         {
             if (App::getLocale() == 'nl')
             {
@@ -57,15 +57,15 @@ Route::group(['prefix' => 'web'], function() {
             return View::make('web.registreren',compact('roles'));
         });
 
-        Route::post('/registreren',['as' => 'web.register', 'uses' => 'UserController@register']);
+        Route::post('/register',['as' => 'web.register', 'uses' => 'UserController@register']);
 
-        Route::get('/profiel',function()
+        Route::get('/profile',function()
         {
             $user = Auth::user()->person;
             return View::make('web.profiel', ['user' => $user]);
         });
 
-        Route::post('/profiel',['as' => 'web.edit','uses' => 'UserController@edit']);
+        Route::post('/profile',['as' => 'web.edit','uses' => 'UserController@edit']);
 
     });
 

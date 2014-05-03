@@ -5,7 +5,7 @@
     <div class="small-12 columns">
         <ul class="breadcrumbs">
             <li><a href="{{ url('/')}}">Home</a></li>
-            <li><a href="{{ url('/search')}}">Spellen zoeken</a></li>
+            <li><a href="{{ url('/search')}}">{{ Lang::get('web-zoeken.breadcrumb')}}</a></li>
             <li class="current">Naam spel</li>
         </ul>
     </div>

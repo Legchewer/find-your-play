@@ -24,7 +24,7 @@ $version = [
                     <li>
                         <a href="#" data-dropdown="dr0p">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
                         <ul id="dr0p" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="{{ URL::to('/web/gebruiker/profiel')}}">{{ Lang::get('web-index.profile-link1') }}</a></li>
+                            <li><a href="{{ URL::to('/web/user/profile')}}">{{ Lang::get('web-index.profile-link1') }}</a></li>
                             <li><a href="{{ URL::to('/web/logout')}}">{{ Lang::get('web-index.profile-link2') }}</a></li>
                         </ul>
                     </li>
