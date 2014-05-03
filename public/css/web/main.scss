@@ -71,6 +71,12 @@ body{
     .divider{
       border-right: 1px solid $dark-grey + 40;
     }
+    .active{
+      color: $blue - 40;
+    }
+    .active:hover{
+      text-decoration: underline;
+    }
   }
   .inline-list>li>*{
     display: inline;

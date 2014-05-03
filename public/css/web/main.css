@@ -55,6 +55,10 @@ body {
     padding-left: 2em; }
     #header .subnav .divider {
       border-right: 1px solid #9f9f9f; }
+    #header .subnav .active {
+      color: #91b1b4; }
+    #header .subnav .active:hover {
+      text-decoration: underline; }
   #header .inline-list > li > * {
     display: inline; }
 

@@ -26,7 +26,7 @@ Route::group(['prefix' => 'web'], function() {
         Session::put('my.locale', $lang);
 
 
-         return Redirect::to('/');
+         return Redirect::back();
 
     });
 
@@ -43,8 +43,16 @@ Route::group(['prefix' => 'web'], function() {
     Route::group(['prefix' => 'gebruiker'], function() {
         Route::get('/registreren',function()
         {
-            $roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
-            //$roles = DB::table('roles')->lists('role_name_nl','role_id');
+            if (App::getLocale() == 'nl')
+            {
+                $roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_nl','role_id');
+
+            }
+            else
+            {
+                $roles = DB::table('roles')->where('role_id','!=',1)->lists('role_name_en','role_id');
+
+            }
 
             return View::make('web.registreren',compact('roles'));
         });
