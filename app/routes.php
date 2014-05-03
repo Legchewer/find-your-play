@@ -96,6 +96,8 @@ Route::group(['prefix' => 'web'], function() {
         return View::make('web.spelzoeken', compact('game_kinds','game_difficulties', 'game_producer','game_themes','game_functions','game_budget','game_players','game_age'));
     });
 
+    Route::post('/search',['as' => 'web.search','uses' => 'SearchController@NameSearch']);
+
     Route::get('/game',function()
     {
         return View::make('web.speldetail');
