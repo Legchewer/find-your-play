@@ -5,8 +5,8 @@
     <div class="small-12 columns">
         <ul class="breadcrumbs">
             <li><a href="{{ URL::to('web/index')}}">Home</a></li>
-            <li class="unactive">Gebruiker</li>
-            <li class="current">Registreren</li>
+            <li class="unactive">{{Lang::get('web-registreren.breadcrumb-part1')}}</li>
+            <li class="current">{{Lang::get('web-registreren.breadcrumb-part2')}}</li>
         </ul>
     </div>
 </div>
@@ -45,6 +45,9 @@
 
     {{ Form::label('role',Lang::get('web-registreren.form-user'), ['class' => ($errors->has('role') ? 'error' : '' ),])}}
     {{ Form::select('role', ['' => Lang::get('web-registreren.form-option')] + $roles)}}
+    @if ($errors->has('role'))
+    {{ $errors->first('role', '<small class="error error-margin-fix">:message</small>') }}
+    @endif
 
     {{ Form::submit(Lang::get('web-registreren.form-button'), ['class' => 'button tiny']), PHP_EOL }}
 
