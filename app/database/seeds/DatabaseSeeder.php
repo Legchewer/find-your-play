@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 
+        $this->call('GamePlayersSeeder');
+        $this->command->info('Game players seeded!');
+
         $this->call('GameKindSeeder');
         $this->command->info('Game kinds seeded!');
 
