@@ -2,7 +2,7 @@
 
 class SearchController extends \BaseController {
 
-    public function NameSearch()
+    public function NameAndDescriptionSearch()
     {
         $q = Input::get('game');
         $games = DB::table('games');

@@ -79,6 +79,7 @@ Route::group(['prefix' => 'web'], function() {
             $game_functions = DB::table('game_function_categories')->lists('game_function_category_name_nl','game_function_category_id');
             $game_players = DB::table('game_has_players')->lists('game_players_name_nl','game_players_id');
             $game_age = DB::table('games')->groupBy('game_age_nl')->lists('game_age_nl');
+            $games = DB::table('games')->select('game_title_nl as game_title','game_description_nl as game_description')->get();
         }
         else
         {
@@ -88,15 +89,16 @@ Route::group(['prefix' => 'web'], function() {
             $game_functions = DB::table('game_function_categories')->lists('game_function_category_name_en','game_function_category_id');
             $game_players = DB::table('game_has_players')->lists('game_players_name_en','game_players_id');
             $game_age = DB::table('games')->groupBy('game_age_en')->lists('game_age_en');
+            $games = DB::table('games')->select('game_title_en as game_title','game_description_en as game_description')->get();
         }
 
         $game_producer = DB::table('games')->groupBy('game_producer')->lists('game_producer');
         $game_budget = DB::table('budget_groups')->lists('budget_group_value','budget_group_id');
 
-        return View::make('web.spelzoeken', compact('game_kinds','game_difficulties', 'game_producer','game_themes','game_functions','game_budget','game_players','game_age'));
+        return View::make('web.spelzoeken', compact('game_kinds','game_difficulties', 'game_producer','game_themes','game_functions','game_budget','game_players','game_age'),['games' => $games]);
     });
 
-    Route::post('/search',['as' => 'web.search','uses' => 'SearchController@NameSearch']);
+    Route::post('/search',['as' => 'web.search','uses' => 'SearchController@NameAndDescriptionSearch']);
 
     Route::get('/game',function()
     {

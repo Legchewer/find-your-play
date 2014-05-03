@@ -274,6 +274,12 @@ body {
 #registreren .error-margin-fix {
   margin-top: -16px; }
 
+/* SEARCH */
+.gameslist img {
+  max-width: 100px !important;
+  height: 100px;
+  float: left; }
+
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {
   .row .row {

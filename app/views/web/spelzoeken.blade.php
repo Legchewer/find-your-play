@@ -39,5 +39,17 @@
             {{ Form::submit(Lang::get('web-zoeken.search-button'), ['class' => 'button tiny']), PHP_EOL }}
         {{ Form::close(), PHP_EOL }}
     </div>
+    <div class="medium-9 columns">
+        <ul class="small-block-grid-1 gameslist">
+            @foreach($games as $g)
+                <li>
+                    <a href="#">
+                        <h1>{{$g->game_title }}</h1>
+                        <p>{{$g->game_description}}</p>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 </div>
 @stop
