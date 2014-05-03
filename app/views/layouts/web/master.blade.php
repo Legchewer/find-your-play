@@ -31,7 +31,18 @@ $version = [
                     <li class="divider">&nbsp;</li>
                     @endif
                     <li>
-                        NL / EN
+                        @if (App::getLocale() == 'nl')
+                        {{ HTML::link('/web/language/nl', 'NL', ['class' => 'language active']), PHP_EOL }}
+                        @else
+                        {{ HTML::link('/web/language/nl', 'NL', ['class' => 'language']), PHP_EOL }}
+                        @endif
+                    </li>
+                    <li>
+                        @if (App::getLocale() == 'en')
+                        {{ HTML::link('/web/language/en', 'EN', ['class' => 'language active']), PHP_EOL }}
+                        @else
+                        {{ HTML::link('/web/language/en', 'EN', ['class' => 'language']), PHP_EOL }}
+                        @endif
                     </li>
                 </ul>
             </div>

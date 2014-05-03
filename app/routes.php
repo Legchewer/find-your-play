@@ -20,6 +20,16 @@ Route::get('/', function()
 
 Route::group(['prefix' => 'web'], function() {
 
+    Route::get('/language/{lang}', function($lang)
+    {
+
+        Session::put('my.locale', $lang);
+
+
+         return Redirect::to('/');
+
+    });
+
     Route::get('/index',['as' => 'web.index',function()
     {
         return View::make('web.index');

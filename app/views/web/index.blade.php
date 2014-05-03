@@ -18,21 +18,21 @@
     <div class="row">
         @if(!Auth::check())
         <div class="medium-6 columns spelzoeken">
-            <h2>Spel zoeken</h2>
+            <h2>{{ Lang::get('web-index.search-header') }}</h2>
             <form>
                 <div class="row collapse">
                     <div class="small-2 medium-1 columns">
                         <span class="prefix"><i class="fa fa-search"></i></span>
                     </div>
                     <div class="small-10 medium-11 columns">
-                        <input type="text" placeholder="bvb. spelnaam">
+                        <input type="text" placeholder="{{ Lang::get('web-index.search-placeholder') }}">
                     </div>
                 </div>
-                <p><a href="#">Geavanceerd zoeken</a> <a href="#" class="button tiny right">Zoeken</a></p>
+                <p><a href="#">{{ Lang::get('web-index.search-link') }}</a> <a href="#" class="button tiny right">{{ Lang::get('web-index.search-button') }}</a></p>
             </form>
         </div>
         <div class="medium-6 columns aanmelden">
-                <h2>Meld je aan</h2>
+                <h2>{{ Lang::get('web-index.login-header') }}</h2>
 
                 @if(Session::has('auth-error-message'))
                 <div class="alert-box alert alert-global" data-alert>
@@ -48,7 +48,7 @@
                         <span class="prefix"><i class="fa fa-user"></i></span>
                     </div>
                     <div class="small-10 medium-11 columns">
-                        {{ Form::email('email', '', ['placeholder' => 'Email adres','class' => ($errors->has('email') ? 'error' : '' )]) }}
+                        {{ Form::email('email', '', ['placeholder' => Lang::get('web-index.login-email-placeholder'),'class' => ($errors->has('email') ? 'error' : '' )]) }}
                         @if ($errors->has('email'))
                         {{ $errors->first('email', '<small class="error">:message</small>') }}
                         @endif
@@ -59,23 +59,20 @@
                         <span class="prefix"><i class="fa fa-lock"></i></span>
                     </div>
                     <div class="small-10 medium-11 columns">
-                        {{ Form::password('password', ['placeholder' => 'Wachtwoord','class' => ($errors->has('password') ? 'error' : '' )]) }}
+                        {{ Form::password('password', ['placeholder' => Lang::get('web-index.login-password-placeholder'),'class' => ($errors->has('password') ? 'error' : '' )]) }}
                         @if ($errors->has('password'))
                         {{ $errors->first('password', '<small class="error">:message</small>') }}
                         @endif
                     </div>
                 </div>
-                <p>Nog geen account? <a href="{{ URL::to('web/gebruiker/registreren')}}">Registreer</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
+                <p>{{ Lang::get('web-index.login-link-pretext') }} <a href="{{ URL::to('web/gebruiker/registreren')}}">{{ Lang::get('web-index.login-link') }}</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
 
                 {{ Form::close(), PHP_EOL }}
             </div>
         @else
                 <div class="medium-6 columns">
-                    <h2>Spel zoeken</h2>
-                    <p>
-                        Maak gebruik van onze zoekfunctie en vindt zo gemakkelijk wat u zoekt. Geef een zoekterm op en de spellen worden voor u weergegeven.
-                        Als u gebruik wil maken van verschillende filters, klik dan op geavanceerd zoeken!
-                    </p>
+                    <h2>{{ Lang::get('web-index.search-header') }}</h2>
+                    <p>{{ Lang::get('web-index.search-text') }}</p>
                 </div>
                 <div class="medium-6 columns small-search">
                     <h2 class="show-for-medium-up">&nbsp;</h2>
@@ -85,10 +82,10 @@
                                 <span class="prefix"><i class="fa fa-search"></i></span>
                             </div>
                             <div class="small-10 medium-11 columns">
-                                <input type="text" placeholder="bvb. spelnaam">
+                                <input type="text" placeholder="{{ Lang::get('web-index.search-placeholder') }}">
                             </div>
                         </div>
-                        <p><a href="#">Geavanceerd zoeken</a> <a href="#" class="button tiny right">Zoeken</a></p>
+                        <p><a href="#">{{ Lang::get('web-index.search-link') }}</a> <a href="#" class="button tiny right">{{ Lang::get('web-index.search-button') }}</a></p>
                     </form>
                 </div>
         @endif
@@ -100,15 +97,15 @@
 @section('contact')
 <div id="contact" class="row">
     <div class="medium-6 columns">
-        <h2>Contact</h2>
-        <p>Lorem Ipsum is slechts een proeftekst uit het drukkerij- en zetterijwezen. Lorem Ipsum is de standaard proeftekst in deze bedrijfstak sinds de 16e eeuw, toen een onbekende drukker een zethaak met letters nam en ze door elkaar husselde om een font-catalogus te maken.</p>
+        <h2>{{ Lang::get('web-index.contact-header') }}</h2>
+        <p>{{ Lang::get('web-index.contact-content') }}</p>
     </div>
     <div class="medium-6 columns contact">
-        <h2>Vind ons op</h2>
+        <h2>{{ Lang::get('web-index.socialmedia-header') }}</h2>
         <ul class="inline-list">
             <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="https://www.facebook.com/pages/Find-Your-Play/1399581420323425?ref=stream"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="https://twitter.com/Find_Your_Play"><i class="fa fa-twitter"></i></a></li>
             <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
         </ul>
     </div>
