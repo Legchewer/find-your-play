@@ -155,7 +155,7 @@ li{
   .content{
     padding-top: 12px;
     min-height: 400px;
-    background: $logo-bg;
+    //background: $logo-bg;
   }
 }
 
@@ -301,6 +301,10 @@ li{
   .button{
     padding: 12px;
     margin-top: 1.6em;
+    background: $blue;
+    &:hover{
+      background: $blue - 20;
+    }
     i{
       font-size: 1.2em;
       margin-right: 0.5em;
@@ -321,5 +325,19 @@ li{
     color: #fff;
     font-family: 'Oxygen', Helvetica, Arial, sans-serif;
     font-size: 1.1em;
+  }
+}
+
+/* CREATE FORMS */
+
+.create{
+  form{
+    label{
+      display: inline;
+    }
+    label+i{
+      color: $dark-grey;
+      font-size: 0.8em;
+    }
   }
 }

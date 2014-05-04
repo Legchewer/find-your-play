@@ -9,25 +9,73 @@ class AdminGameController extends \BaseController {
 	 */
 	public function index()
 	{
-        // get count of all functions
-        $count = Game::all()->count();
+        /*$games = Game::where('theme_id','=',1)->get();
+
+        //var_dump($games); // altijd een collectie (zelfs voor één game)
+
+        foreach($games as $game){
+            var_dump($game->theme->theme_name_nl); // eloquent object // resultaat is 'boerderij'
+        }*/
+
+        /*$theme = Theme::find(1);
+
+        $theme_games = $theme->games;
+
+        //var_dump($theme_games); // altijd een collectie (zelfs voor één game)
+
+        foreach($theme_games as $game){
+            var_dump($game->game_title_nl); // 'nijntje vormenstoof'
+        }*/
+
+        // LIKE (met EAGER)
+
+        //$themes = Theme::where('theme_name_nl','like','%boer%')->get();
+
+        //var_dump($themes);
+
+        /*foreach($themes as $theme){
+            var_dump($theme->theme_name_nl);
+        }*/
+
+        $q = 'nergensin';
+
+        $s = Game::
+            where('game_title_en','LIKE','%' . $q . '%')
+            ->orWhere('game_description_en','LIKE','%' . $q . '%')
+            ->orWhere('game_producer','LIKE','%' . $q . '%')
+            ->get();
+
+        //var_dump($s);
+
+        if(!$s->isEmpty()){
+            echo "NOT EMPTY";
+        } else {
+            echo "EMPTY";
+        }
+
+        /*foreach($s as $game){
+            var_dump($game->game_id); // 1
+        }*/
+
+        // get count of all games
+        /*$count = Game::all()->count();
 
         // sort by name and paginate
 
         if (App::getLocale() == 'nl')
         {
-            $games = Game::orderBy('game_type_id', 'asc')->orderBy('game_title_nl')->paginate(10);
+            $games = Game::orderBy('game_type_id', 'asc')->orderBy('game_title_nl', 'asc')->paginate(10);
 
         }
         else
         {
-            $games = Game::orderBy('game_type_id', 'asc')->orderBy('game_title_en')->paginate(10);
+            $games = Game::orderBy('game_type_id', 'asc')->orderBy('game_title_en', 'asc')->paginate(10);
 
         }
 
         return View::make('admin/games/index')
             ->with('games',$games)
-            ->with('count',$count);
+            ->with('count',$count);*/
 	}
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-class AdminGameKindController extends \BaseController {
+class AdminRoleController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,24 +9,24 @@ class AdminGameKindController extends \BaseController {
 	 */
 	public function index()
 	{
-        // get count of all functions
-        $count = GameKind::all()->count();
+        // get count of all roles
+        $count = Role::all()->count();
 
         // sort by name and paginate
 
         if (App::getLocale() == 'nl')
         {
-            $kinds = GameKind::orderBy('game_kind_name_nl', 'asc')->paginate(10);
+            $roles = Role::orderBy('role_name_nl', 'asc')->paginate(10);
 
         }
         else
         {
-            $kinds = GameKind::orderBy('game_kind_name_en', 'asc')->paginate(10);
+            $roles = Role::orderBy('role_name_en', 'asc')->paginate(10);
 
         }
 
-        return View::make('admin/kinds/index')
-            ->with('kinds',$kinds)
+        return View::make('admin/roles/index')
+            ->with('roles',$roles)
             ->with('count',$count);
 	}
 
@@ -38,7 +38,7 @@ class AdminGameKindController extends \BaseController {
     public function create()
     {
 
-        return View::make('admin/kinds/create');
+        return View::make('admin/roles/create');
     }
 
     /**
@@ -49,24 +49,24 @@ class AdminGameKindController extends \BaseController {
     public function store()
     {
         $rules = [
-            'name_nl' => 'required_without:name_en' ,
-            'name_en' => 'required_without:name_nl'
+            'name_nl' => 'required' ,
+            'name_en' => 'required'
         ];
 
         $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->passes()) {
 
-            $kind = new GameKind();
-            $kind->game_kind_name_nl = Input::get('name_nl');
-            $kind->game_kind_name_en = Input::get('name_en');
+            $role = new Role();
+            $role->role_name_nl = Input::get('name_nl');
+            $role->role_name_en = Input::get('name_en');
 
-            $kind->save();
+            $role->save();
 
-            return Redirect::route('admin.kinds');
+            return Redirect::route('admin.roles');
 
         } else {
-            return Redirect::route('admin.kinds.create')
+            return Redirect::route('admin.roles.create')
                 ->withInput()
                 ->withErrors($validator); // Maakt $errors in View.
         }
@@ -80,9 +80,9 @@ class AdminGameKindController extends \BaseController {
      */
     public function destroy($id)
     {
-        GameKind::destroy($id);
+        Role::destroy($id);
 
-        return Redirect::route('admin.kinds');
+        return Redirect::route('admin.roles');
     }
 
 }

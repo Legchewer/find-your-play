@@ -108,8 +108,7 @@ li {
   background: #fcfcfc; }
   .fw-container-main .content {
     padding-top: 12px;
-    min-height: 400px;
-    background: #fcfcfc; }
+    min-height: 400px; }
 
 .fw-container-footer {
   width: 100%;
@@ -224,7 +223,10 @@ li {
     margin-right: 0.6em; }
   .content .button {
     padding: 12px;
-    margin-top: 1.6em; }
+    margin-top: 1.6em;
+    background: #b9d9dc; }
+    .content .button:hover {
+      background: #a5c5c8; }
     .content .button i {
       font-size: 1.2em;
       margin-right: 0.5em; }
@@ -239,3 +241,10 @@ li {
     color: #fff;
     font-family: 'Oxygen', Helvetica, Arial, sans-serif;
     font-size: 1.1em; }
+
+/* CREATE FORMS */
+.create form label {
+  display: inline; }
+.create form label + i {
+  color: #777777;
+  font-size: 0.8em; }

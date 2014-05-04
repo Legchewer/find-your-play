@@ -62,6 +62,8 @@
                 {{ $budgetgroups->links() }}
             </div>
 
+            <a href="{{ URL::route('admin.budgetgroups.create') }}" class="button button-add"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 0, ['type' => strtolower(Lang::choice('admin-pages.budget-groups',0))]) }}</a>
+
         </div>
     </div>
 </div>

@@ -94,6 +94,8 @@
                 {{ $kinds->links() }}
             </div>
 
+            <a href="{{ URL::route('admin.kinds.create') }}" class="button button-add"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 0, ['type' => strtolower(Lang::choice('admin-pages.kinds',0))]) }}</a>
+
         </div>
     </div>
 </div>

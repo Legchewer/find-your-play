@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="content themes">
+<div class="content difficulties">
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes', 1) }} <small>{{ Lang::get('admin-forms.theme-create-title') }}</small></h1>
+            <h1><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties', 1) }} <small>{{ Lang::get('admin-forms.difficulty-create-title') }}</small></h1>
 
         </div>
     </div>
@@ -25,18 +25,18 @@
             </div>
             @endif
 
-            {{ Form::open(['route' => 'admin.themes.store']), PHP_EOL }}
+            {{ Form::open(['route' => 'admin.difficulties.store']), PHP_EOL }}
 
-            {{ Form::label('name_nl', ucfirst(Lang::get('admin-forms.theme-name-nl'))) }}
+            {{ Form::label('name_nl', ucfirst(Lang::get('admin-forms.difficulty-name-nl'))) }}
             <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
-            {{ Form::text('name_nl', '', ['placeholder' => Lang::get('admin-forms.theme-name-ph')]) }}
+            {{ Form::text('name_nl', '', ['placeholder' => Lang::get('admin-forms.difficulty-name-ph')]) }}
 
-            {{ Form::label('name_en', ucfirst(Lang::get('admin-forms.theme-name-en'))) }}
+            {{ Form::label('name_en', ucfirst(Lang::get('admin-forms.difficulty-name-en'))) }}
             <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
-            {{ Form::text('name_en', '', ['placeholder' => Lang::get('admin-forms.theme-name-ph')]) }}
+            {{ Form::text('name_en', '', ['placeholder' => Lang::get('admin-forms.difficulty-name-ph')]) }}
 
             {{ Form::submit(Lang::get('admin-forms.submit-add'), ['class' => 'button button-submit']), PHP_EOL }}
-            {{ HTML::link('/admin/themes', Lang::get('admin-forms.theme-list'), ['' => '']), PHP_EOL }}
+            {{ HTML::link('/admin/difficulties', Lang::get('admin-forms.difficulty-list'), ['' => '']), PHP_EOL }}
             {{ Form::close(), PHP_EOL }}
 
         </div>

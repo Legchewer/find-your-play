@@ -100,8 +100,9 @@ return array(
         'password'        => 'wachtwoord',
         'password_repeat' => 'wachtwoord herhalen',
         'role'            => 'gebruiker',
-        'name_nl'            => '<strong>Naam (Nederlands)</strong>',
-        'name_en'            => '<strong>Naam (Engels)</strong>'
+        'name_nl'         => '<strong>Naam (Nederlands)</strong>',
+        'name_en'         => '<strong>Naam (Engels)</strong>',
+        'value'           => '<strong>Waarde</strong>'
     ),
 
 );

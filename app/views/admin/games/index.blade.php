@@ -27,6 +27,7 @@
             <table class="games">
                 <thead>
                 <tr>
+                    <th>{{ Lang::get('table_general.more-info') }}</th>
                     <th>{{ Lang::get('table_specific.title') }}</th>
                     <th>{{ Lang::get('table_specific.type') }}</th>
                     <th>{{ Lang::get('table_specific.theme') }}</th>
@@ -44,6 +45,26 @@
                     @foreach ($games as $game)
                     <tr class="game-row" id="game-row-{{ $game->game_id }}">
 
+                        <td class="more-info">
+                        <span data-tooltip class="has-tip tip-top" title="
+                            {{ Lang::get('table_general.created') }}:
+                            {{ $game->game_created }}
+                            <br />
+                            {{ Lang::get('table_general.modified') }}:
+                            @if ($game->game_modified)
+                                {{ $game->game_modified }}
+                            @else
+                                /
+                            @endif
+                            <br />
+                            {{ Lang::get('table_general.deleted') }}:
+                            @if ($game->game_deleted)
+                                {{ $game->game_deleted }}
+                            @else
+                                /
+                            @endif
+                        "><i class="fa fa-info"></i></span>
+                        </td>
                         <td>
                             @if ($game->game_title_nl)
                             {{ $game->game_title_nl }}
@@ -108,6 +129,26 @@
                     @foreach ($games as $game)
                     <tr class="game-row" id="game-row-{{ $game->game_id }}">
 
+                        <td class="more-info">
+                        <span data-tooltip class="has-tip tip-top" title="
+                            {{ Lang::get('table_general.created') }}:
+                            {{ $game->game_created }}
+                            <br />
+                            {{ Lang::get('table_general.modified') }}:
+                            @if ($game->game_modified)
+                                {{ $game->game_modified }}
+                            @else
+                                /
+                            @endif
+                            <br />
+                            {{ Lang::get('table_general.deleted') }}:
+                            @if ($game->game_deleted)
+                                {{ $game->game_deleted }}
+                            @else
+                                /
+                            @endif
+                        "><i class="fa fa-info"></i></span>
+                        </td>
                         <td>
                             @if ($game->game_title_en)
                             {{ $game->game_title_en }}

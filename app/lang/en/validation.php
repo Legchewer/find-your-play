@@ -97,7 +97,8 @@ return array(
         'email' => '<strong>Email</strong>',
         'password' => '<strong>Password</strong>',
         'name_nl'            => '<strong>Name (Dutch)</strong>',
-        'name_en'            => '<strong>Name (English)</strong>'
+        'name_en'            => '<strong>Name (English)</strong>',
+        'value'            => '<strong>Value</strong>'
     ],
 
 );

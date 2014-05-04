@@ -6,7 +6,7 @@ return [
     'created' => 'Gecreëerd',
     'modified' => 'Aangepast',
     'deleted' => 'Verwijderd',
-    'more-info' => 'More info',
+    'more-info' => 'Meer info',
     'actions' => 'Acties',
     'add' => 'Voeg nieuw :type toe|Voeg nieuwe :type toe',
 

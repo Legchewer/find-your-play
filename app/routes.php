@@ -148,6 +148,36 @@ Route::group(['prefix' => 'admin'], function() {
         ->before('auth-admin');
 
     /*
+     * Members
+     */
+    Route::get('/members', ['as'   => 'admin.members', 'uses' => 'AdminMemberController@index'])
+        ->before('auth-admin');
+
+    // hard delete member
+    Route::get('/members/destroy/{id}', ['as' => 'admin.members.destroy', 'uses' => 'AdminMemberController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    /*
+     * Roles
+     */
+    Route::get('/roles', ['as'   => 'admin.roles', 'uses' => 'AdminRoleController@index'])
+        ->before('auth-admin');
+
+    // hard delete role
+    Route::get('/roles/destroy/{id}', ['as' => 'admin.roles.destroy', 'uses' => 'AdminRoleController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // add role form
+    Route::get('/roles/create', ['as' => 'admin.roles.create', 'uses' => 'AdminRoleController@create'])
+        ->before('auth');
+
+    // store new role
+    Route::post('/roles/store', ['as' => 'admin.roles.store', 'uses' => 'AdminRoleController@store'])
+        ->before('auth','csrf');
+
+    /*
      * Games
      */
     Route::get('/games', ['as'   => 'admin.games', 'uses' => 'AdminGameController@index'])
@@ -166,6 +196,11 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/themes', ['as'   => 'admin.themes', 'uses' => 'AdminThemeController@index'])
         ->before('auth');
 
+    // hard delete theme
+    Route::get('/themes/destroy/{id}', ['as' => 'admin.themes.destroy', 'uses' => 'AdminThemeController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
     // add theme form
     Route::get('/themes/create', ['as' => 'admin.themes.create', 'uses' => 'AdminThemeController@create'])
         ->before('auth');
@@ -173,11 +208,6 @@ Route::group(['prefix' => 'admin'], function() {
     // store new theme
     Route::post('/themes/store', ['as' => 'admin.themes.store', 'uses' => 'AdminThemeController@store'])
         ->before('auth','csrf');
-
-    // hard delete theme
-    Route::get('/themes/destroy/{id}', ['as' => 'admin.themes.destroy', 'uses' => 'AdminThemeController@destroy'])
-        ->where(['id' => '[0-9]+'])
-        ->before('auth');
 
     /*
      * Functions
@@ -192,6 +222,14 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth');
 
+    // add function form
+    Route::get('/functions/create', ['as' => 'admin.functions.create', 'uses' => 'AdminGameFunctionController@create'])
+        ->before('auth');
+
+    // store new function
+    Route::post('/functions/store', ['as' => 'admin.functions.store', 'uses' => 'AdminGameFunctionController@store'])
+        ->before('auth','csrf');
+
     /*
      * Function categories
      */
@@ -204,6 +242,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/categories/destroy/{id}', ['as' => 'admin.categories.destroy', 'uses' => 'AdminGameFunctionController@destroy'])
         ->where(['id' => '[0-9]+'])
         ->before('auth');
+
+    // add function category form
+    Route::get('/categories/create', ['as' => 'admin.categories.create', 'uses' => 'AdminGameFunctionCategoryController@create'])
+        ->before('auth');
+
+    // store new function category
+    Route::post('/categories/store', ['as' => 'admin.categories.store', 'uses' => 'AdminGameFunctionCategoryController@store'])
+        ->before('auth','csrf');
 
     /*
      * Game kinds
@@ -218,6 +264,14 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth');
 
+    // add kind form
+    Route::get('/kinds/create', ['as' => 'admin.kinds.create', 'uses' => 'AdminGameKindController@create'])
+        ->before('auth');
+
+    // store new kind
+    Route::post('/kinds/store', ['as' => 'admin.kinds.store', 'uses' => 'AdminGameKindController@store'])
+        ->before('auth','csrf');
+
     /*
      * Game types
      */
@@ -230,6 +284,14 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/types/destroy/{id}', ['as' => 'admin.types.destroy', 'uses' => 'AdminGameTypeController@destroy'])
         ->where(['id' => '[0-9]+'])
         ->before('auth');
+
+    // add type form
+    Route::get('/types/create', ['as' => 'admin.types.create', 'uses' => 'AdminGameTypeController@create'])
+        ->before('auth');
+
+    // store new type
+    Route::post('/types/store', ['as' => 'admin.types.store', 'uses' => 'AdminGameTypeController@store'])
+        ->before('auth','csrf');
 
     /*
      * Game difficulties
@@ -244,6 +306,14 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth');
 
+    // add difficulty form
+    Route::get('/difficulties/create', ['as' => 'admin.difficulties.create', 'uses' => 'AdminGameDifficultyController@create'])
+        ->before('auth');
+
+    // store new difficulty
+    Route::post('/difficulties/store', ['as' => 'admin.difficulties.store', 'uses' => 'AdminGameDifficultyController@store'])
+        ->before('auth','csrf');
+
     /*
      * Budget groups
      */
@@ -253,9 +323,17 @@ Route::group(['prefix' => 'admin'], function() {
         ->before('auth');
 
     // hard delete budget group
-    Route::get('/budget-groups/destroy/{id}', ['as' => 'admin.budgetgroups.destroy', 'uses' => 'AdminThemeController@destroy'])
+    Route::get('/budget-groups/destroy/{id}', ['as' => 'admin.budgetgroups.destroy', 'uses' => 'AdminBudgetGroupController@destroy'])
         ->where(['id' => '[0-9]+'])
         ->before('auth');
+
+    // add budget group form
+    Route::get('/budget-groups/create', ['as' => 'admin.budgetgroups.create', 'uses' => 'AdminBudgetGroupController@create'])
+        ->before('auth');
+
+    // store new budget group
+    Route::post('/budget-groups/store', ['as' => 'admin.budgetgroups.store', 'uses' => 'AdminBudgetGroupController@store'])
+        ->before('auth','csrf');
 
     // FEEDBACK ANDERS DOEN (geen tabel)
 

@@ -4,6 +4,27 @@ class AdminMemberController extends \BaseController {
 
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        // get count of all functions
+        $count = Member::all()->count();
+
+        // sort by name and paginate
+
+        // TODO : ordenen volgens person name (join nodig?)
+        $members = Member::orderBy('member_id', 'asc')->paginate(10);
+
+
+        return View::make('admin/members/index')
+            ->with('members',$members)
+            ->with('count',$count);
+    }
+
+    /**
      * Authorize user.
      *
      * @return Response

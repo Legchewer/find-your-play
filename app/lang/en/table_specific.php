@@ -8,5 +8,7 @@ return [
     'producer' => 'Producer',
     'age' => 'Age group',
     'category' => 'Category',
-    'kind' => 'Kind'
+    'kind' => 'Kind',
+    'email' => 'Email address',
+    'role' => 'Role'
 ];

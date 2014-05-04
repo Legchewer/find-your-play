@@ -2,11 +2,11 @@
 
 @section('content')
 
-<div class="content themes">
+<div class="content kinds">
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes', 1) }} <small>{{ Lang::get('admin-forms.theme-create-title') }}</small></h1>
+            <h1><i class="fa fa-clipboard"></i> {{ Lang::choice('admin-pages.kinds', 1) }} <small>{{ Lang::get('admin-forms.kind-create-title') }}</small></h1>
 
         </div>
     </div>
@@ -25,18 +25,18 @@
             </div>
             @endif
 
-            {{ Form::open(['route' => 'admin.themes.store']), PHP_EOL }}
+            {{ Form::open(['route' => 'admin.kinds.store']), PHP_EOL }}
 
-            {{ Form::label('name_nl', ucfirst(Lang::get('admin-forms.theme-name-nl'))) }}
+            {{ Form::label('name_nl', ucfirst(Lang::get('admin-forms.kind-name-nl'))) }}
             <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
-            {{ Form::text('name_nl', '', ['placeholder' => Lang::get('admin-forms.theme-name-ph')]) }}
+            {{ Form::text('name_nl', '', ['placeholder' => Lang::get('admin-forms.kind-name-ph')]) }}
 
-            {{ Form::label('name_en', ucfirst(Lang::get('admin-forms.theme-name-en'))) }}
+            {{ Form::label('name_en', ucfirst(Lang::get('admin-forms.kind-name-en'))) }}
             <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
-            {{ Form::text('name_en', '', ['placeholder' => Lang::get('admin-forms.theme-name-ph')]) }}
+            {{ Form::text('name_en', '', ['placeholder' => Lang::get('admin-forms.kind-name-ph')]) }}
 
             {{ Form::submit(Lang::get('admin-forms.submit-add'), ['class' => 'button button-submit']), PHP_EOL }}
-            {{ HTML::link('/admin/themes', Lang::get('admin-forms.theme-list'), ['' => '']), PHP_EOL }}
+            {{ HTML::link('/admin/kinds', Lang::get('admin-forms.kind-list'), ['' => '']), PHP_EOL }}
             {{ Form::close(), PHP_EOL }}
 
         </div>

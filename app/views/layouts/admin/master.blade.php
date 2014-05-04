@@ -66,8 +66,8 @@ $version = [
                 <li class="large-4 medium-4 columns second">
                     <a data-dropdown="drop2" class="dropdown" href=""><i class="fa fa-users fa-lg"></i> {{ Lang::choice('admin-pages.members',1) }}</a>
                     <ul id="drop2" data-dropdown-content class="f-dropdown">
-                        <li><a href="#"><i class="fa fa-users"></i> {{ Lang::choice('admin-pages.members',1) }}</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> {{ Lang::choice('admin-pages.roles',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.members') }}"><i class="fa fa-users"></i> {{ Lang::choice('admin-pages.members',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.roles') }}"><i class="fa fa-user"></i> {{ Lang::choice('admin-pages.roles',1) }}</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns last">

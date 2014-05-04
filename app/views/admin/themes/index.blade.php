@@ -94,7 +94,7 @@
                 {{ $themes->links() }}
             </div>
 
-            <a href="{{ URL::route('admin.themes.create') }}" class="btn"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 1, ['type' => strtolower(Lang::choice('admin-pages.themes',0))]) }}</a>
+            <a href="{{ URL::route('admin.themes.create') }}" class="button button-add"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 1, ['type' => strtolower(Lang::choice('admin-pages.themes',0))]) }}</a>
 
         </div>
     </div>
