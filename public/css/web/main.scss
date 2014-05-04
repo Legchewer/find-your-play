@@ -71,6 +71,12 @@ body{
     .divider{
       border-right: 1px solid $dark-grey + 40;
     }
+    .active{
+      color: $blue - 40;
+    }
+    .active:hover{
+      text-decoration: underline;
+    }
   }
   .inline-list>li>*{
     display: inline;
@@ -336,8 +342,19 @@ body{
   label:first-letter{
     text-transform: capitalize;
   }
+  .error-margin-fix{
+    margin-top: -16px;
+  }
 }
 
+/* SEARCH */
+.gameslist{
+  img{
+    max-width:100px !important;
+    height:100px;
+    float:left;
+  }
+}
 
 /* RESPONSIVE */
 @media only screen

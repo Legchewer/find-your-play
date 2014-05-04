@@ -55,6 +55,10 @@ body {
     padding-left: 2em; }
     #header .subnav .divider {
       border-right: 1px solid #9f9f9f; }
+    #header .subnav .active {
+      color: #91b1b4; }
+    #header .subnav .active:hover {
+      text-decoration: underline; }
   #header .inline-list > li > * {
     display: inline; }
 
@@ -267,6 +271,14 @@ body {
   color: #444444; }
 #registreren label:first-letter {
   text-transform: capitalize; }
+#registreren .error-margin-fix {
+  margin-top: -16px; }
+
+/* SEARCH */
+.gameslist img {
+  max-width: 100px !important;
+  height: 100px;
+  float: left; }
 
 /* RESPONSIVE */
 @media only screen and (max-width: 768px) {
