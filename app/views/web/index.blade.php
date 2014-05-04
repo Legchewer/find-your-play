@@ -65,7 +65,7 @@
                         @endif
                     </div>
                 </div>
-                <p>{{ Lang::get('web-index.login-link-pretext') }} <a href="{{ URL::to('web/gebruiker/registreren')}}">{{ Lang::get('web-index.login-link') }}</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
+                <p>{{ Lang::get('web-index.login-link-pretext') }} <a href="{{ URL::to('web/user/register')}}">{{ Lang::get('web-index.login-link') }}</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
 
                 {{ Form::close(), PHP_EOL }}
             </div>
