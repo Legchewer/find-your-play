@@ -15,7 +15,10 @@ class BudgetGroupSeeder extends Seeder{
         ]);
 
         BudgetGroup::create([
-            'budget_group_value' => '40-80 EUR'
+            'budget_group_value' => '40-60 EUR'
+        ]);
+        BudgetGroup::create([
+           'budget_group_value' => '+60 EUR'
         ]);
 
     }
