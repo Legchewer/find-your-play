@@ -10,46 +10,72 @@ class SearchController extends \BaseController {
 
         if (App::getLocale() == 'nl')
         {
-            foreach($games as $s)
+            $themes = Theme::where('theme_name_nl','like','%' . $q . '%')->get();
+            foreach($themes as $theme)
             {
-                $s = $games->
-                    where('game_title_nl','LIKE','%' . $q . '%')
-                    ->orWhere('game_description_nl','LIKE','%' . $q . '%')
-                    ->orWhere('game_producer','LIKE','%' . $q . '%')
-                    ->with(array('theme' => function($query){
-                            $q = Input::get('game');
-                            $query->where('theme_name_nl','LIKE','%' . $q . '%');
-                        }))
-                    ->get();
+                $id = $theme->theme_id;
+            }
+            if(!$themes->isEmpty())
+            {
+                foreach($games as $g)
+                {
+                    $game = $g->where('theme_id','=',$id)
+                        ->orWhere('game_title_nl','LIKE','%' . $q . '%')
+                        ->orWhere('game_description_nl','LIKE','%' . $q . '%')
+                        ->orWhere('game_producer','LIKE','%' . $q . '%')
+                        ->select('game_title_nl as game_title','game_description_nl as game_description')
+                        ->get();
+                }
+            }
+            else
+            {
+                foreach($games as $g)
+                {
+                    $game = $g->where('game_title_nl','LIKE','%' . $q . '%')
+                        ->orWhere('game_description_nl','LIKE','%' . $q . '%')
+                        ->orWhere('game_producer','LIKE','%' . $q . '%')
+                        ->select('game_title_nl as game_title','game_description_nl as game_description')
+                        ->get();
+                }
             }
         }
         else
         {
 
-            $theme_id = Theme::where('theme_name_en','like','%' . $q . '%')->get();
-            if(!$theme_id->isEmpty())
+            $themes = Theme::where('theme_name_en','like','%' . $q . '%')->get();
+            foreach($themes as $theme)
+            {
+                $id = $theme->theme_id;
+            }
+            if(!$themes->isEmpty())
             {
                 foreach($games as $g)
                 {
-                    $g = Game::where('theme_id','=',$theme_id[0]->theme_id)->get();
-                    var_dump($g);
+                    $game = $g->where('theme_id','=',$id)
+                              ->orWhere('game_title_en','LIKE','%' . $q . '%')
+                              ->orWhere('game_description_en','LIKE','%' . $q . '%')
+                              ->orWhere('game_producer','LIKE','%' . $q . '%')
+                              ->select('game_title_en as game_title','game_description_en as game_description')
+                              ->get();
                 }
             }
-
-
-
-            /*foreach($games as $s)
+            else
             {
-                $s = Game::with(array('theme' => function($query){
-                        $q = Input::get('game');
-                        $query->where('theme_name_en','like','%'.$q.'%');
-                    }))
-
-                    /*->orWhere('game_title_en','LIKE','%' . $q . '%')
-                    ->orWhere('game_description_en','LIKE','%' . $q . '%')
-                    ->orWhere('game_producer','LIKE','%' . $q . '%')
-                    ->get();
-            }*/
+                foreach($games as $g)
+                {
+                    $game = $g->where('game_title_en','LIKE','%' . $q . '%')
+                        ->orWhere('game_description_en','LIKE','%' . $q . '%')
+                        ->orWhere('game_producer','LIKE','%' . $q . '%')
+                        ->select('game_title_en as game_title','game_description_en as game_description')
+                        ->get();
+                }
+            }
         }
+        return View::make('web.spelzoeken', ['games' => $game]);
+    }
+
+    public function Filter()
+    {
+        return View::make('web.spelzoeken');
     }
 }

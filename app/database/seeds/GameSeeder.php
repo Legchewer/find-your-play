@@ -50,7 +50,7 @@ class GameSeeder extends Seeder{
             'game_type_id' => 1,
             'game_difficulty_id' => 1,
             'budget_group_id' => 1,
-            'theme_id' => 1
+            'theme_id' => 2
         ]);
 
         $game1->gameFunctions()->attach(1); // geheugen

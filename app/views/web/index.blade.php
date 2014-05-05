@@ -76,7 +76,7 @@
                 </div>
                 <div class="medium-6 columns small-search">
                     <h2 class="show-for-medium-up">&nbsp;</h2>
-                    {{ Form::open(['route' => 'web.search']), PHP_EOL }}
+                    {{ Form::open(['action' => 'SearchController@NameAndDescriptionSearch']), PHP_EOL }}
                         <div class="row collapse">
                             <div class="small-2 medium-1 columns">
                                 <span class="prefix"><i class="fa fa-search"></i></span>
