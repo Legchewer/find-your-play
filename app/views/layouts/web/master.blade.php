@@ -59,7 +59,7 @@ $version = [
 </div>
 <div id="footer">
     <div class="row">
-        <p>&copy; 2014 MMP</p>
+        <p>&copy; 2014 Find your Play</p>
     </div>
 </div>
 
