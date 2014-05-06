@@ -41,6 +41,7 @@
     </div>
     <div class="medium-9 columns">
         <ul class="small-block-grid-1 gameslist">
+            @if(empty($games))
             @foreach($games as $g)
                 <li>
                     <a href="#">
@@ -49,6 +50,9 @@
                     </a>
                 </li>
             @endforeach
+            @else
+            <li><strong>{{Lang::get('web-zoeken.search-error')}}</strong></li>
+            @endif
         </ul>
     </div>
 </div>

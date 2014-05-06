@@ -14,4 +14,5 @@ return [
     'search-functions' => 'Function',
     'search-button' => 'Search',
     'search-option' => 'Make your choice..',
+    'search-error' => 'No games were found.. Please try another search term.'
 ];
