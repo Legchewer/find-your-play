@@ -232,6 +232,14 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth');
 
+    // add game form
+    Route::get('/games/create', ['as' => 'admin.games.create', 'uses' => 'AdminGameController@create'])
+        ->before('auth');
+
+    // store new game
+    Route::post('/games/store', ['as' => 'admin.games.store', 'uses' => 'AdminGameController@store'])
+        ->before('auth','csrf');
+
     /*
      * Themes
      */

@@ -218,6 +218,8 @@
                 {{ $games->links() }}
             </div>
 
+            <a href="{{ URL::route('admin.games.create') }}" class="button button-add"><i class="fa fa-plus"></i>{{ Lang::choice('table_general.add', 1, ['type' => strtolower(Lang::choice('admin-pages.games',0))]) }}</a>
+
         </div>
     </div>
 </div>
