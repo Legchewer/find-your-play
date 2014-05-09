@@ -18,6 +18,7 @@
     <div class="row">
         @if(!Auth::check())
         <div class="medium-6 columns spelzoeken">
+            {{ Form::open(['route' => 'web.index.post']), PHP_EOL }}
             <h2>{{ Lang::get('web-index.search-header') }}</h2>
             <form>
                 <div class="row collapse">
@@ -25,10 +26,11 @@
                         <span class="prefix"><i class="fa fa-search"></i></span>
                     </div>
                     <div class="small-10 medium-11 columns">
-                        <input type="text" placeholder="{{ Lang::get('web-index.search-placeholder') }}">
+                        {{ Form::text('game','', ['placeholder' => Lang::get('web-index.search-placeholder')]) }}
                     </div>
                 </div>
-                <p><a href="#">{{ Lang::get('web-index.search-link') }}</a> <a href="#" class="button tiny right">{{ Lang::get('web-index.search-button') }}</a></p>
+                <p><a href="{{URL::to('web/search')}}">{{ Lang::get('web-index.search-link') }}</a> {{ Form::submit(Lang::get('web-index.search-button'), ['class' => 'button tiny right']), PHP_EOL }}</a></p>
+                {{ Form::close(), PHP_EOL }}
             </form>
         </div>
         <div class="medium-6 columns aanmelden">
@@ -76,7 +78,7 @@
                 </div>
                 <div class="medium-6 columns small-search">
                     <h2 class="show-for-medium-up">&nbsp;</h2>
-                    {{ Form::open(['route' => 'web.search']), PHP_EOL }}
+                    {{ Form::open(['route' => 'web.index.post']), PHP_EOL }}
                         <div class="row collapse">
                             <div class="small-2 medium-1 columns">
                                 <span class="prefix"><i class="fa fa-search"></i></span>

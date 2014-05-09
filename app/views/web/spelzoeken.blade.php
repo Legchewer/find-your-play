@@ -11,7 +11,7 @@
 </div>
 <div class="row">
     <div class="medium-3 columns">
-        {{ Form::open(['route' => 'web.register']), PHP_EOL }}
+        {{ Form::open(['route' => 'web.search.post']), PHP_EOL }}
             {{ Form::label('game_type',Lang::get('web-zoeken.search-game'))}}
             {{ Form::select('game_type', ['' => Lang::get('web-zoeken.search-option')] + $game_kinds)}}
 
@@ -41,14 +41,18 @@
     </div>
     <div class="medium-9 columns">
         <ul class="small-block-grid-1 gameslist">
+            @if(empty($games))
             @foreach($games as $g)
                 <li>
                     <a href="#">
-                        <h1>{{$g->game_title }}</h1>
+                        <h1>{{$g->game_title}}</h1>
                         <p>{{$g->game_description}}</p>
                     </a>
                 </li>
             @endforeach
+            @else
+            <li><strong>{{Lang::get('web-zoeken.search-error')}}</strong></li>
+            @endif
         </ul>
     </div>
 </div>
