@@ -4,8 +4,6 @@ class GameSeeder extends Seeder{
 
     public function run(){
 
-        // voorlopig maar 1 spel
-
         $game1 = Game::create([
             'game_title_nl' => 'Nijntje vormenstoof',
             'game_title_en' => 'Nijntje shape puzzle',
@@ -20,7 +18,7 @@ class GameSeeder extends Seeder{
             'game_rules_en' => 'the rules',
             'game_duration_nl' => '15 min',
             'game_duration_en' => '15 min',
-            'game_players' => '1',
+            'game_players_id' => '1',
             'game_therapeutic_nl' => 'therapeutische fiche',
             'game_therapeutic_en' => 'therapeutic file',
             // foreign keys
@@ -43,7 +41,7 @@ class GameSeeder extends Seeder{
             'game_rules_en' => 'the rules',
             'game_duration_nl' => '15 min',
             'game_duration_en' => '15 min',
-            'game_players' => '1',
+            'game_players_id' => '1',
             'game_therapeutic_nl' => 'therapeutische fiche',
             'game_therapeutic_en' => 'therapeutic file',
             // foreign keys
@@ -75,6 +73,16 @@ class GameSeeder extends Seeder{
         $game1->gameFeatures()->attach(8);
         $game1->gameFeatures()->attach(9);
         $game1->gameFeatures()->attach(10);
+        $game1->gameFeatures()->attach(11);
+        $game1->gameFeatures()->attach(12);
+        $game1->gameFeatures()->attach(13);
+        $game1->gameFeatures()->attach(14);
+        $game1->gameFeatures()->attach(15);
+        $game1->gameFeatures()->attach(16);
+        $game1->gameFeatures()->attach(17);
+        $game1->gameFeatures()->attach(18);
+        $game1->gameFeatures()->attach(19);
+        $game1->gameFeatures()->attach(20);
 
         $game2->gameFunctions()->attach(1); // geheugen
         $game2->gameFunctions()->attach(6); // fijne motoriek
@@ -98,6 +106,16 @@ class GameSeeder extends Seeder{
         $game2->gameFeatures()->attach(8);
         $game2->gameFeatures()->attach(9);
         $game2->gameFeatures()->attach(10);
+        $game2->gameFeatures()->attach(11);
+        $game2->gameFeatures()->attach(12);
+        $game2->gameFeatures()->attach(13);
+        $game2->gameFeatures()->attach(14);
+        $game2->gameFeatures()->attach(15);
+        $game2->gameFeatures()->attach(16);
+        $game2->gameFeatures()->attach(17);
+        $game2->gameFeatures()->attach(18);
+        $game2->gameFeatures()->attach(19);
+        $game2->gameFeatures()->attach(20);
 
     }
 

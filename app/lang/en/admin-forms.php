@@ -35,7 +35,6 @@ return [
     'game-duration-en'      => 'duration (English)',
     'game-duration-ph'      => 'Enter game duration',
     'game-players'     => 'Number of players',
-    'game-players-ph'      => 'Enter the number of players',
     'game-functions'     => 'functions',
     'game-functions-ph'      => 'Select game functions',
     'game-therapeutic-nl'     => 'therapeutic file (Dutch)',
@@ -43,7 +42,7 @@ return [
     'game-therapeutic-ph'      => 'Fill in therapeutic file',
     'game-features-nl'     => 'game features (Dutch)',
     'game-features-en'      => 'game features (Engels)',
-    'game-features-ph'      => 'e.g. name, value <br/> name, value', // TODO : FORMAT TONEN VOOR INPUT
+    'game-features-ph'      => 'e.g. name, value <br/> name, value',
     'game-tags-nl'     => 'tags (Dutch)',
     'game-tags-en'      => 'tags (English)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',

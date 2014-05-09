@@ -35,7 +35,6 @@ return [
     'game-duration-en'      => 'spelduur (Engels)',
     'game-duration-ph'      => 'Geef de spelduur in',
     'game-players'     => 'aantal spelers',
-    'game-players-ph'      => 'Geef het aantal spelers in',
     'game-functions'     => 'functies',
     'game-functions-ph'      => 'Selecteer de functies',
     'game-therapeutic-nl'     => 'therapeutische fiche (Nederlands)',
@@ -43,7 +42,7 @@ return [
     'game-therapeutic-ph'      => 'Vul de therapeutische fiche in',
     'game-features-nl'     => 'spel kenmerken (Nederlands)',
     'game-features-en'      => 'spel kenmerken (Engels)',
-    'game-features-ph'      => 'e.g. naam, waarde <br/> naam, waarde', // TODO : FORMAT TONEN VOOR INPUT
+    'game-features-ph'      => 'e.g. naam, waarde <br/> naam, waarde',
     'game-tags-nl'     => 'tags (Nederlands)',
     'game-tags-en'      => 'tags (Engels)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',

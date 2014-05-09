@@ -107,5 +107,13 @@ class Game extends Eloquent {
         return $this->belongsTo('Theme');
     }
 
+    /**
+     * @return array
+     */
+    public function gamePlayers()
+    {
+        return $this->belongsTo('GamePlayers');
+    }
+
 
 }

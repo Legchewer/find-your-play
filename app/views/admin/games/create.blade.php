@@ -25,7 +25,7 @@
             </div>
             @endif
 
-            {{ Form::open(['route' => 'admin.games.store', 'files' => true]), PHP_EOL }}
+            {{ Form::open(['route' => ['admin.games.store'], 'files' => true]), PHP_EOL }}
 
             {{ Form::label('title_nl', ucfirst(Lang::get('admin-forms.game-title-nl'))) }}
             <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
@@ -53,6 +53,10 @@
 
             {{ Form::label('age_en', ucfirst(Lang::get('admin-forms.game-age-en'))) }}
             {{ Form::text('age_en', '', ['placeholder' => Lang::get('admin-forms.game-age-ph')]) }}
+
+            {{ Form::label('players', ucfirst(Lang::get('admin-forms.game-players'))) }}
+            <i class="fa fa-asterisk"></i>
+            {{ Form::select('players', $players) }}
 
             {{ Form::label('price', ucfirst(Lang::get('admin-forms.game-price'))) }}
             {{ Form::text('price', '', ['placeholder' => Lang::get('admin-forms.game-price')]) }}
@@ -83,10 +87,6 @@
 
             {{ Form::label('duration_en', ucfirst(Lang::get('admin-forms.game-duration-en'))) }}
             {{ Form::text('duration_en', '', ['placeholder' => Lang::get('admin-forms.game-duration-ph')]) }}
-
-            {{ Form::label('players', ucfirst(Lang::get('admin-forms.game-players'))) }}
-            <i class="fa fa-asterisk"></i>
-            {{ Form::text('players', '', ['placeholder' => Lang::get('admin-forms.game-players-ph')]) }}
 
             {{ Form::label('functions', ucfirst(Lang::get('admin-forms.game-functions'))) }}
             <i class="fa fa-asterisk"></i>

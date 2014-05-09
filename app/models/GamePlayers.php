@@ -6,7 +6,7 @@ class GamePlayers extends Eloquent {
      *
      * @var string
      */
-    protected $table = 'game_has_players';
+    protected $table = 'game_players';
 
     /**
      * The primary key id.
