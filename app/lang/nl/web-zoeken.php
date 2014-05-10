@@ -14,5 +14,5 @@ return [
     'search-functions' => 'Functie',
     'search-button' => 'Zoeken',
     'search-option' => 'Maak uw keuze..',
-    'search-error' => 'Er werden geen spellen gevonden.. Probeer een andere zoekmogelijkeheid.'
+    'search-error' => 'Er werden geen spellen gevonden.. Probeer een andere zoekmogelijkheid.'
 ];

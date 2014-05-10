@@ -71,9 +71,9 @@ Route::group(['prefix' => 'web'], function() {
 
     });
 
-    Route::get('/search/{string?}',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
+    Route::get('/search',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
 
-    Route::post('/search/{string?}',['as' => 'web.search.post','uses' => 'SearchController@FilterSearch']);
+    Route::post('/search',['as' => 'web.search.post','uses' => 'SearchController@SearchFormSearch']);
 
     Route::get('/game',function()
     {

@@ -18,7 +18,7 @@ class GameSeeder extends Seeder{
             'game_rules_en' => 'the rules',
             'game_duration_nl' => '15 min',
             'game_duration_en' => '15 min',
-            'game_players_id' => '1',
+            'game_players' => '1',
             'game_therapeutic_nl' => 'therapeutische fiche',
             'game_therapeutic_en' => 'therapeutic file',
             // foreign keys
@@ -41,7 +41,7 @@ class GameSeeder extends Seeder{
             'game_rules_en' => 'the rules',
             'game_duration_nl' => '15 min',
             'game_duration_en' => '15 min',
-            'game_players_id' => '1',
+            'game_players' => '1',
             'game_therapeutic_nl' => 'therapeutische fiche',
             'game_therapeutic_en' => 'therapeutic file',
             // foreign keys

@@ -12,8 +12,8 @@
 <div class="row">
     <div class="medium-3 columns">
         {{ Form::open(['route' => 'web.search.post']), PHP_EOL }}
-            {{ Form::label('game_type',Lang::get('web-zoeken.search-game'))}}
-            {{ Form::select('game_type', ['' => Lang::get('web-zoeken.search-option')] + $game_kinds)}}
+            {{ Form::label('game_kind',Lang::get('web-zoeken.search-game'))}}
+            {{ Form::select('game_kind', ['' => Lang::get('web-zoeken.search-option')] + $game_kinds)}}
 
             {{ Form::label('game_difficulty',Lang::get('web-zoeken.search-difficulty'))}}
             {{ Form::select('game_difficulty', ['' => Lang::get('web-zoeken.search-option')] + $game_difficulties)}}
@@ -36,12 +36,12 @@
             {{ Form::label('game_age',Lang::get('web-zoeken.search-age'))}}
             {{ Form::select('game_age', ['' => Lang::get('web-zoeken.search-option')] + $game_age)}}
 
-            {{ Form::submit(Lang::get('web-zoeken.search-button'), ['class' => 'button tiny']), PHP_EOL }}
+        {{ Form::submit(Lang::get('web-zoeken.search-button'), ['class' => 'button tiny']), PHP_EOL }}
         {{ Form::close(), PHP_EOL }}
     </div>
     <div class="medium-9 columns">
         <ul class="small-block-grid-1 gameslist">
-            @if(empty($games))
+            @if(!empty($games))
             @foreach($games as $g)
                 <li>
                     <a href="#">
