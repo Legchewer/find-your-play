@@ -6,7 +6,7 @@
         <ul class="breadcrumbs">
             <li><a href="{{ url('/')}}">Home</a></li>
             <li><a href="{{ url('/search')}}">{{ Lang::get('web-zoeken.breadcrumb')}}</a></li>
-            <li class="current">Naam spel</li>
+            <li class="current">Nijntje vormenstoof</li>
         </ul>
     </div>
 </div>
