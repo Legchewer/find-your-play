@@ -18,7 +18,8 @@ class SearchController extends \BaseController {
     public function FilterIndex()
     {
         // alle spellen
-        $games = Game::with('gameFunctions','gameType')->get();
+        //$games = Game::with('gameFunctions','gameType')->get();
+        $games = Game::all();
 
         // nederlands
         if(App::getLocale() == 'nl')
@@ -52,7 +53,7 @@ class SearchController extends \BaseController {
                             ->orWhere('game_title_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_description_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_producer','LIKE','%' . $search_index . '%')
-                            ->select('game_title_nl as game_title','game_description_nl as game_description')
+                            ->select('game_id as game_id','game_title_nl as game_title','game_description_nl as game_description')
                             ->get();
                     }
                 }
@@ -64,7 +65,7 @@ class SearchController extends \BaseController {
                         $game = $g->where('game_title_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_description_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_producer','LIKE','%' . $search_index . '%')
-                            ->select('game_title_nl as game_title','game_description_nl as game_description')
+                            ->select('game_id as game_id','game_title_nl as game_title','game_description_nl as game_description')
                             ->get();
                     }
                 }
@@ -100,7 +101,7 @@ class SearchController extends \BaseController {
 
                 foreach($games as $g)
                 {
-                   $game = $g->where(function($query)use($array)
+                   $game = /*$g->where(function($query)use($array)
                            {
                                if($array['difficulty'] != 'null'){
                                    $query->where('game_difficulty_id','=',$array['difficulty']);
@@ -114,7 +115,7 @@ class SearchController extends \BaseController {
                                /*if($array['function'] != 'null'){
                                    $query->where('gameFunctions.game_function_id','=',$array['function']);
                                }*/
-                               if($array['budget'] != 'null'){
+                               /*if($array['budget'] != 'null'){
                                    $query->where('budget_group_id','=',$array['budget']);
                                }
                                if($array['players'] != 'null'){
@@ -123,13 +124,16 @@ class SearchController extends \BaseController {
                                if($array['age'] != 'null'){
                                    $query->where('game_age_nl','=',$array['age']);
                                }
-                           })
-                           /*$g->with(array('gameType' => function($query,$array){
+                           })*/
+                           /*$g->with(array('gameType' => function($query)use($array){
                                 if($array['kind'] != 'null'){
                                     $query->where('game_function_id','=',$array['kind']);
                                 }
                            }))*/
-                             ->select("game_title_nl as game_title","game_description_nl as game_description")
+                    $g->with(array('GameType' => function($query){
+                            $query->where('game_function_id','=',1);
+                        }))
+                             ->select("game_id,game_title_nl as game_title","game_description_nl as game_description")
                              ->get();
                 }
             }
@@ -138,7 +142,7 @@ class SearchController extends \BaseController {
             {
                 foreach($games as $g)
                 {
-                    $game = $g->select('game_title_nl as game_title','game_description_nl as game_description')
+                    $game = $g->select('game_id as game_id','game_title_nl as game_title','game_description_nl as game_description')
                         ->get();
                 }
             }
@@ -155,7 +159,7 @@ class SearchController extends \BaseController {
 
             foreach($games as $g)
             {
-                $game = $g->select('game_title_en as game_title','game_description_en as game_description')
+                $game = $g->select('game_id as game_id','game_title_en as game_title','game_description_en as game_description')
                           ->get();
             }
         }

@@ -75,10 +75,7 @@ Route::group(['prefix' => 'web'], function() {
 
     Route::post('/search',['as' => 'web.search.post','uses' => 'SearchController@SearchFormSearch']);
 
-    Route::get('/game',function()
-    {
-        return View::make('web.speldetail');
-    });
+    Route::get('/game/{id}',['as' => 'web.game','uses' => 'GameController@Index']);
 
     /*
      * Authentication

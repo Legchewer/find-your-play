@@ -44,7 +44,7 @@
             @if(!empty($games))
             @foreach($games as $g)
                 <li>
-                    <a href="#">
+                    <a href="game/{{ $g->game_id }}">
                         <h1>{{$g->game_title}}</h1>
                         <p>{{$g->game_description}}</p>
                     </a>

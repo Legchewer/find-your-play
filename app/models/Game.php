@@ -115,5 +115,4 @@ class Game extends Eloquent {
         return $this->belongsTo('GamePlayers');
     }
 
-
 }
