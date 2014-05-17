@@ -14,5 +14,4 @@
     $('#warning-accept').click(function(e) {
         location.href = route;
     });
-
 })(window);

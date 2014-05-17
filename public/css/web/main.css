@@ -260,6 +260,9 @@ body {
 .detailspel {
   margin-bottom: 50px; }
 
+.wishlist i {
+  color: #b9d9dc; }
+
 /* REGISTREREN */
 #registreren .button {
   background: #f4f4f4;

@@ -17,7 +17,6 @@ class AdminGameFunctionController extends \BaseController {
         if (App::getLocale() == 'nl')
         {
             $functions = GameFunction::orderBy('game_function_category_id', 'asc')->orderBy('game_function_name_nl', 'asc')->paginate(10);
-
         }
         else
         {
