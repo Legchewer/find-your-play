@@ -22,60 +22,38 @@ Route::group(['prefix' => 'web'], function() {
 
     Route::get('/language/{lang}', function($lang)
     {
-
         Session::put('my.locale', $lang);
 
-
-         return Redirect::back();
-
+        return Redirect::back();
     });
 
-    Route::get('/',['as' => 'web.index',function()
-    {
-        return View::make('web.index');
-    }]);
+    Route::get('/',['as' => 'web.index','uses' => 'UserController@Index']);
+    Route::get('/about',['as' => 'web.about','uses' => 'UserController@About']);
+    Route::get('/search',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
+    Route::get('/game/{id}',['as' => 'web.game','uses' => 'GameController@Index']);
 
     Route::post('/',['as' => 'web.index.post','uses' => 'SearchController@SearchFormIndex']);
-
-    Route::get('/about',function()
-    {
-        return View::make('web.overons');
-    });
-
-    Route::group(['prefix' => 'user'], function() {
-        Route::get('/register',function()
-        {
-            if (App::getLocale() == 'nl')
-            {
-                $roles = Role::where('role_id','!=',1)->lists('role_name_nl','role_id');
-
-            }
-            else
-            {
-                $roles = Role::where('role_id','!=',1)->lists('role_name_en','role_id');
-
-            }
-
-            return View::make('web.registreren',compact('roles'));
-        });
-
-        Route::post('/register',['as' => 'web.register', 'uses' => 'UserController@register']);
-
-        Route::get('/profile',function()
-        {
-            $user = Auth::user()->person;
-            return View::make('web.profiel', ['user' => $user]);
-        });
-
-        Route::post('/profile',['as' => 'web.edit','uses' => 'UserController@edit']);
-
-    });
-
-    Route::get('/search',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
-
     Route::post('/search',['as' => 'web.search.post','uses' => 'SearchController@SearchFormSearch']);
 
-    Route::get('/game/{id}',['as' => 'web.game','uses' => 'GameController@Index']);
+
+    Route::group(['prefix' => 'user'], function() {
+        Route::get('/register', ['as' => 'web.register', 'uses' => 'UserController@RegisterIndex']);
+        Route::post('/register',['as' => 'web.register', 'uses' => 'UserController@Register']);
+
+        Route::group(['prefix' => 'profile'],function(){
+            Route::get('/', ['as' => 'web.profile', 'uses' => 'UserController@ProfileIndex']);
+            Route::get('/register/client',['as' => 'web.client', 'uses' => 'ClientController@RegisterIndex']);
+
+            Route::post('/',['as' => 'web.edit','uses' => 'UserController@Profile']);
+            Route::post('/register/client',['as' => 'web.register.client', 'uses' => 'ClientController@Register']);
+        });
+    });
+
+
+
+
+
+
 
     /*
      * Authentication

@@ -255,6 +255,21 @@ body {
       margin-top: 6px; }
 #profiel label:first-letter {
   text-transform: capitalize; }
+#profiel .add-client {
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 2px 10px 5px 10px;
+  margin-top: -4px;
+  margin-right: -8px;
+  background: #b9d9dc;
+  color: #fff;
+  transition: 0.3s;
+  -moz-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s; }
+#profiel .add-client:hover {
+  background: #fff !important;
+  color: #b9d9dc !important; }
 
 /* DETAIL SPEL */
 .detailspel {

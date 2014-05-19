@@ -2,7 +2,6 @@
 
 class UserController extends \BaseController {
 
-
     /**
      * Authorize user.
      *
@@ -47,34 +46,24 @@ class UserController extends \BaseController {
         }
     }
 
-    public function edit()
-    {
-        $rules = [
-            'givenname' => 'required',
-            'surname'   => 'required',
-            'email'     => 'required|email'
-        ];
 
-        $validator = Validator::make(Input::all(), $rules);
 
-        if ($validator->passes()) {
-            $person = Person::find(Auth::user()->person_id);
-            $person->person_givenname = Input::get('givenname');
-            $person->person_surname = Input::get('surname');
-            $person->person_email = Input::get('email');
+    public function RegisterIndex(){
+        if (App::getLocale() == 'nl')
+        {
+            $roles = Role::where('role_id','!=',1)->lists('role_name_nl','role_id');
 
-            $person->save();
-
-            return Redirect::to('web/gebruiker/profiel');
-
-        } else {
-            return Redirect::to('web/gebruiker/profiel')
-                ->withInput()
-                ->withErrors($validator);
         }
+        else
+        {
+            $roles = Role::where('role_id','!=',1)->lists('role_name_en','role_id');
+
+        }
+
+        return View::make('web.registreren',compact('roles'));
     }
 
-    public function register()
+    public function Register()
     {
         $rules = [
             'givenname'       => 'required',
@@ -103,9 +92,48 @@ class UserController extends \BaseController {
             return Redirect::to('web/index');
 
         } else {
-            return Redirect::to('web/gebruiker/registreren')
+            return Redirect::to('web/user/register')
                 ->withInput()
                 ->withErrors($validator);
         }
+    }
+    public function ProfileIndex(){
+        $user = Auth::user()->person;
+        $clients = Client::all();
+        $clients='';
+
+        return View::make('web.profiel', ['user' => $user, 'clients' => $clients]);
+    }
+    public function Profile()
+    {
+        $rules = [
+            'givenname' => 'required',
+            'surname'   => 'required',
+            'email'     => 'required|email'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $person = Person::find(Auth::user()->person_id);
+            $person->person_givenname = Input::get('givenname');
+            $person->person_surname = Input::get('surname');
+            $person->person_email = Input::get('email');
+
+            $person->save();
+
+            return Redirect::route('web.edit');
+
+        } else {
+            return Redirect::route('web.edit')
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
+    public function Index(){
+        return View::make('web.index');
+    }
+    public function About(){
+        return View::make('web.overons');
     }
 }

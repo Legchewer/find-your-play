@@ -4,7 +4,7 @@
 <div class="row breadcrumb">
     <div class="small-12 columns paddingfix">
         <ul class="breadcrumbs">
-            <li><a href="{{ url('/')}}">Home</a></li>
+            <li><a href="{{ URL::to('/')}}">Home</a></li>
             <li class="unactive">{{ Lang::get('web-profiel.breadcrumb')}}</li>
             <li class="current">{{$user->person_givenname}}</li>
         </ul>
@@ -44,33 +44,10 @@
         <div class="small-12 medium-6 columns">
             <div class="panel_blue">
                 <div class="panel_title">
-                    <h3>{{ Lang::get('web-profiel.fiches-header')}} <i class="right fa fa-user"></i></h3>
+                    <h3>{{ Lang::get('web-profiel.fiches-header')}} <a href="{{ URL::to('web/user/profile/register/client') }}" class="right add-client"><i class="fa fa-plus"></i></a></h3>
                 </div>
                 <ul class="liststyle">
-                    <li>
-                        <a href="#" data-dropdown="drop">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-dropdown="drop1">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop1" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-dropdown="drop2">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop2" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Fiche</a></li>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -81,25 +58,13 @@
                 </div>
                 <ul class="liststyle">
                     <li>
-                        <a href="#" data-dropdown="drop3">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop3" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
+                        <a href="#">Voornaam Achternaam &raquo;</a>
                     </li>
                     <li>
-                        <a href="#" data-dropdown="drop4">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop4" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
+                        <a href="#">Voornaam Achternaam &raquo;</a>
                     </li>
                     <li>
-                        <a href="#" data-dropdown="drop5">Voornaam Achternaam &raquo;</a>
-                        <ul id="drop5" class="tiny f-dropdown" data-dropdown-content>
-                            <li><a href="#">Naam spel</a></li>
-                            <li><a href="#">Naam spel 2</a></li>
-                        </ul>
+                        <a href="#"> Voornaam Achternaam &raquo;</a>
                     </li>
                 </ul>
             </div>
