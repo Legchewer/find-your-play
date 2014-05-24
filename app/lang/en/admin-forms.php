@@ -84,6 +84,12 @@ return [
     'difficulty-name-en'      => 'name (English)',
     'difficulty-name-ph'      => 'Enter difficulty name',
     'difficulty-list'         => 'Difficulty list',
+    // players
+    'players-create-title' => 'create new players',
+    'players-name-nl'      => 'name (Dutch)',
+    'players-name-en'      => 'name (English)',
+    'players-name-ph'      => 'Enter players name',
+    'players-list'         => 'Players list',
     // themes
     'theme-create-title'    => 'create new theme',
     'theme-name-nl'         => 'name (Dutch)',
@@ -100,6 +106,19 @@ return [
     'role-name-nl'      => 'name (Dutch)',
     'role-name-en'      => 'name (English)',
     'role-name-ph'      => 'Enter role name',
-    'role-list'         => 'Role list'
+    'role-list'         => 'Role list',
+    // members
+    'member-create-title' => 'create new admin',
+    'person-email'      => 'Email address',
+    'person-email-ph'      => 'Enter email address',
+    'person-givenname'      => 'Given name',
+    'person-givenname-ph'      => 'Enter given name',
+    'person-surname'      => 'Surname',
+    'person-surname-ph'      => 'Enter surname',
+    'member-password'      => 'Password',
+    'member-password-ph'      => 'Enter password',
+    'member-repeat'      => 'Password (repeat)',
+    'member-repeat-ph'      => 'Enter the password again',
+    'member-list'         => 'Member list'
 
 ];

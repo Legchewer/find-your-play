@@ -55,6 +55,7 @@ $version = [
                         <li><a href="{{ URL::route('admin.games') }}"><i class="fa fa-puzzle-piece"></i> {{ Lang::choice('admin-pages.games',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.kinds') }}"><i class="fa fa-clipboard"></i> {{ Lang::choice('admin-pages.kinds',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.types') }}"><i class="fa fa-folder-open"></i> {{ Lang::choice('admin-pages.types',1) }}</a></li>
+                        <li><a href="{{ URL::route('admin.players') }}"><i class="fa fa-male"></i> {{ Lang::choice('admin-pages.players',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.themes') }}"><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.functions') }}"><i class="fa fa-lightbulb-o"></i> {{ Lang::choice('admin-pages.functions',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.categories') }}"><i class="fa fa-book"></i> {{ Lang::choice('admin-pages.function-categories',1) }}</a></li>

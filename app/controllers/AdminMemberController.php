@@ -100,6 +100,72 @@ class AdminMemberController extends \BaseController {
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+    public function create()
+    {
+
+        // rol is altijd admin
+
+        return View::make('admin/members/create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        var_dump(Input::all());
+
+        $rules = [
+            'person_email'    => 'required|email|unique:persons',
+            'givenname' => 'required|min:2',
+            'surname' => 'required|min:2',
+            'password' => 'required|min:6',
+            'repeat' => 'required|same:password'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // create new person
+            $person = new Person();
+
+            $person->person_email = Input::get('person_email');
+            $person->person_givenname = Input::get('givenname');
+            $person->person_surname = Input::get('surname');
+
+            $person->save();
+
+            // create new member
+            $member = new Member();
+
+            $member->member_password = Input::get('password'); // automatically hashes
+            $member->member_created = date("Y-m-d H:i:s");
+
+            $member->person()->associate($person);
+
+            $role = Role::find(1); // role is always admin
+
+            $member->role()->associate($role);
+
+            $member->save();
+
+            return Redirect::route('admin.members');
+
+        } else {
+            return Redirect::route('admin.members.create')
+                ->withInput()
+                ->withErrors($validator); // Maakt $errors in View.
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

@@ -42,7 +42,7 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.budgetgroups.edit', [$budgetgroup->budget_group_id]) --}}">
+                            <a href="{{ URL::route('admin.budgetgroups.edit', [$budgetgroup->budget_group_id]) }}">
                                 <span data-tooltip class="has-tip" title="Edit budgetgroep"><i class="fa fa-pencil"></i></span>
                             </a>
 

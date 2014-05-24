@@ -56,7 +56,7 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.types.edit', [$type->game_type_id]) --}}">
+                            <a href="{{ URL::route('admin.types.edit', [$type->game_type_id]) }}">
                                 <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                             </a>
 
@@ -89,7 +89,7 @@
                     </td>
 
                     <td>
-                        <a href="{{-- URL::route('admin.types.edit', [$type->game_type_id]) --}}">
+                        <a href="{{ URL::route('admin.types.edit', [$type->game_type_id]) }}">
                             <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                         </a>
 

@@ -87,6 +87,71 @@ class AdminGameTypeController extends \BaseController {
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $type = GameType::find($id);
+
+        // create appropriate ddl according to current locale
+        if (App::getLocale() == 'nl')
+        {
+            $kinds = GameKind::lists('game_kind_name_nl','game_kind_id');
+        }
+        else {
+            $kinds = GameKind::lists('game_kind_name_en','game_kind_id');
+        }
+
+        return View::make('admin/types/edit')
+            ->with('type',$type)
+            ->with('kinds',$kinds);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $type = GameType::find($id);
+
+        $rules = [
+            'name_nl' => 'required_without:name_en' ,
+            'name_en' => 'required_without:name_nl',
+            'kind' => 'required'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+            $type->game_type_name_nl = Input::get('name_nl');
+            $type->game_type_name_en = Input::get('name_en');
+
+            $kind = GameKind::find(Input::get('kind'));
+
+            $type->gameKind()->associate($kind);
+
+            $type->save();
+
+            return Redirect::route('admin.types');
+
+        } else {
+
+            return Redirect::to('admin/types/edit/' . $type->game_type_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

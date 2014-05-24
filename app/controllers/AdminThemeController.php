@@ -73,6 +73,56 @@ class AdminThemeController extends \BaseController {
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $theme = Theme::find($id);
+
+        return View::make('admin/themes/edit')
+            ->with('theme',$theme);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $theme = Theme::find($id);
+
+        $rules = [
+            'name_nl' => 'required_without:name_en' ,
+            'name_en' => 'required_without:name_nl'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+            $theme->theme_name_nl = Input::get('name_nl');
+            $theme->theme_name_en = Input::get('name_en');
+
+            // save changes
+            $theme->save();
+
+            return Redirect::route('admin.themes');
+
+        } else {
+
+            return Redirect::to('admin/themes/edit/' . $theme->theme_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

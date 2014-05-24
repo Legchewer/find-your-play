@@ -48,9 +48,9 @@ return array(
 	"mimes"            => " :attribute moet een bestand zijn van het type: :values.",
 	"min"              => array(
 		"numeric" => " :attribute is min. :min.",
-		"file"    => " :attribute bevat min. :min kilobytes.",
-		"string"  => " :attribute bevat min. :min karakters.",
-		"array"   => " :attribute bevat min. :min items.",
+		"file"    => " :attribute moet min. :min kilobytes bevatten.",
+		"string"  => " :attribute moet min. :min karakters bevatten.",
+		"array"   => " :attribute moet min. :min items bevatten.",
 	),
 	"not_in"           => " Geselecteerde :attribute is ongeldig.",
 	"numeric"          => " :attribute moet een getal zijn.",
@@ -59,7 +59,7 @@ return array(
 	"required_if"      => " :attribute veld is vereist wanneer when :or of :value.",
 	"required_with"    => " :attribute veld is vereist wanneer :values aanwezig is.",
 	"required_without" => " :attribute veld is vereist wanneer :values niet aanwezig is.",
-	"same"             => " :attribute en :or moeten hetzelfde zijn.",
+	"same"             => " :attribute en :other moeten hetzelfde zijn.",
 	"size"             => array(
 		"numeric" => " :attribute is gelijk aan :size.",
 		"file"    => " :attribute is gelijk aan :size kilobytes.",
@@ -94,15 +94,22 @@ return array(
 	*/
 
 	'attributes' => array(
-        'givenname'       => 'voornaam',
+        /*'givenname'     => 'voornaam',
         'surname'         => 'achternaam',
         'email'           => 'email adres',
         'password'        => 'wachtwoord',
-        'password_repeat' => 'wachtwoord herhalen',
+        'password_repeat' => 'wachtwoord herhalen',*/
+        'givenname'       => '<strong>Voornaam</strong>',
+        'surname'         => '<strong>Achternaam</strong>',
+        'email'           => '<strong>Emailadres</strong>',
+        'person_email'    => '<strong>Emailadres</strong>',
+        'password'        => '<strong>Wachtwoord</strong>',
+        'password_repeat' => '<strong>Wachtwoord herhalen</strong>',
+        'repeat'          => '<strong>Wachtwoord (opnieuw)</strong>',
         'role'            => 'gebruiker',
         'name_nl'         => '<strong>Naam (Nederlands)</strong>',
         'name_en'         => '<strong>Naam (Engels)</strong>',
-        'value'           => '<strong>Waarde</strong>'
+        'value'           => '<strong>Waarde</strong>',
     ),
 
 );

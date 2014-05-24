@@ -59,7 +59,7 @@ return array(
 	"required_if"      => "The :attribute field is required when :other is :value.",
 	"required_with"    => "The :attribute field is required when :values is present.",
 	"required_without" => "The :attribute field is required when :values is not present.",
-	"same"             => "The :attribute and :other must match.",
+	"same"             => "The :attribute and :other fields must match.",
 	"size"             => array(
 		"numeric" => "The :attribute must be :size.",
 		"file"    => "The :attribute must be :size kilobytes.",
@@ -94,11 +94,17 @@ return array(
 	*/
 
     'attributes' => [
-        'email' => '<strong>Email</strong>',
-        'password' => '<strong>Password</strong>',
-        'name_nl'            => '<strong>Name (Dutch)</strong>',
-        'name_en'            => '<strong>Name (English)</strong>',
-        'value'            => '<strong>Value</strong>'
+        'givenname'       => '<strong>Given name</strong>',
+        'surname'         => '<strong>Surname</strong>',
+        'email'           => '<strong>Email adress</strong>',
+        'person_email'    => '<strong>Email adress</strong>',
+        'password'        => '<strong>Password</strong>',
+        'password_repeat' => '<strong>Repeat password</strong>',
+        'repeat'          => '<strong>Password (repeat)</strong>',
+        'role'            => 'user',
+        'name_nl'         => '<strong>Name (Dutch)</strong>',
+        'name_en'         => '<strong>Name (English)</strong>',
+        'value'           => '<strong>Value</strong>'
     ],
 
 );

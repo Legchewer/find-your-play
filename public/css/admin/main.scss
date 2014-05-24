@@ -106,6 +106,7 @@ textarea{
 }
 
 .fw-container-nav{
+  @extend .clearfix;
   width: 100%;
   // background: $green;
   .main-nav{
@@ -297,7 +298,6 @@ textarea{
 
 .content{
   padding-right: 0;
-  overflow-x: scroll;
   i{
     font-size: 1.4em;
     margin-right: 0.6em;
@@ -332,9 +332,9 @@ textarea{
   }
 }
 
-/* CREATE FORMS */
+/* CREATE/EDIT FORMS */
 
-.create{
+.create, .edit{
   form{
     label{
       display: inline;

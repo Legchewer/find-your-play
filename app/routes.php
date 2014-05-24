@@ -177,6 +177,14 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth');
 
+    // add member form
+    Route::get('/members/create', ['as' => 'admin.members.create', 'uses' => 'AdminMemberController@create'])
+        ->before('auth');
+
+    // store new role
+    Route::post('/members/store', ['as' => 'admin.members.store', 'uses' => 'AdminMemberController@store'])
+        ->before('auth','csrf');
+
     /*
      * Roles
      */
@@ -194,6 +202,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     // store new role
     Route::post('/roles/store', ['as' => 'admin.roles.store', 'uses' => 'AdminRoleController@store'])
+        ->before('auth','csrf');
+
+    // edit role
+    Route::get('/roles/edit/{id}', ['as' => 'admin.roles.edit', 'uses' => 'AdminRoleController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update role
+    Route::post('/roles/update/{id}', ['as' => 'admin.roles.update', 'uses' => 'AdminRoleController@update'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -236,6 +254,16 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/themes/store', ['as' => 'admin.themes.store', 'uses' => 'AdminThemeController@store'])
         ->before('auth','csrf');
 
+    // edit theme
+    Route::get('/themes/edit/{id}', ['as' => 'admin.themes.edit', 'uses' => 'AdminThemeController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update theme
+    Route::post('/themes/update/{id}', ['as' => 'admin.themes.update', 'uses' => 'AdminThemeController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
     /*
      * Functions
      */
@@ -255,6 +283,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     // store new function
     Route::post('/functions/store', ['as' => 'admin.functions.store', 'uses' => 'AdminGameFunctionController@store'])
+        ->before('auth','csrf');
+
+    // edit function
+    Route::get('/functions/edit/{id}', ['as' => 'admin.functions.edit', 'uses' => 'AdminGameFunctionController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update function
+    Route::post('/functions/update/{id}', ['as' => 'admin.functions.update', 'uses' => 'AdminGameFunctionController@update'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -278,6 +316,16 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/categories/store', ['as' => 'admin.categories.store', 'uses' => 'AdminGameFunctionCategoryController@store'])
         ->before('auth','csrf');
 
+    // edit function category
+    Route::get('/categories/edit/{id}', ['as' => 'admin.categories.edit', 'uses' => 'AdminGameFunctionCategoryController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update function category
+    Route::post('/categories/update/{id}', ['as' => 'admin.categories.update', 'uses' => 'AdminGameFunctionCategoryController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
     /*
      * Game kinds
      */
@@ -297,6 +345,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     // store new kind
     Route::post('/kinds/store', ['as' => 'admin.kinds.store', 'uses' => 'AdminGameKindController@store'])
+        ->before('auth','csrf');
+
+    // edit kind
+    Route::get('/kinds/edit/{id}', ['as' => 'admin.kinds.edit', 'uses' => 'AdminGameKindController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update kind
+    Route::post('/kinds/update/{id}', ['as' => 'admin.kinds.update', 'uses' => 'AdminGameKindController@update'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -320,6 +378,47 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/types/store', ['as' => 'admin.types.store', 'uses' => 'AdminGameTypeController@store'])
         ->before('auth','csrf');
 
+    // edit type
+    Route::get('/types/edit/{id}', ['as' => 'admin.types.edit', 'uses' => 'AdminGameTypeController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update type
+    Route::post('/types/update/{id}', ['as' => 'admin.types.update', 'uses' => 'AdminGameTypeController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
+    /*
+     * Game Players
+     */
+
+    // game players list
+    Route::get('/players', ['as'   => 'admin.players', 'uses' => 'AdminGamePlayersController@index'])
+        ->before('auth');
+
+    // hard delete players
+    Route::get('/players/destroy/{id}', ['as' => 'admin.players.destroy', 'uses' => 'AdminGamePlayersController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // add players form
+    Route::get('/players/create', ['as' => 'admin.players.create', 'uses' => 'AdminGamePlayersController@create'])
+        ->before('auth');
+
+    // store new players
+    Route::post('/players/store', ['as' => 'admin.players.store', 'uses' => 'AdminGamePlayersController@store'])
+        ->before('auth','csrf');
+
+    // edit players
+    Route::get('/players/edit/{id}', ['as' => 'admin.players.edit', 'uses' => 'AdminGamePlayersController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update players
+    Route::post('/players/update/{id}', ['as' => 'admin.players.update', 'uses' => 'AdminGamePlayersController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
     /*
      * Game difficulties
      */
@@ -339,6 +438,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     // store new difficulty
     Route::post('/difficulties/store', ['as' => 'admin.difficulties.store', 'uses' => 'AdminGameDifficultyController@store'])
+        ->before('auth','csrf');
+
+    // edit difficulty
+    Route::get('/difficulties/edit/{id}', ['as' => 'admin.difficulties.edit', 'uses' => 'AdminGameDifficultyController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update difficulty
+    Route::post('/difficulties/update/{id}', ['as' => 'admin.difficulties.update', 'uses' => 'AdminGameDifficultyController@update'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -362,7 +471,17 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/budget-groups/store', ['as' => 'admin.budgetgroups.store', 'uses' => 'AdminBudgetGroupController@store'])
         ->before('auth','csrf');
 
-    // FEEDBACK ANDERS DOEN (geen tabel)
+    // edit budget group
+    Route::get('/budget-groups/edit/{id}', ['as' => 'admin.budgetgroups.edit', 'uses' => 'AdminBudgetGroupController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update budget group
+    Route::post('/budget-groups/update/{id}', ['as' => 'admin.budgetgroups.update', 'uses' => 'AdminBudgetGroupController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
+    // FEEDBACK ANDERS DOEN (geen tabel?)
 
 });
 

@@ -73,6 +73,56 @@ class AdminGameFunctionCategoryController extends \BaseController {
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $category = GameFunctionCategory::find($id);
+
+        return View::make('admin/categories/edit')
+            ->with('category',$category);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $category = GameFunctionCategory::find($id);
+
+        $rules = [
+            'name_nl' => 'required_without:name_en' ,
+            'name_en' => 'required_without:name_nl'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+            $category->game_function_category_name_nl = Input::get('name_nl');
+            $category->game_function_category_name_en = Input::get('name_en');
+
+            // save changes
+            $category->save();
+
+            return Redirect::route('admin.categories');
+
+        } else {
+
+            return Redirect::to('admin/categories/edit/' . $category->game_function_category_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

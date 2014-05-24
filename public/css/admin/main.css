@@ -51,15 +51,16 @@ textarea {
   resize: none; }
 
 /* CLEARFIX */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .fw-container-nav:before,
+.clearfix:after,
+.fw-container-nav:after {
   content: " ";
   display: table; }
 
-.clearfix:after {
+.clearfix:after, .fw-container-nav:after {
   clear: both; }
 
-.clearfix {
+.clearfix, .fw-container-nav {
   *zoom: 1; }
 
 /* LAYOUT */
@@ -219,8 +220,7 @@ textarea {
     margin-right: 0.4em; }
 
 .content {
-  padding-right: 0;
-  overflow-x: scroll; }
+  padding-right: 0; }
   .content i {
     font-size: 1.4em;
     margin-right: 0.6em; }
@@ -245,13 +245,13 @@ textarea {
     font-family: 'Oxygen', Helvetica, Arial, sans-serif;
     font-size: 1.1em; }
 
-/* CREATE FORMS */
-.create form label {
+/* CREATE/EDIT FORMS */
+.create form label, .edit form label {
   display: inline; }
-.create form label + i {
+.create form label + i, .edit form label + i {
   color: #777777;
   font-size: 0.8em; }
-.create form textarea {
+.create form textarea, .edit form textarea {
   height: 180px; }
 
 /* CUSTOM SELECT2 STYLINGS */

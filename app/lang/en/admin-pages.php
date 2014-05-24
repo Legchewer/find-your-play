@@ -8,6 +8,8 @@ return [
     'kinds-sub' => 'view game kinds',
     'types' => 'Game types|Type',
     'types-sub' => 'view game types',
+    'players' => 'Game players|Players',
+    'players-sub' => 'view game players',
     'themes' => 'Themes|Theme',
     'themes-sub' => 'view themes',
     'functions' => 'Functions|Function',

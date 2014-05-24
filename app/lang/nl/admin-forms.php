@@ -84,6 +84,12 @@ return [
     'difficulty-name-en'      => 'naam (Engels)',
     'difficulty-name-ph'      => 'Geef de naam in',
     'difficulty-list'         => 'Lijst moeilijkheidsgraden',
+    // players
+    'players-create-title' => 'creëer nieuwe spelers',
+    'players-name-nl'      => 'naam (Nederlands)',
+    'players-name-en'      => 'naam (Engels)',
+    'players-name-ph'      => 'Geef de naam in',
+    'players-list'         => 'Lijst spelers',
     // themes
     'theme-create-title'    => 'creëer nieuw thema',
     'theme-name-nl'         => 'naam (Nederlands)',
@@ -100,5 +106,18 @@ return [
     'role-name-nl'      => 'naam (Nederlands)',
     'role-name-en'      => 'naam (Engels)',
     'role-name-ph'      => 'Geef de naam in',
-    'role-list'         => 'Lijst rollen'
+    'role-list'         => 'Lijst rollen',
+    // members
+    'member-create-title' => 'creëer nieuwe admin',
+    'person-email'      => 'Emailadres',
+    'person-email-ph'      => 'Geef het emailadres in',
+    'person-givenname'      => 'Voornaam',
+    'person-givenname-ph'      => 'Geef de voornaam in',
+    'person-surname'      => 'Achternaam',
+    'person-surname-ph'      => 'Geef de achternaam in',
+    'member-password'      => 'Wachtwoord',
+    'member-password-ph'      => 'Geef het wachtwoord in',
+    'member-repeat'      => 'Wachtwoord (opnieuw)',
+    'member-repeat-ph'      => 'Geef het wachtwoord opnieuw in',
+    'member-list'         => 'Lijst leden'
 ];

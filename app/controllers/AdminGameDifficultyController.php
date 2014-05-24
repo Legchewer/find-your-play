@@ -73,6 +73,56 @@ class AdminGameDifficultyController extends \BaseController {
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $difficulty = GameDifficulty::find($id);
+
+        return View::make('admin/difficulties/edit')
+            ->with('difficulty',$difficulty);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $difficulty = GameDifficulty::find($id);
+
+        $rules = [
+            'name_nl' => 'required_without:name_en' ,
+            'name_en' => 'required_without:name_nl'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+            $difficulty->game_difficulty_name_nl = Input::get('name_nl');
+            $difficulty->game_difficulty_name_en = Input::get('name_en');
+
+            // save changes
+            $difficulty->save();
+
+            return Redirect::route('admin.difficulties');
+
+        } else {
+
+            return Redirect::to('admin/difficulties/edit/' . $difficulty->game_difficulty_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

@@ -47,7 +47,7 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.themes.edit', [$theme->theme_id]) --}}">
+                            <a href="{{ URL::route('admin.themes.edit', [$theme->theme_id]) }}">
                                 <span data-tooltip class="has-tip" title="Edit thema"><i class="fa fa-pencil"></i></span>
                             </a>
 
@@ -72,7 +72,7 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.themes.edit', [$theme->theme_id]) --}}">
+                            <a href="{{ URL::route('admin.themes.edit', [$theme->theme_id]) }}">
                                 <span data-tooltip class="has-tip" title="Edit theme"><i class="fa fa-pencil"></i></span>
                             </a>
 

@@ -47,7 +47,7 @@
                     </td>
 
                     <td>
-                        <a href="{{-- URL::route('admin.roles.edit', [$role->role_id]) --}}">
+                        <a href="{{ URL::route('admin.roles.edit', [$role->role_id]) }}">
                             <span data-tooltip class="has-tip" title="Edit rol"><i class="fa fa-pencil"></i></span>
                         </a>
 
@@ -72,7 +72,7 @@
                     </td>
 
                     <td>
-                        <a href="{{-- URL::route('admin.roles.edit', [$role->role_id]) --}}">
+                        <a href="{{ URL::route('admin.roles.edit', [$role->role_id]) }}">
                             <span data-tooltip class="has-tip" title="Edit role"><i class="fa fa-pencil"></i></span>
                         </a>
 
