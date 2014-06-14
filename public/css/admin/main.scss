@@ -115,6 +115,9 @@ textarea{
     .nav-list{
       text-align: center;
       li{
+        &:last-of-type{
+          padding-right: 0;
+        }
         .active{
           color: $background;
         }
@@ -296,11 +299,25 @@ textarea{
   }
 }
 
+// regular content views (tables)
+
 .content{
   padding-right: 0;
-  i{
-    font-size: 1.4em;
-    margin-right: 0.6em;
+  .content-header{
+    position: relative;
+    i{
+      font-size: 1.4em;
+      margin-right: 0.6em;
+    }
+    .count{
+      font-family: 'Oxygen', Helvetica, Arial, sans-serif;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: $dark-grey;
+      position: absolute;
+      top: 1em;
+      right: 0;//1em;
+    }
   }
   .button{
     padding: 12px;
@@ -330,6 +347,83 @@ textarea{
     font-family: 'Oxygen', Helvetica, Arial, sans-serif;
     font-size: 1.1em;
   }
+
+  // feedback view
+
+  &.feedback{
+    .feedback-game{
+      margin: 0 auto 2em auto;
+      border: 1px solid #ccc;
+      .feedback-game-header{
+        background: $blue;
+        margin-bottom: 1em;
+        h2{
+          color: #fff;
+          font-size: 1.1em;
+        }
+      }
+      .feedback-game-info{
+        @extend .clearfix;
+        //padding: 1em;
+        padding-bottom: 1em;
+        .feedback-game-img{
+          max-height: 200px;
+          overflow: hidden;
+          margin-bottom: 1em;
+          //background: #fff;
+          img{
+            max-width: 100%;
+            height: auto;
+          }
+          p{
+            text-align: center;
+          }
+        }
+        .feedback-game-info-list{
+          ul{
+            li{
+              font-size: 1.1em;
+            }
+          }
+        }
+      }
+      .feedback-game-messages{
+        // show messages link
+        &>span{
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          text-align: center;
+          padding: 1em 0.9375rem;
+          font-weight: bold;
+          border-top: 1px solid #ccc;
+        }
+        ul{
+          display: none;
+          margin-left: 0;
+          li{
+            padding: 1em 0.9375rem;
+            &:first-of-type{
+              border-top: 1px solid #ccc;
+            }
+            &:nth-child(2n){
+              background: #f3f3f3;
+            }
+            h3{
+              font-size: 1.1em;
+              a{
+                margin-left: 1em;
+                //float: right;
+              }
+            }
+            .feedback-text{
+              padding-left: 1em;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* CREATE/EDIT FORMS */
@@ -342,6 +436,9 @@ textarea{
     label+i{
       color: $dark-grey;
       font-size: 0.8em;
+    }
+    img{
+      max-height: 200px;
     }
     textarea{
       height: 180px;

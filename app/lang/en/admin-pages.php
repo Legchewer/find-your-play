@@ -20,6 +20,8 @@ return [
     'difficulties-sub' => 'view difficulties',
     'budget-groups' => 'Budget groups|Budget group',
     'budget-groups-sub' => 'view budget groups',
+    'feedback' => 'Feedback',
+    'feedback-sub' => 'what are users saying?',
     'members' => 'Members|Member',
     'members-sub' => 'view members',
     'roles' => 'Roles|Role',

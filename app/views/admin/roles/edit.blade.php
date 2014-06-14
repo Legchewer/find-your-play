@@ -36,7 +36,7 @@
             {{ Form::text('name_en', $role->role_name_en, ['placeholder' => Lang::get('admin-forms.role-name-ph')]) }}
 
             {{ Form::submit(Lang::get('admin-forms.submit-update'), ['class' => 'button button-submit']), PHP_EOL }}
-            {{ HTML::link('/admin/kinds', Lang::get('admin-forms.role-list'), ['' => '']), PHP_EOL }}
+            {{ HTML::link('/admin/roles', Lang::get('admin-forms.role-list'), ['' => '']), PHP_EOL }}
             {{ Form::close(), PHP_EOL }}
 
         </div>

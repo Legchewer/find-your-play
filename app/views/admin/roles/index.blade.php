@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-user"></i> {{ Lang::choice('admin-pages.roles',1) }} <small>{{ Lang::get('admin-pages.roles-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -48,11 +50,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.roles.edit', [$role->role_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit rol"><i class="fa fa-pencil"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit rol"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.roles.destroy', [$role->role_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete rol"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete rol"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>
@@ -73,11 +75,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.roles.edit', [$role->role_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit role"><i class="fa fa-pencil"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit role"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.roles.destroy', [$role->role_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete role"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete role"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>

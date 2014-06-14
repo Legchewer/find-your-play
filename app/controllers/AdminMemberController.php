@@ -106,7 +106,6 @@ class AdminMemberController extends \BaseController {
      */
     public function create()
     {
-
         // rol is altijd admin
 
         return View::make('admin/members/create');
@@ -119,8 +118,6 @@ class AdminMemberController extends \BaseController {
      */
     public function store()
     {
-        var_dump(Input::all());
-
         $rules = [
             'person_email'    => 'required|email|unique:persons',
             'givenname' => 'required|min:2',
@@ -162,6 +159,115 @@ class AdminMemberController extends \BaseController {
             return Redirect::route('admin.members.create')
                 ->withInput()
                 ->withErrors($validator); // Maakt $errors in View.
+        }
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $member = Member::find($id);
+
+        return View::make('admin/members/edit')
+            ->with('member',$member);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        $member = Member::find($id);
+
+        $rules = [
+            'person_email'    => 'required|email',
+            'givenname' => 'required|min:2',
+            'surname' => 'required|min:2'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+            $member->person->person_email = Input::get('person_email');
+            $member->person->person_givenname = Input::get('givenname');
+            $member->person->person_surname = Input::get('surname');
+
+            $member->member_modified = date("Y-m-d H:i:s");
+
+            // save changes
+            $member->person->save(); // otherwise doesn't save?
+            $member->save();
+
+            return Redirect::route('admin.members');
+
+        } else {
+
+            return Redirect::to('admin/members/edit/' . $member->member_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
+    }
+
+    /**
+     * Show the form for changing the password.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function changePassword($id)
+    {
+        $member = Member::find($id);
+
+        return View::make('admin/members/password')
+            ->with('member',$member);
+    }
+
+    /**
+     * Update the password.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function passwordUpdate($id)
+    {
+        // TODO : EXTRA VELD VOOR EIGEN PASWOORD CONTROLE
+
+        $member = Member::find($id);
+
+        $rules = [
+            'password' => 'required|min:6',
+            'repeat' => 'required|same:password'
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+
+            // update data with $_POST values
+
+            $member->member_password = Hash::make(Input::get('password'));
+
+            $member->member_modified = date("Y-m-d H:i:s");
+
+            // save changes
+            $member->save();
+
+            return Redirect::route('admin.root');
+
+        } else {
+
+            return Redirect::to('admin/members/password/' . $member->member_id)
+                ->withInput()
+                ->withErrors($validator);
         }
     }
 

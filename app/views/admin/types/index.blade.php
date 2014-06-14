@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-folder-open"></i> {{ Lang::choice('admin-pages.types',1) }} <small>{{ Lang::get('admin-pages.types-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -57,11 +59,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.types.edit', [$type->game_type_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.types.destroy', [$type->game_type_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -90,11 +92,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.types.edit', [$type->game_type_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit type"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.types.destroy', [$type->game_type_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete type"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>

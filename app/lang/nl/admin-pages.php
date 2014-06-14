@@ -20,6 +20,8 @@ return [
     'difficulties-sub' => 'bekijk moeilijkheidsgraden',
     'budget-groups' => 'Budget groepen|Budget groep',
     'budget-groups-sub' => 'bekijk budget groepen',
+    'feedback' => 'Feedback',
+    'feedback-sub' => 'wat zeggen gebruikers?',
     'members' => 'Leden|Lid',
     'members-sub' => 'bekijk leden',
     'roles' => 'Rollen|Rol',

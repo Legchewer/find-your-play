@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-clipboard"></i> {{ Lang::choice('admin-pages.kinds',1) }} <small>{{ Lang::get('admin-pages.kinds-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -48,11 +50,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.kinds.edit', [$kind->game_kind_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit spelsoort"><i class="fa fa-pencil"></i></span>
+                                <span  class="has-tip" title="Edit spelsoort"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.kinds.destroy', [$kind->game_kind_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete spelsoort"><i class="fa fa-trash-o"></i></span>
+                                <span  class="has-tip" title="Permadelete spelsoort"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -73,11 +75,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.kinds.edit', [$kind->game_kind_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit kind"><i class="fa fa-pencil"></i></span>
+                            <span  class="has-tip" title="Edit kind"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.kinds.destroy', [$kind->game_kind_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete kind"><i class="fa fa-trash-o"></i></span>
+                            <span  class="has-tip" title="Permadelete kind"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>

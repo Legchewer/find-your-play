@@ -104,4 +104,12 @@ class Member extends Eloquent implements UserInterface, RemindableInterface {
         return $this->belongsToMany('Client','members_has_clients', 'member_id', 'client_id');
     }
 
+    /**
+     * @return array
+     */
+    public function feedback()
+    {
+        return $this->hasMany('Feedback');
+    }
+
 }

@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-users"></i> {{ Lang::choice('admin-pages.members',1) }} <small>{{ Lang::get('admin-pages.members-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -75,12 +77,12 @@
                     </td>
 
                     <td>
-                        <a href="{{-- URL::route('admin.members.edit', [$member->member_id]) --}}">
-                            <span data-tooltip class="has-tip" title="Edit lid"><i class="fa fa-pencil"></i></span>
+                        <a href="{{ URL::route('admin.members.edit', [$member->member_id]) }}">
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit lid"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.members.destroy', [$member->member_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete lid"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete lid"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>
@@ -124,12 +126,12 @@
                     </td>
 
                     <td>
-                        <a href="{{-- URL::route('admin.members.edit', [$member->member_id]) --}}">
-                            <span data-tooltip class="has-tip" title="Edit member"><i class="fa fa-pencil"></i></span>
+                        <a href="{{ URL::route('admin.members.edit', [$member->member_id]) }}">
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit member"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.members.destroy', [$member->member_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete member"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete member"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>

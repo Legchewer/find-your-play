@@ -2,6 +2,7 @@
 
 return [
     'welcome' => 'Welcome',
-    'logout' => 'Logout'
+    'logout' => 'Logout',
+    'change-password' => 'Change password'
 
 ];

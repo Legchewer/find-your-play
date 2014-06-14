@@ -3,6 +3,7 @@
 return [
     'submit-add'        => 'Voeg toe',
     'submit-update'     => 'Opslaan',
+    'return-dashboard'     => 'Terug naar dashboard',
     'error-translation' => 'Vul tenminste één taal in per veld',
     'one-language'      => '(minstens één taal)',
     // login
@@ -47,6 +48,8 @@ return [
     'game-tags-en'      => 'tags (Engels)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',
     'game-image'     => 'kies afbeelding',
+    'game-no-image' => 'momenteel is er geen afbeelding',
+    'game-current-image' => 'huidige afbeelding',
     'game-difficulty'     => 'moeilijkheidsgraad',
     'game-type'     => 'type',
     'game-theme'     => 'thema',

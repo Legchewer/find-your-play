@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-money"></i> {{ Lang::choice('admin-pages.budget-groups',1) }} <small>{{ Lang::get('admin-pages.budget-groups-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -43,11 +45,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.budgetgroups.edit', [$budgetgroup->budget_group_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit budgetgroep"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit budgetgroep"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.budgetgroups.destroy', [$budgetgroup->budget_group_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete budgetgroep"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete budgetgroep"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>

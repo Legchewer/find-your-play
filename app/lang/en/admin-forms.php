@@ -3,6 +3,7 @@
 return [
     'submit-add'        => 'Create',
     'submit-update'     => 'Save',
+    'return-dashboard'  => 'Return to dashboard',
     'error-translation' => 'Enter at least one language for each field',
     'one-language'      => '(at least one language)',
     // login
@@ -47,6 +48,8 @@ return [
     'game-tags-en'      => 'tags (English)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',
     'game-image'     => 'choose image',
+    'game-no-image' => 'currently, there is no icon',
+    'game-current-image' => 'current image',
     'game-difficulty'     => 'difficulty',
     'game-type'     => 'type',
     'game-theme'     => 'theme',

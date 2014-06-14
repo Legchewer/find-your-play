@@ -115,5 +115,12 @@ class Game extends Eloquent {
         return $this->belongsTo('GamePlayers');
     }
 
+    /**
+     * @return array
+     */
+    public function feedback()
+    {
+        return $this->hasMany('Feedback');
+    }
 
 }

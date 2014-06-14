@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-lightbulb-o"></i> {{ Lang::choice('admin-pages.functions',1) }} <small>{{ Lang::get('admin-pages.functions-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -57,11 +59,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.functions.edit', [$function->game_function_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.functions.destroy', [$function->game_function_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -90,11 +92,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.functions.edit', [$function->game_function_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit function"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.functions.destroy', [$function->game_function_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete function"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>

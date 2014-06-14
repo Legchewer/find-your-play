@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-male"></i> {{ Lang::choice('admin-pages.players',1) }} <small>{{ Lang::get('admin-pages.players-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -48,11 +50,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.players.edit', [$players_s->game_players_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit spelers"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit spelers"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.players.destroy', [$players_s->game_players_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete spelers"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete spelers"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -73,11 +75,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.players.edit', [$players_s->game_players_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit players"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit players"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.players.destroy', [$players_s->game_players_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete players"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete players"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>

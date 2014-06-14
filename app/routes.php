@@ -181,8 +181,28 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/members/create', ['as' => 'admin.members.create', 'uses' => 'AdminMemberController@create'])
         ->before('auth');
 
-    // store new role
+    // store new member
     Route::post('/members/store', ['as' => 'admin.members.store', 'uses' => 'AdminMemberController@store'])
+        ->before('auth','csrf');
+
+    // edit member
+    Route::get('/members/edit/{id}', ['as' => 'admin.members.edit', 'uses' => 'AdminMemberController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update member
+    Route::post('/members/update/{id}', ['as' => 'admin.members.update', 'uses' => 'AdminMemberController@update'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth','csrf');
+
+    // change password
+    Route::get('/members/password/{id}', ['as' => 'admin.members.password', 'uses' => 'AdminMemberController@changePassword'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update password
+    Route::post('/members/pwupdate/{id}', ['as' => 'admin.members.pwupdate', 'uses' => 'AdminMemberController@passwordUpdate'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -231,6 +251,16 @@ Route::group(['prefix' => 'admin'], function() {
 
     // store new game
     Route::post('/games/store', ['as' => 'admin.games.store', 'uses' => 'AdminGameController@store'])
+        ->before('auth','csrf');
+
+    // edit game
+    Route::get('/games/edit/{id}', ['as' => 'admin.games.edit', 'uses' => 'AdminGameController@edit'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
+
+    // update game
+    Route::post('/games/update/{id}', ['as' => 'admin.games.update', 'uses' => 'AdminGameController@update'])
+        ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
     /*
@@ -481,7 +511,18 @@ Route::group(['prefix' => 'admin'], function() {
         ->where(['id' => '[0-9]+'])
         ->before('auth','csrf');
 
-    // FEEDBACK ANDERS DOEN (geen tabel?)
+    /*
+     * Feedback
+     */
+
+    // feedback list
+    Route::get('/feedback', ['as'   => 'admin.feedback', 'uses' => 'AdminFeedbackController@index'])
+        ->before('auth');
+
+    // hard delete feedback message
+    Route::get('/feedback/destroy/{id}', ['as' => 'admin.feedback.destroy', 'uses' => 'AdminFeedbackController@destroy'])
+        ->where(['id' => '[0-9]+'])
+        ->before('auth');
 
 });
 
@@ -491,3 +532,14 @@ Route::get('/404', ['as' => '404', function()
 
 }
 ]);
+
+// RESTful API (only for internal use)
+
+Route::group(['prefix' => 'api'], function ()
+{
+
+    /* route to get specific game's functions */
+    Route::get('/game/{id}/functions', 'RestApiController@getFunctionsForGame')
+        ->where(['id' => '[0-9]+']);
+
+});

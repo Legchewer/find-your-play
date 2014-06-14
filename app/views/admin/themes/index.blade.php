@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-rocket"></i> {{ Lang::choice('admin-pages.themes',1) }} <small>{{ Lang::get('admin-pages.themes-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -48,11 +50,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.themes.edit', [$theme->theme_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit thema"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit thema"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.themes.destroy', [$theme->theme_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -73,11 +75,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.themes.edit', [$theme->theme_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit theme"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit theme"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.themes.destroy', [$theme->theme_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete thema"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>

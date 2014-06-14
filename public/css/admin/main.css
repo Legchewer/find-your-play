@@ -51,16 +51,17 @@ textarea {
   resize: none; }
 
 /* CLEARFIX */
-.clearfix:before, .fw-container-nav:before,
+.clearfix:before, .fw-container-nav:before, .content.feedback .feedback-game .feedback-game-info:before,
 .clearfix:after,
-.fw-container-nav:after {
+.fw-container-nav:after,
+.content.feedback .feedback-game .feedback-game-info:after {
   content: " ";
   display: table; }
 
-.clearfix:after, .fw-container-nav:after {
+.clearfix:after, .fw-container-nav:after, .content.feedback .feedback-game .feedback-game-info:after {
   clear: both; }
 
-.clearfix, .fw-container-nav {
+.clearfix, .fw-container-nav, .content.feedback .feedback-game .feedback-game-info {
   *zoom: 1; }
 
 /* LAYOUT */
@@ -81,6 +82,8 @@ textarea {
     margin-bottom: 24px; }
     .fw-container-nav .main-nav .nav-list {
       text-align: center; }
+      .fw-container-nav .main-nav .nav-list li:last-of-type {
+        padding-right: 0; }
       .fw-container-nav .main-nav .nav-list li .active {
         color: #f4f4f4; }
       .fw-container-nav .main-nav .nav-list li a {
@@ -221,9 +224,19 @@ textarea {
 
 .content {
   padding-right: 0; }
-  .content i {
-    font-size: 1.4em;
-    margin-right: 0.6em; }
+  .content .content-header {
+    position: relative; }
+    .content .content-header i {
+      font-size: 1.4em;
+      margin-right: 0.6em; }
+    .content .content-header .count {
+      font-family: 'Oxygen', Helvetica, Arial, sans-serif;
+      font-size: 2.2em;
+      font-weight: bold;
+      color: #777777;
+      position: absolute;
+      top: 1em;
+      right: 0; }
   .content .button {
     padding: 12px;
     margin-top: 1.6em;
@@ -244,6 +257,51 @@ textarea {
     color: #fff;
     font-family: 'Oxygen', Helvetica, Arial, sans-serif;
     font-size: 1.1em; }
+  .content.feedback .feedback-game {
+    margin: 0 auto 2em auto;
+    border: 1px solid #ccc; }
+    .content.feedback .feedback-game .feedback-game-header {
+      background: #b9d9dc;
+      margin-bottom: 1em; }
+      .content.feedback .feedback-game .feedback-game-header h2 {
+        color: #fff;
+        font-size: 1.1em; }
+    .content.feedback .feedback-game .feedback-game-info {
+      padding-bottom: 1em; }
+      .content.feedback .feedback-game .feedback-game-info .feedback-game-img {
+        max-height: 200px;
+        overflow: hidden;
+        margin-bottom: 1em; }
+        .content.feedback .feedback-game .feedback-game-info .feedback-game-img img {
+          max-width: 100%;
+          height: auto; }
+        .content.feedback .feedback-game .feedback-game-info .feedback-game-img p {
+          text-align: center; }
+      .content.feedback .feedback-game .feedback-game-info .feedback-game-info-list ul li {
+        font-size: 1.1em; }
+    .content.feedback .feedback-game .feedback-game-messages > span {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+      padding: 1em 0.9375rem;
+      font-weight: bold;
+      border-top: 1px solid #ccc; }
+    .content.feedback .feedback-game .feedback-game-messages ul {
+      display: none;
+      margin-left: 0; }
+      .content.feedback .feedback-game .feedback-game-messages ul li {
+        padding: 1em 0.9375rem; }
+        .content.feedback .feedback-game .feedback-game-messages ul li:first-of-type {
+          border-top: 1px solid #ccc; }
+        .content.feedback .feedback-game .feedback-game-messages ul li:nth-child(2n) {
+          background: #f3f3f3; }
+        .content.feedback .feedback-game .feedback-game-messages ul li h3 {
+          font-size: 1.1em; }
+          .content.feedback .feedback-game .feedback-game-messages ul li h3 a {
+            margin-left: 1em; }
+        .content.feedback .feedback-game .feedback-game-messages ul li .feedback-text {
+          padding-left: 1em; }
 
 /* CREATE/EDIT FORMS */
 .create form label, .edit form label {
@@ -251,6 +309,8 @@ textarea {
 .create form label + i, .edit form label + i {
   color: #777777;
   font-size: 0.8em; }
+.create form img, .edit form img {
+  max-height: 200px; }
 .create form textarea, .edit form textarea {
   height: 180px; }
 

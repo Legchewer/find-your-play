@@ -16,7 +16,16 @@ $version = [
     </div>
     <div class="subnav large-4 medium-4 small-4 columns">
         <ul class="inline-list right">
-            <!-- TEMP -->
+            @if(Auth::User())
+            <li>
+                <a href="#" data-dropdown="dr0p">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
+                <ul id="dr0p" class="tiny f-dropdown" data-dropdown-content>
+                    <li><a href="{{ URL::route('admin.members.password', [Auth::user()->member_id]) }}">{{ Lang::get('admin-general.change-password') }}</a></li>
+                    <li>{{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}</li>
+                </ul>
+            </li>
+            <li class="divider">&nbsp;</li>
+            @endif
             <li>
                 @if (App::getLocale() == 'nl')
                 {{ HTML::link('/admin/language/nl', 'NL', ['class' => 'language active']), PHP_EOL }}
@@ -30,16 +39,6 @@ $version = [
                 @else
                 {{ HTML::link('/admin/language/en', 'EN', ['class' => 'language']), PHP_EOL }}
                 @endif
-            </li>
-            <li>
-                &nbsp;|&nbsp;
-            </li>
-            <li>
-                {{ Lang::get('admin-general.welcome') }} {{ Auth::user()->person->person_givenname }}
-            </li>
-            <li class="divider">&nbsp;</li>
-            <li>
-                {{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}
             </li>
         </ul>
     </div>
@@ -61,7 +60,7 @@ $version = [
                         <li><a href="{{ URL::route('admin.categories') }}"><i class="fa fa-book"></i> {{ Lang::choice('admin-pages.function-categories',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.difficulties') }}"><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties',1) }}</a></li>
                         <li><a href="{{ URL::route('admin.budgetgroups') }}"><i class="fa fa-money"></i> {{ Lang::choice('admin-pages.budget-groups',1) }}</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> Feedback</a></li>
+                        <li><a href="{{ URL::route('admin.feedback') }}"><i class="fa fa-comments"></i> Feedback</a></li>
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns second">

@@ -49,9 +49,11 @@
             {{ Form::select('difficulty', $difficulties) }}
 
             {{ Form::label('age_nl', ucfirst(Lang::get('admin-forms.game-age-nl'))) }}
+            <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
             {{ Form::text('age_nl', '', ['placeholder' => Lang::get('admin-forms.game-age-ph')]) }}
 
             {{ Form::label('age_en', ucfirst(Lang::get('admin-forms.game-age-en'))) }}
+            <i class="fa fa-asterisk"> {{ Lang::get('admin-forms.one-language') }}</i>
             {{ Form::text('age_en', '', ['placeholder' => Lang::get('admin-forms.game-age-ph')]) }}
 
             {{ Form::label('players', ucfirst(Lang::get('admin-forms.game-players'))) }}
@@ -99,16 +101,13 @@
             {{ Form::textarea('therapeutic_en', '', ['class' => 'ckeditor','placeholder' => Lang::get('admin-forms.game-therapeutic-ph')]) }}
 
             {{ Form::label('image', ucfirst(Lang::get('admin-forms.game-image'))) }}
-            <!--<div class="fileUpload button">
-                <span>Upload</span>-->
             {{ Form::file('image', ['class' => 'upload']) }}
-            <!--</div>-->
 
             {{ Form::label('features_nl', ucfirst(Lang::get('admin-forms.game-features-nl'))) }}
             {{ Form::textarea('features_nl', '', ['class' => 'ckeditor','placeholder' => Lang::get('admin-forms.game-features-ph')]) }}
 
             {{ Form::label('features_en', ucfirst(Lang::get('admin-forms.game-features-en'))) }}
-            {{ Form::textarea('features_en', '', ['class' => 'ckeditor','placeholder' => Lang::get('admin-forms.game-features-ph')]) }}
+            {{ Form::textarea('features_en', '', ['placeholder' => Lang::get('admin-forms.game-features-ph')]) }}
 
             {{ Form::label('tags_nl', ucfirst(Lang::get('admin-forms.game-tags-nl'))) }}
             {{ Form::text('tags_nl', '', ['placeholder' => Lang::get('admin-forms.game-tags-ph')]) }}

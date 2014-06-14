@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-puzzle-piece"></i> {{ Lang::choice('admin-pages.games',1) }} <small>{{ Lang::get('admin-pages.games-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -112,12 +114,12 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.games.edit', [$game->game_id]) --}}">
-                                <span data-tooltip class="has-tip" title="Edit spel"><i class="fa fa-pencil"></i></span>
+                            <a href="{{ URL::route('admin.games.edit', [$game->game_id]) }}">
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit spel"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.games.destroy', [$game->game_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete spel"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete spel"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -196,12 +198,12 @@
                         </td>
 
                         <td>
-                            <a href="{{-- URL::route('admin.games.edit', [$game->game_id]) --}}">
-                                <span data-tooltip class="has-tip" title="Edit game"><i class="fa fa-pencil"></i></span>
+                            <a href="{{ URL::route('admin.games.edit', [$game->game_id]) }}">
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit game"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.games.destroy', [$game->game_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete game"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" data-options="disable_for_touch:true" class="has-tip" title="Permadelete game"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>

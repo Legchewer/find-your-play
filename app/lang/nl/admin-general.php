@@ -2,6 +2,7 @@
 
 return [
     'welcome' => 'Welkom',
-    'logout' => 'Uitloggen'
+    'logout' => 'Uitloggen',
+    'change-password' => 'Verander wachtwoord'
 
 ];

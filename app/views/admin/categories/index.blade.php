@@ -18,6 +18,8 @@
 
             <h1><i class="fa fa-book"></i> {{ Lang::choice('admin-pages.function-categories',1) }} <small>{{ Lang::get('admin-pages.function-categories-sub') }}</small></h1>
 
+            <span class="count">{{ $count }}</span>
+
         </div>
     </div>
 
@@ -48,11 +50,11 @@
 
                         <td>
                             <a href="{{ URL::route('admin.categories.edit', [$category->game_function_category_id]) }}">
-                                <span data-tooltip class="has-tip" title="Edit categorie"><i class="fa fa-pencil"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit categorie"><i class="fa fa-pencil"></i></span>
                             </a>
 
                             <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.categories.destroy', [$category->game_function_category_id]) }}" >
-                                <span data-tooltip class="has-tip" title="Permadelete categorie"><i class="fa fa-trash-o"></i></span>
+                                <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete categorie"><i class="fa fa-trash-o"></i></span>
                             </a>
 
                         </td>
@@ -73,11 +75,11 @@
 
                     <td>
                         <a href="{{ URL::route('admin.categories.edit', [$category->game_function_category_id]) }}">
-                            <span data-tooltip class="has-tip" title="Edit category"><i class="fa fa-pencil"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Edit category"><i class="fa fa-pencil"></i></span>
                         </a>
 
                         <a class="confirm" data-reveal-id="warning" href="{{ URL::route('admin.categories.destroy', [$category->game_function_category_id]) }}" >
-                            <span data-tooltip class="has-tip" title="Permadelete category"><i class="fa fa-trash-o"></i></span>
+                            <span data-tooltip data-options="disable_for_touch:true" class="has-tip" title="Permadelete category"><i class="fa fa-trash-o"></i></span>
                         </a>
 
                     </td>
