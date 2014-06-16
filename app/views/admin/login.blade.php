@@ -33,7 +33,7 @@
     <div class="checkboxFive">
         <input type="checkbox" value="1" id="checkboxFiveInput" name="remember" />
         <label for="checkboxFiveInput"></label>
-        <span class="remember-label">Remember me</span>
+        <span class="checkbox-label">Remember me</span>
     </div>
 
     {{ Form::submit(Lang::get('admin-forms.login-enter'), ['class' => 'button expand']), PHP_EOL }}

@@ -104,7 +104,7 @@
             {{ Form::file('image', ['class' => 'upload']) }}
 
             {{ Form::label('features_nl', ucfirst(Lang::get('admin-forms.game-features-nl'))) }}
-            {{ Form::textarea('features_nl', '', ['class' => 'ckeditor','placeholder' => Lang::get('admin-forms.game-features-ph')]) }}
+            {{ Form::textarea('features_nl', '', ['placeholder' => Lang::get('admin-forms.game-features-ph')]) }}
 
             {{ Form::label('features_en', ucfirst(Lang::get('admin-forms.game-features-en'))) }}
             {{ Form::textarea('features_en', '', ['placeholder' => Lang::get('admin-forms.game-features-ph')]) }}

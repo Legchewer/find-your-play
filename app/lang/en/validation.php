@@ -100,6 +100,8 @@ return array(
         'person_email'    => '<strong>Email adress</strong>',
         'password'        => '<strong>Password</strong>',
         'password_repeat' => '<strong>Repeat password</strong>',
+        'old_password' => '<strong>Current password</strong>',
+        'old_repeat' => '<strong>Repeat current password</strong>',
         'repeat'          => '<strong>Password (repeat)</strong>',
         'role'            => 'user',
         'name_nl'         => '<strong>Name (Dutch)</strong>',

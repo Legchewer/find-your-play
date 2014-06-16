@@ -220,12 +220,11 @@ class AdminMemberController extends \BaseController {
     /**
      * Show the form for changing the password.
      *
-     * @param  int  $id
      * @return Response
      */
-    public function changePassword($id)
+    public function changePassword()
     {
-        $member = Member::find($id);
+        $member = Auth::user();
 
         return View::make('admin/members/password')
             ->with('member',$member);
@@ -234,16 +233,16 @@ class AdminMemberController extends \BaseController {
     /**
      * Update the password.
      *
-     * @param  int  $id
      * @return Response
      */
-    public function passwordUpdate($id)
+    public function passwordUpdate()
     {
-        // TODO : EXTRA VELD VOOR EIGEN PASWOORD CONTROLE
 
-        $member = Member::find($id);
+        $member = Auth::user();
 
         $rules = [
+            'old_password' => 'required',
+            'old_repeat' => 'required|same:old_password',
             'password' => 'required|min:6',
             'repeat' => 'required|same:password'
         ];
@@ -252,20 +251,45 @@ class AdminMemberController extends \BaseController {
 
         if ($validator->passes()) {
 
-            // update data with $_POST values
+            $old_pw = Input::get('old_password');
 
-            $member->member_password = Hash::make(Input::get('password'));
+            // check if password is correct
+            if(Hash::check($old_pw, $member->member_password)){
 
-            $member->member_modified = date("Y-m-d H:i:s");
+                // update data with $_POST values
 
-            // save changes
-            $member->save();
+                $member->member_password = Hash::make(Input::get('password'));
 
-            return Redirect::route('admin.root');
+                $member->member_modified = date("Y-m-d H:i:s");
+
+                // save changes
+                $member->save();
+
+                return Redirect::route('admin.root');
+
+            } else {
+
+                // set error message based on language
+
+                if (App::getLocale() == 'nl'){
+
+                    return Redirect::to('admin/members/password')
+                        ->withInput()
+                        ->with('auth-error-message', 'Verkeerd wachtwoord');
+
+                } else {
+
+                    return Redirect::to('admin/members/password')
+                        ->withInput()
+                        ->with('auth-error-message', 'Wrong password');
+
+                }
+
+            }
 
         } else {
 
-            return Redirect::to('admin/members/password/' . $member->member_id)
+            return Redirect::to('admin/members/password')
                 ->withInput()
                 ->withErrors($validator);
         }

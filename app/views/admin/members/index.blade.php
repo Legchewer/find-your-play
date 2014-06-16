@@ -29,10 +29,10 @@
             <table class="members">
                 <thead>
                 <tr>
-                    <th>{{ Lang::get('table_general.more-info') }}</th>
+                    <th class="show-for-large-up">{{ Lang::get('table_general.more-info') }}</th>
                     <th>{{ Lang::get('table_general.name') }}</th>
-                    <th>{{ Lang::get('table_specific.email') }}</th>
-                    <th>{{ Lang::get('table_specific.role') }}</th>
+                    <th class="show-for-medium-up">{{ Lang::get('table_specific.email') }}</th>
+                    <th class="show-for-medium-up">{{ Lang::get('table_specific.role') }}</th>
                     <th>{{ Lang::get('table_general.actions') }}</th>
                 </tr>
                 </thead>
@@ -44,7 +44,7 @@
                 @foreach ($members as $member)
                 <tr class="member-row" id="member-row-{{ $member->member_id }}">
 
-                    <td class="more-info">
+                    <td class="more-info show-for-large-up">
                         <span data-tooltip class="has-tip tip-top" title="
                             {{ Lang::get('table_general.created') }}:
                             {{ $member->member_created }}
@@ -68,11 +68,11 @@
                         {{ $member->person->person_givenname }} {{ $member->person->person_surname }}
                     </td>
 
-                    <td>
+                    <td class="show-for-medium-up">
                         {{ $member->person->person_email }}
                     </td>
 
-                    <td>
+                    <td class="show-for-medium-up">
                         {{ $member->role->role_name_nl }}
                     </td>
 
@@ -93,7 +93,7 @@
 
                 @foreach ($members as $member)
                 <tr class="member-row" id="member-row-{{ $member->member_id }}">
-                    <td class="more-info">
+                    <td class="more-info show-for-large-up">
                         <span data-tooltip class="has-tip tip-top" title="
                             {{ Lang::get('table_general.created') }}:
                             {{ $member->member_created }}
@@ -117,11 +117,11 @@
                         {{ $member->person->person_givenname }} {{ $member->person->person_surname }}
                     </td>
 
-                    <td>
+                    <td class="show-for-medium-up">
                         {{ $member->person->person_email }}
                     </td>
 
-                    <td>
+                    <td class="show-for-medium-up">
                         {{ $member->role->role_name_en }}
                     </td>
 

@@ -43,7 +43,8 @@ return [
     'game-therapeutic-ph'      => 'Vul de therapeutische fiche in',
     'game-features-nl'     => 'spel kenmerken (Nederlands)',
     'game-features-en'      => 'spel kenmerken (Engels)',
-    'game-features-ph'      => 'e.g. naam, waarde <br/> naam, waarde',
+    // tabs are a "hack" to get multiline placeholders
+    'game-features-ph'      => 'e.g. naam, waarde                                                                                                                                                                                                                                                                                                                                                                                                                                                                    naam, waarde',
     'game-tags-nl'     => 'tags (Nederlands)',
     'game-tags-en'      => 'tags (Engels)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',
@@ -120,7 +121,10 @@ return [
     'person-surname-ph'      => 'Geef de achternaam in',
     'member-password'      => 'Wachtwoord',
     'member-password-ph'      => 'Geef het wachtwoord in',
-    'member-repeat'      => 'Wachtwoord (opnieuw)',
+    'member-new-password'      => 'Nieuw wachtwoord',
+    'member-old-password'      => 'Huidig wachtwoord',
+    'member-old-repeat'      => 'Herhaal huidig wachtwoord',
+    'member-repeat'      => 'Herhaal wachtwoord',
     'member-repeat-ph'      => 'Geef het wachtwoord opnieuw in',
     'member-list'         => 'Lijst leden'
 ];

@@ -105,6 +105,8 @@ return array(
         'person_email'    => '<strong>Emailadres</strong>',
         'password'        => '<strong>Wachtwoord</strong>',
         'password_repeat' => '<strong>Wachtwoord herhalen</strong>',
+        'old_password' => '<strong>Huidig wachtwoord</strong>',
+        'old_repeat' => '<strong>Herhaal huidig wachtwoord</strong>',
         'repeat'          => '<strong>Wachtwoord (opnieuw)</strong>',
         'role'            => 'gebruiker',
         'name_nl'         => '<strong>Naam (Nederlands)</strong>',

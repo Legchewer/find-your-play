@@ -33,6 +33,7 @@
                     <th>{{ Lang::get('table_general.actions') }}</th>
                 </tr>
                 </thead>
+
                 <tbody>
 
                 {{-- LANGUAGE CHECK --}}

@@ -10,17 +10,17 @@ $version = [
 <body>
 
 <div class="header row">
-    <div class="logo large-8 medium-8 small-8 columns clearfix">
+    <div class="logo large-8 medium-8 small-12 columns clearfix">
         <a href="{{ URL::route('admin.dashboard') }}" alt="dashboard" >{{ HTML::image('images/logo-admin.png', 'Find your Play', ['class' => 'left', 'title' => 'Find your Play']) }}</a>
         <h1 class="hide">Find Your Play Admin</h1>
     </div>
-    <div class="subnav large-4 medium-4 small-4 columns">
+    <div class="subnav large-4 medium-4 small-12 columns">
         <ul class="inline-list right">
             @if(Auth::User())
             <li>
                 <a href="#" data-dropdown="dr0p">{{ Auth::user()->person->person_givenname }} <i class="fa fa-caret-down"></i></a>
                 <ul id="dr0p" class="tiny f-dropdown" data-dropdown-content>
-                    <li><a href="{{ URL::route('admin.members.password', [Auth::user()->member_id]) }}">{{ Lang::get('admin-general.change-password') }}</a></li>
+                    <li><a href="{{ URL::route('admin.members.password') }}">{{ Lang::get('admin-general.change-password') }}</a></li>
                     <li>{{ HTML::link('/admin/logout', Lang::get('admin-general.logout'), ['' => '']), PHP_EOL }}</li>
                 </ul>
             </li>
@@ -71,7 +71,7 @@ $version = [
                     </ul>
                 </li>
                 <li class="large-4 medium-4 columns last">
-                    <a href="#"><i class="fa fa-cogs fa-lg"></i> {{ Lang::get('admin-pages.settings') }}</a>
+                    <a href="{{ URL::route('admin.settings') }}"><i class="fa fa-cogs fa-lg"></i> {{ Lang::get('admin-pages.settings') }}</a>
                 </li>
             </ul>
         </nav>
@@ -83,7 +83,7 @@ $version = [
 
 <div class="fw-container-footer">
     <div class="footer row">
-        <p>Copyright &copy; Find your Play. Alle rechten voorbehouden.</p>
+        <p>Copyright &copy; Find your Play.<br /> Alle rechten voorbehouden.</p>
     </div>
 </div>
 

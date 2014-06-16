@@ -43,7 +43,8 @@ return [
     'game-therapeutic-ph'      => 'Fill in therapeutic file',
     'game-features-nl'     => 'game features (Dutch)',
     'game-features-en'      => 'game features (Engels)',
-    'game-features-ph'      => 'e.g. name, value <br/> name, value',
+    // tabs are a "hack" to get multiline placeholders
+    'game-features-ph'      => 'e.g. name, value                                                                                                                                                                                                                                                                                                                                                                                                                                                                name, value',
     'game-tags-nl'     => 'tags (Dutch)',
     'game-tags-en'      => 'tags (English)',
     'game-tags-ph'      => 'e.g. tag 1, tag 2, tag 3',
@@ -120,7 +121,10 @@ return [
     'person-surname-ph'      => 'Enter surname',
     'member-password'      => 'Password',
     'member-password-ph'      => 'Enter password',
-    'member-repeat'      => 'Password (repeat)',
+    'member-new-password'      => 'Enter new password',
+    'member-old-password'      => 'Enter current password',
+    'member-old-repeat'      => 'Repeat current password',
+    'member-repeat'      => 'Repeat password',
     'member-repeat-ph'      => 'Enter the password again',
     'member-list'         => 'Member list'
 

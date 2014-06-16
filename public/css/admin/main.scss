@@ -25,6 +25,11 @@ input:focus {
   outline:none;
 }
 
+input[type="checkbox"]{
+  width: 2em;
+  height: 14px;
+}
+
 body{
   padding:    0;
   margin:     0;
@@ -67,6 +72,9 @@ li{
 textarea{
   resize: none;
 }
+.alert-msg{
+  font-size: 1rem;
+}
 
 /* CLEARFIX */
 .clearfix:before,
@@ -88,7 +96,7 @@ textarea{
   .logo{
     padding: 12px;
     img{
-      //width: 42px;
+      //max-height: 110px;
     }
   }
 }
@@ -99,9 +107,16 @@ textarea{
   .divider{
     border-right: 1px solid $dark-grey + 40;
   }
-  // TEMP
   .active{
     color: $blue - 40;
+  }
+  .f-dropdown{
+    li{
+      a{
+        font-family: 'Oxygen', Helvetica, Arial, sans-serif;
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -116,7 +131,7 @@ textarea{
       text-align: center;
       li{
         &:last-of-type{
-          padding-right: 0;
+          //padding-right: 0;
         }
         .active{
           color: $background;
@@ -228,7 +243,7 @@ textarea{
   width: 25px;
   position: relative;
   margin-bottom: 1em;
-  .remember-label{
+  .checkbox-label{
     display: block;
     position: absolute;
     left: 38px;
@@ -302,7 +317,7 @@ textarea{
 // regular content views (tables)
 
 .content{
-  padding-right: 0;
+  //padding-right: 0;
   .content-header{
     position: relative;
     i{
@@ -315,8 +330,8 @@ textarea{
       font-weight: bold;
       color: $dark-grey;
       position: absolute;
-      top: 1em;
-      right: 0;//1em;
+      top: 0.55em;
+      right: 1rem; // zelfde als padding van columns div
     }
   }
   .button{
@@ -351,6 +366,12 @@ textarea{
   // feedback view
 
   &.feedback{
+    .feedback-list{
+      &>li{
+        //width: 50%;
+        //float: left;
+      }
+    }
     .feedback-game{
       margin: 0 auto 2em auto;
       border: 1px solid #ccc;
@@ -424,6 +445,51 @@ textarea{
       }
     }
   }
+
+  // dashboard view
+  &.dashboard{
+    .dashboard-info{
+      padding-top: 2em;
+      .dashboard-info-panel{
+        margin-bottom: 2em;
+        .panel-header{
+          background: $blue;
+          padding: 0.2em 0.8em;
+          h2{
+            color: #fff;
+            font-size: 2em;
+            i{
+              padding-top: 0.2em;
+              margin-right: 0.2em;
+              float: right;
+            }
+          }
+        }
+        .panel-content{
+          border: 1px solid #ccc;
+          padding: 0.6em 0.8em;
+          ul{
+            li{
+              font-size: 1.1em;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // settings
+
+  &.settings{
+
+    form{
+      label{
+        display: inline;
+        font-size: 1.2em;
+      }
+    }
+
+  }
 }
 
 /* CREATE/EDIT FORMS */
@@ -437,11 +503,21 @@ textarea{
       color: $dark-grey;
       font-size: 0.8em;
     }
-    img{
-      max-height: 200px;
+    .current-image{
+      margin-bottom: 1em;
+      img{
+        max-height: 200px;
+      }
+    }
+    .select2-container{
+      margin-bottom: 1em;
     }
     textarea{
       height: 180px;
+      margin-bottom: 1em;
+    }
+    .cke{
+      margin-bottom: 1em;
     }
   }
 }
@@ -484,4 +560,107 @@ textarea{
   .select2-highlighted{
     background: $blue;
   }
+}
+
+/* MEDIA QUERIES
+=================================================================
+*/
+
+/* min-width 641px and max-width 1024px */
+@media only screen and (min-width: 40em) and (max-width: 64em) {
+
+  .content{
+    .content-header{
+      i{
+        margin-right: 0.2em;
+      }
+    }
+  }
+
+}
+
+/* max-width 640px */
+@media only screen and (max-width: 40em) {
+
+  .content{
+    .content-header{
+      i{
+        margin-right: 0.1em;
+      }
+    }
+  }
+
+  small{
+    display: none;
+  }
+
+  .button{
+    width: 100%;
+  }
+
+  .logo{
+    margin-bottom: 1em;
+  }
+
+  .fw-container-nav{
+    margin-bottom: 1em;
+  }
+
+  .subnav{
+    margin-bottom: 1em;
+    ul{
+      li{
+        a{
+          font-size: 1.4em;
+        }
+        &.divider{
+          border: none;
+        }
+      }
+      &.f-dropdown{
+        li{
+          a{
+            padding: 1em;
+            font-size: 1em;
+          }
+        }
+      }
+    }
+  }
+
+  table tr td{
+    font-size: 0.7em;
+  }
+
+  td{
+    //font-size: 0.8em;
+    i{
+      font-size: 1.8em;
+      margin-right: 0.3em;
+    }
+  }
+
+  .footer{
+    p{
+      font-size: 1em;
+    }
+  }
+
+}
+
+// max width: 400px
+@media only screen and (max-width: 25em) {
+
+  .content{
+    .content-header{
+      h1{
+        font-size: 1.8em;
+      }
+      .count{
+        font-size: 1.8em;
+        top: 0.5em;
+      }
+    }
+  }
+
 }

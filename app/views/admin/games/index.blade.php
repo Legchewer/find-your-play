@@ -29,13 +29,13 @@
             <table class="games">
                 <thead>
                 <tr>
-                    <th>{{ Lang::get('table_general.more-info') }}</th>
+                    <th class="show-for-large-up">{{ Lang::get('table_general.more-info') }}</th>
                     <th>{{ Lang::get('table_specific.title') }}</th>
                     <th>{{ Lang::get('table_specific.type') }}</th>
-                    <th>{{ Lang::get('table_specific.theme') }}</th>
-                    <th>{{ Lang::get('table_specific.difficulty') }}</th>
-                    <th>{{ Lang::get('table_specific.producer') }}</th>
-                    <th>{{ Lang::get('table_specific.age') }}</th>
+                    <th class="show-for-medium-up">{{ Lang::get('table_specific.theme') }}</th>
+                    <th class="show-for-large-up">{{ Lang::get('table_specific.difficulty') }}</th>
+                    <th class="show-for-medium-up">{{ Lang::get('table_specific.producer') }}</th>
+                    <th class="show-for-medium-up">{{ Lang::get('table_specific.age') }}</th>
                     <th>{{ Lang::get('table_general.actions') }}</th>
                 </tr>
                 </thead>
@@ -47,7 +47,7 @@
                     @foreach ($games as $game)
                     <tr class="game-row" id="game-row-{{ $game->game_id }}">
 
-                        <td class="more-info">
+                        <td class="more-info show-for-large-up">
                         <span data-tooltip class="has-tip tip-top" title="
                             {{ Lang::get('table_general.created') }}:
                             {{ $game->game_created }}
@@ -83,7 +83,7 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->theme->theme_name_nl)
                             {{ $game->theme->theme_name_nl }}
                             @else
@@ -91,7 +91,7 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-large-up">
                             @if ($game->gameDifficulty->game_difficulty_name_nl)
                             {{ $game->gameDifficulty->game_difficulty_name_nl }}
                             @else
@@ -99,13 +99,13 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->game_producer)
                             {{ $game->game_producer }}
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->game_age_nl)
                             {{ $game->game_age_nl }}
                             @else
@@ -131,7 +131,7 @@
                     @foreach ($games as $game)
                     <tr class="game-row" id="game-row-{{ $game->game_id }}">
 
-                        <td class="more-info">
+                        <td class="more-info show-for-large-up">
                         <span data-tooltip class="has-tip tip-top" title="
                             {{ Lang::get('table_general.created') }}:
                             {{ $game->game_created }}
@@ -167,7 +167,7 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->theme->theme_name_en)
                             {{ $game->theme->theme_name_en }}
                             @else
@@ -175,7 +175,7 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-large-up">
                             @if ($game->gameDifficulty->game_difficulty_name_en)
                             {{ $game->gameDifficulty->game_difficulty_name_en }}
                             @else
@@ -183,13 +183,13 @@
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->game_producer)
                             {{ $game->game_producer }}
                             @endif
                         </td>
 
-                        <td>
+                        <td class="show-for-medium-up">
                             @if ($game->game_age_en)
                             {{ $game->game_age_en }}
                             @else

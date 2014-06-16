@@ -16,7 +16,7 @@
     <div class="row">
         <div class="large-12 columns content-header">
 
-            <h1><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties',1) }} <small>{{ Lang::get('admin-pages.difficulties-sub') }}</small></h1>
+            <h1><i class="fa fa-bar-chart-o"></i> {{ Lang::choice('admin-pages.difficulties',1) }} <small class="show-for-medium-up">{{ Lang::get('admin-pages.difficulties-sub') }}</small></h1>
 
             <span class="count">{{ $count }}</span>
 

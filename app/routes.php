@@ -196,13 +196,11 @@ Route::group(['prefix' => 'admin'], function() {
         ->before('auth','csrf');
 
     // change password
-    Route::get('/members/password/{id}', ['as' => 'admin.members.password', 'uses' => 'AdminMemberController@changePassword'])
-        ->where(['id' => '[0-9]+'])
+    Route::get('/members/password', ['as' => 'admin.members.password', 'uses' => 'AdminMemberController@changePassword'])
         ->before('auth');
 
     // update password
-    Route::post('/members/pwupdate/{id}', ['as' => 'admin.members.pwupdate', 'uses' => 'AdminMemberController@passwordUpdate'])
-        ->where(['id' => '[0-9]+'])
+    Route::post('/members/pwupdate', ['as' => 'admin.members.pwupdate', 'uses' => 'AdminMemberController@passwordUpdate'])
         ->before('auth','csrf');
 
     /*
@@ -523,6 +521,18 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('/feedback/destroy/{id}', ['as' => 'admin.feedback.destroy', 'uses' => 'AdminFeedbackController@destroy'])
         ->where(['id' => '[0-9]+'])
         ->before('auth');
+
+    /*
+     * Settings
+     */
+
+    // settings page
+    Route::get('/settings', ['as'   => 'admin.settings', 'uses' => 'AdminSettingsController@index'])
+        ->before('auth');
+
+    // update settings
+    Route::post('/settings/update', ['as' => 'admin.settings.update', 'uses' => 'AdminSettingsController@update'])
+        ->before('auth','csrf');
 
 });
 

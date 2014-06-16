@@ -25,15 +25,30 @@
             </div>
             @endif
 
-            {{ Form::open(['route' => ['admin.members.pwupdate', $member->member_id]]), PHP_EOL }}
+            @if(Session::has('auth-error-message'))
+            <div class="alert-box alert" data-alert>
+                <span class="alert-msg">{{ Session::get('auth-error-message') }}</span>
+                <a href="#" class="close">&times;</a>
+            </div>
+            @endif
 
-            {{ Form::label('password', ucfirst(Lang::get('admin-forms.member-password'))) }}
+            {{ Form::open(['route' => ['admin.members.pwupdate']]), PHP_EOL }}
+
+            {{ Form::label('old_password', ucfirst(Lang::get('admin-forms.member-old-password'))) }}
             <i class="fa fa-asterisk"></i>
-            {{ Form::password('password', '', ['placeholder' => Lang::get('admin-forms.member-password-ph')]) }}
+            {{ Form::password('old_password', '', []) }}
+
+            {{ Form::label('old_repeat', ucfirst(Lang::get('admin-forms.member-old-repeat'))) }}
+            <i class="fa fa-asterisk"></i>
+            {{ Form::password('old_repeat', '', []) }}
+
+            {{ Form::label('password', ucfirst(Lang::get('admin-forms.member-new-password'))) }}
+            <i class="fa fa-asterisk"></i>
+            {{ Form::password('password', '', []) }}
 
             {{ Form::label('repeat', ucfirst(Lang::get('admin-forms.member-repeat'))) }}
             <i class="fa fa-asterisk"></i>
-            {{ Form::password('repeat', '', ['placeholder' => Lang::get('admin-forms.member-repeat-ph')]) }}
+            {{ Form::password('repeat', '', []) }}
 
             {{ Form::submit(Lang::get('admin-forms.submit-update'), ['class' => 'button button-submit']), PHP_EOL }}
             {{ HTML::link('/admin', Lang::get('admin-forms.return-dashboard'), ['' => '']), PHP_EOL }}
