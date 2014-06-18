@@ -9,6 +9,15 @@ class AdminGameController extends \BaseController {
 	 */
 	public function index()
 	{
+        /*$client = Client::find(1);
+
+        foreach($client->games as $game){
+
+            var_dump($game->pivot->client_game_evaluation);
+
+        }*/
+
+        ///////
 
         // get count of all games
         $count = Game::all()->count();
@@ -220,6 +229,8 @@ class AdminGameController extends \BaseController {
             }
 
             return Redirect::route('admin.games');
+
+            //return Redirect::route('web.player')->with('id',$player_id);
 
         } else {
             return Redirect::route('admin.games.create')
@@ -635,6 +646,59 @@ class AdminGameController extends \BaseController {
         Game::destroy($id);
 
         return Redirect::route('admin.games');
+    }
+
+    /**
+     * Handles input from search form
+     *
+     * @return Response
+     */
+    public function searchSubmit(){
+
+        // get string from search
+        $str = strtolower(Input::get('search'));
+
+        if($str == ''){
+
+            return Redirect::route('admin.games');
+
+        } else {
+
+            return Redirect::to('admin/games/search/' . $str);
+
+        }
+
+    }
+
+    /**
+     * Search by string
+     *
+     * @param $str
+     * @return Response
+     */
+    public function search($str){
+
+        if($str == ''){
+
+            return Redirect::route('admin.games');
+
+        } else {
+
+            // get matching results (for both languages)
+            $games = Game::where('game_title_nl','like','%' . $str . '%')
+                ->orWhere('game_title_en','like','%' . $str . '%')
+                ->get();
+
+            // get count of problems
+            $count = $games->count();
+
+            // redirect wth search results
+            return View::make('admin/games/index')
+                ->with('count', $count)
+                ->with('search_results', $games);
+
+        }
+
     }
 
 }

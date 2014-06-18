@@ -46,7 +46,7 @@
                             </header>
                             <div class="feedback-game-info">
 
-                                <div class="large-6 medium-4 columns feedback-game-img">
+                                <div class="large-4 medium-4 columns feedback-game-img">
 
                                     @if($game->game_image)
 
@@ -57,7 +57,7 @@
 
                                 </div>
 
-                                <div class="large-6 medium-8 columns feedback-game-info-list">
+                                <div class="large-8 medium-8 columns feedback-game-info-list">
                                     <ul>
                                         <li>type: {{ $game->game_type->game_type_name_nl }}</li>
                                         <li>thema: {{ $game->theme->theme_name_nl }}</li>

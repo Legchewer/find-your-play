@@ -27,6 +27,7 @@ return [
     'roles' => 'Rollen|Rol',
     'roles-sub' => 'bekijk rollen',
     'settings' => 'Instellingen',
-    'settings-sub' => 'verander instellingen'
+    'settings-sub' => 'verander instellingen',
+    'search' => 'Resultaten|Resultaat'
 
 ];

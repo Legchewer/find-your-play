@@ -27,6 +27,7 @@ return [
     'roles' => 'Roles|Role',
     'roles-sub' => 'view roles',
     'settings' => 'Settings',
-    'settings-sub' => 'change settings'
+    'settings-sub' => 'change settings',
+    'search' => 'Search results|Search result'
 
 ];

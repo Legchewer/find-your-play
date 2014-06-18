@@ -12,6 +12,10 @@ return [
     'login-password'    => 'Wachtwoord',
     'login-enter'       => 'Inloggen',
     'login-remember'    => 'Onthoud mij',
+    // search
+    'search-title' => 'zoek op titel',
+    'search-ph' => 'geef zoekstring op',
+    'submit-search' => 'Zoeken',
     // games
     'game-create-title' => 'creëer nieuw spelletje',
     'game-title-nl'     => 'titel (Nederlands)',

@@ -12,6 +12,10 @@ return [
     'login-password'    => 'Password',
     'login-enter'       => 'Enter',
     'login-remember'    => 'Remember me',
+    // search
+    'search-title' => 'search in title',
+    'search-ph' => 'enter search string',
+    'submit-search' => 'Search',
     // games
     'game-create-title' => 'create new game',
     'game-title-nl'     => 'title (Dutch)',
@@ -28,7 +32,7 @@ return [
     'game-producer'     => 'producer',
     'game-producer-ph'      => 'Enter game producer',
     'game-availability'     => 'availability',
-    'game-availability-ph'      => 'Enter game availability', // TODO : andere naam
+    'game-availability-ph'      => 'Enter game availability', // TODO : andere naam?
     'game-rules-nl'     => 'rules (Dutch)',
     'game-rules-en'      => 'rules (English)',
     'game-rules-ph'      => 'Enter the game rules',

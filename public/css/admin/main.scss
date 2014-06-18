@@ -76,6 +76,13 @@ textarea{
   font-size: 1rem;
 }
 
+.button{
+  background: $blue !important; // override foundation color
+  &:hover, &:focus, &:active{
+    background: $blue - 30 !important; // override foundation color
+  }
+}
+
 /* CLEARFIX */
 .clearfix:before,
 .clearfix:after {
@@ -317,6 +324,16 @@ textarea{
 // regular content views (tables)
 
 .content{
+
+  .search-wrapper{
+    input{
+      margin-bottom: 0;
+    }
+    input[type="submit"]{
+      margin: 1em 0 2em 0;
+    }
+  }
+
   //padding-right: 0;
   .content-header{
     position: relative;
@@ -388,13 +405,14 @@ textarea{
         //padding: 1em;
         padding-bottom: 1em;
         .feedback-game-img{
-          max-height: 200px;
-          overflow: hidden;
+          //max-height: 300px;
+          //overflow: hidden;
           margin-bottom: 1em;
-          //background: #fff;
           img{
             max-width: 100%;
             height: auto;
+            max-height: 300px;
+            border: 2px solid #ccc;
           }
           p{
             text-align: center;
