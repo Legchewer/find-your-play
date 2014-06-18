@@ -111,12 +111,4 @@ class Member extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Feedback');
     }
 
-    /**
-     * @return array
-     */
-    public function feedback()
-    {
-        return $this->hasMany('Feedback');
-    }
-
 }

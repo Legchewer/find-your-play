@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'find-your-play-db',
 			'username'  => 'root',
-			'password'  => 'bitnami',
+			'password'  => 'adminn',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

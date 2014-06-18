@@ -241,13 +241,14 @@ class UserController extends \BaseController {
     public function ClientGamesEditIndex($player_id,$game_id){
         $client = Client::find($player_id);
 
-        foreach($client->games as $c)
-        {
-            if($c->game_id == $game_id && $c->pivot->client_id == $client->client_id)
-            {
-                $game = $c->pivot;
-            }
-        }
+        //foreach($client->games as $c)
+        //{
+            //if($c->game_id == $game_id && $c->pivot->client_id == $client->client_id)
+            //{
+                //$game = $c->pivot;
+                $game = Game::lists('game_title_nl','game_id');
+            //}
+        //}
         return View::make('web.client-games-edit', ['client' => $client, 'game' => $game]);
     }
     // post edit page

@@ -40,7 +40,8 @@
             {{ Form::open(['route' => ['web.player.add.game',$client->client_id]]), PHP_EOL }}
 
             {{ Form::label('game',Lang::get('web-add-game.game'), ['class' => ($errors->has('game') ? 'error' : '' ),])}}
-            {{ Form::select('game',  ['' => Lang::get('web-add-game.option')] + $game)}}
+            {{-- Form::select('game',  ['' => Lang::get('web-add-game.option')] + $game) --}}
+            {{ Form::select('game', $game) }}
             @if ($errors->has('game'))
             {{ $errors->first('game', '<small class="error error-margin-fix">:message</small>') }}
             @endif
