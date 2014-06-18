@@ -62,6 +62,10 @@ class UserController extends \BaseController {
 
         return View::make('web.registreren',compact('roles'));
     }
+    public function SignInIndex()
+    {
+        return View::make('web.aanmelden');
+    }
 
     public function Register()
     {
@@ -98,11 +102,24 @@ class UserController extends \BaseController {
         }
     }
     public function ProfileIndex(){
-        $user = Auth::user()->person;
-        $clients = Client::all();
-        $clients='';
+        $auth_user = Auth::user();
+        $wishlist_games = [];
+        // cookie terug uitlezen
+        if(Cookie::get('wishlist')){
+            $cookie_data = Cookie::get('wishlist');
 
-        return View::make('web.profiel', ['user' => $user, 'clients' => $clients]);
+            // id's omzetten naar array van Game objecten
+
+
+
+            foreach($cookie_data as $id){
+
+                array_push($wishlist_games, Game::find($id));
+
+            }
+        }
+
+        return View::make('web.profiel', ['user' => $auth_user, 'wishlist' => $wishlist_games]);
     }
     public function Profile()
     {
@@ -135,5 +152,135 @@ class UserController extends \BaseController {
     }
     public function About(){
         return View::make('web.overons');
+    }
+    public function ClientGamesIndex($id){
+        $client = Client::find($id);
+        $clientgames = [];
+        foreach($client->games as $g){
+            array_push($clientgames,$g->game_id);
+        }
+        $games = Game::all();
+        if(App::getLocale() == 'nl')
+        {
+            $games_list = [];
+
+            foreach(Game::all() as $game){
+
+                foreach($game->clients as $c){
+                    if($c->client_id == $id){
+                        // this doesn't work.. :/
+                        /*if(!in_array($c->pivot->game_id, $clientgames)){
+
+                        }*/
+                        array_push($games_list, $game);
+                    }
+                }
+            }
+            foreach($games_list as $g)
+            {
+                $game = $g->lists('game_title_nl','game_id');
+            }
+
+        }else{
+            $games_list = [];
+
+            foreach(Game::all() as $game){
+
+                foreach($game->clients as $client){
+
+                    if($client->client_id !== $id){
+
+                        array_push($games_list, $game);
+
+                    }
+                }
+            }
+            foreach($games_list as $g)
+            {
+                $game = $g->lists('game_title_en','game_id');
+            }
+        }
+        return View::make('web.client-games', ['client' => $client],compact('game'));
+    }
+    public function ClientGames($id)
+    {
+
+        $rules = [
+            'game'       => 'required',
+            'usedate'    => 'required',
+            'evaluation' => 'required',
+            'duration'   => 'required',
+            'log'        => 'required',
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $game = Input::get('game');
+            $date = Input::get('usedate');
+            $evalution = Input::get('evaluation');
+            $duration = Input::get('duration');
+            $log = Input::get('log');
+
+
+            $client = Client::find($id);
+            $client->games()->attach($game, ['client_game_usedate'=>$date, 'client_game_evaluation'=>$evalution, 'client_game_duration'=>$duration, 'client_game_log'=>$log]);
+
+
+            $client->save();
+
+            return Redirect::route('web.player')->with('id',$id);
+
+        } else {
+            return Redirect::to('web/user/profile/player/' . $id)
+                 ->withInput()
+                 ->withErrors($validator);
+        }
+    }
+    // show edit page
+    public function ClientGamesEditIndex($player_id,$game_id){
+        $client = Client::find($player_id);
+
+        foreach($client->games as $c)
+        {
+            if($c->game_id == $game_id && $c->pivot->client_id == $client->client_id)
+            {
+                $game = $c->pivot;
+            }
+        }
+        return View::make('web.client-games-edit', ['client' => $client, 'game' => $game]);
+    }
+    // post edit page
+    public function ClientGamesEdit($player_id,$game_id){
+        $rules = [
+            'usedate'    => 'required',
+            'evaluation' => 'required',
+            'duration'   => 'required',
+            'log'        => 'required',
+        ];
+
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->passes()) {
+            $date = Input::get('usedate');
+            $evalution = Input::get('evaluation');
+            $duration = Input::get('duration');
+            $log = Input::get('log');
+
+
+            $client = Client::find($player_id);
+            $client->games()->sync(array($game_id, ['client_game_usedate'=>$date, 'client_game_evaluation'=>$evalution, 'client_game_duration'=>$duration, 'client_game_log'=>$log]));
+
+
+            $client->save();
+
+            return Redirect::to('web/user/profile/player/' . $player_id);
+
+        }
+        else {
+            return Redirect::to('web/user/profile/player/' . $player_id . '/edit/' . $game_id)
+                ->withInput()
+                ->withErrors($validator);
+        }
     }
 }

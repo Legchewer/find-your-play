@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'game-info' => 'Algemene info',
+    'game-info' => 'General info',
     'game-characteristic' => 'Characteristics',
     'game-function' => 'Functions',
     'game-buy' => 'Purchase',
@@ -35,4 +35,8 @@ return [
     'game-price' => 'Price',
     'game-producer' => 'Producent',
     'game-availability' => 'Availability',
+    'button' => 'Add to wishlist',
+    'button2' => 'Remove from wishlist',
+    'button3' => 'Post feedback',
+    'fiche' => 'Therapeutic file'
 ];

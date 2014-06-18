@@ -1,0 +1,188 @@
+@media screen and (max-width: 320px) {
+  #header #logo {
+    margin-left: 0; }
+
+  #header h1 {
+    top: 69px;
+    left: 80px;
+    width: 100%;
+    font-size: 2em; }
+
+  #header .subnav {
+    padding-left: 0; }
+
+  #contact .inline-list > li {
+    margin-right: 19px; }
+
+  .page_navigation .spelzoeken {
+    height: auto; }
+
+  .spelzoeken {
+    background: #B9D9DC; }
+
+  .aanmelden {
+    background: #A2E1AC; }
+
+  .subnav ul {
+    margin-left: -12rem; }
+
+  .margintopfix .button {
+    margin-right: 15px; }
+
+  .wishlist .button {
+    width: 100%; }
+
+  .infopanels {
+    margin-top: 0; }
+
+  #panel5a form {
+    border-top: 1px solid #999999;
+    padding-top: 15px; }
+
+  #panel5a small {
+    float: right; }
+
+  #panel5a .feedback {
+    margin-bottom: 10px; }
+    #panel5a .feedback p {
+      margin-bottom: 5px; }
+
+  #panel5a .feedback:last-of-type {
+    margin-bottom: 20px; } }
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  #header #logo {
+    margin-left: 0; }
+
+  #header h1 {
+    font-size: 3em;
+    left: 90px;
+    top: 55px;
+    width: 100%; }
+
+  #header .subnav {
+    padding-left: 0; }
+
+  .intro .paddingfix img {
+    width: 100%; }
+
+  .intro-about img {
+    width: 100%; }
+
+  #contact .inline-list > li {
+    margin-right: 19px; }
+
+  .page_navigation .spelzoeken {
+    height: auto; }
+
+  .spelzoeken {
+    background: #B9D9DC; }
+
+  .aanmelden {
+    background: #A2E1AC; }
+
+  .subnav ul {
+    margin-left: -9rem; }
+
+  .margintopfix .button {
+    margin-right: 15px; }
+
+  .wishlist .button {
+    width: 100%; }
+
+  .infopanels {
+    margin-top: 0; }
+
+  #panel5a form {
+    border-top: 1px solid #999999;
+    padding-top: 15px; }
+
+  #panel5a small {
+    float: right; }
+
+  #panel5a .feedback {
+    margin-bottom: 10px; }
+    #panel5a .feedback p {
+      margin-bottom: 5px; }
+
+  #panel5a .feedback:last-of-type {
+    margin-bottom: 20px; } }
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #header #logo {
+    margin-left: 0; }
+
+  #header h1 {
+    font-size: 4em;
+    left: 90px;
+    top: 39px;
+    width: 100%; }
+
+  #header .subnav {
+    padding-left: 0; }
+
+  .subnav ul {
+    margin-left: -9rem; }
+
+  .detailspel dl {
+    width: 200px !important; }
+
+  .tabs-content.vertical {
+    width: 74% !important; }
+
+  #panel5a form {
+    border-top: 1px solid #999999;
+    padding-top: 15px; }
+
+  #panel5a small {
+    float: right; }
+
+  #panel5a .feedback {
+    margin-bottom: 10px; }
+    #panel5a .feedback p {
+      margin-bottom: 5px; }
+
+  #panel5a .feedback:last-of-type {
+    margin-bottom: 20px; }
+
+  .infopanels {
+    margin-top: 0; }
+
+  .margintopfix .button {
+    margin-right: 15px; } }
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .paddingfix1024 {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem; }
+
+  .spelzoeken, .aanmelden {
+    padding-left: 1.938rem;
+    padding-right: 1.938rem; }
+
+  #header #logo {
+    margin-left: 0; }
+
+  #header h1 {
+    font-size: 4em;
+    left: 90px;
+    top: 39px;
+    width: 100%; }
+
+  #header .subnav {
+    padding-left: 0; }
+
+  #panel5a form {
+    border-top: 1px solid #999999;
+    padding-top: 15px; }
+
+  #panel5a small {
+    float: right; }
+
+  #panel5a .feedback {
+    margin-bottom: 10px; }
+    #panel5a .feedback p {
+      margin-bottom: 5px; }
+
+  #panel5a .feedback:last-of-type {
+    margin-bottom: 20px; }
+
+  .infopanels {
+    margin-top: 0; } }

@@ -4,6 +4,7 @@ return [
     // header
     'breadcrumb-part1' => 'User',
     'breadcrumb-part2' => 'Register',
+    'aanmelden' => 'Sign in',
     // form
     'form-firstname' => 'Given name',
     'form-lastname' => 'Sur name',

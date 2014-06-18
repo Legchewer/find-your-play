@@ -41,15 +41,15 @@
     </div>
     <div class="medium-9 columns">
         <ul class="small-block-grid-1 gameslist">
-            @if(!empty($games))
-            @foreach($games as $g)
-                <li>
-                    <a href="game/{{ $g->game_id }}">
-                        <h1>{{$g->game_title}}</h1>
-                        <p>{{$g->game_description}}</p>
-                    </a>
-                </li>
-            @endforeach
+            @if(! $games->isEmpty() )
+                @foreach($games as $g)
+                    <li>
+                        <a href="game/{{ $g->game_id }}">
+                            <h1>{{$g->game_title}}</h1>
+                            <p>{{$g->game_description}}</p>
+                        </a>
+                    </li>
+                @endforeach
             @else
             <li><strong>{{Lang::get('web-zoeken.search-error')}}</strong></li>
             @endif

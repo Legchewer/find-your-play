@@ -262,6 +262,16 @@ body{
     margin-bottom:0;
   }
 }
+.addgame{
+  h2{
+    color:#999999;
+  }
+}
+.experience{
+  h2{
+    color:#999999;
+  }
+}
 
 /* PROFIEL */
 #profiel{
@@ -275,19 +285,13 @@ body{
       display: block;
       color:#222222;
     }
+    p{
+      padding: 10px 10px 10px 0;
+      color:#222222;
+    }
     ul li a{
       padding:5px;
     }
-  }
-  .button{
-    background:$header_background;
-    border:1px solid #dcdcdc;
-    color:$dark-grey;
-  }
-  .button:hover{
-    background:#DBDBDB;
-    border:1px solid #999999;
-    color:#444444;
   }
   .panel_blue{
     background:$blue;
@@ -333,7 +337,7 @@ body{
     -webkit-transition:0.3s;
     -o-transition:0.3s;
   }
-  .add-client:hover{
+  .add-client:hover, .add-client:active{
     background:#fff !important;
     color:#b9d9dc !important;
   }
@@ -343,22 +347,12 @@ body{
 .detailspel{
   margin-bottom:50px;
 }
-.wishlist i{
-  color:$blue;
+.infopanels{
+  margin-top:-58px;
 }
 
 /* REGISTREREN */
 #registreren{
-  .button{
-    background:$header_background;
-    border:1px solid #dcdcdc;
-    color:$dark-grey;
-  }
-  .button:hover{
-    background:#DBDBDB;
-    border:1px solid #999999;
-    color:#444444;
-  }
   label:first-letter{
     text-transform: capitalize;
   }
@@ -376,6 +370,53 @@ body{
   }
 }
 
+/* datepicker fix */
+#usedate{
+  position:relative;
+}
+#log{
+  height:100px;
+}
+#players{
+  h2{
+    color:#999999;
+  }
+a{
+  font-size:1.5em;
+  line-height: auto;
+  margin-bottom:10px;
+  display: block;
+}
+}
+.margintopfix{
+  margin-top:-107px;
+}
+#add_game{
+  h2{
+    color:#999999;
+  }
+}
+.edit{
+  margin-top: -30px;
+}
+#aanmelden{
+  height:1px;
+}
+.gameslist li{
+  border-bottom:1px solid #999999;
+}
+.gameslist li:last-of-type{
+  border-bottom:none;
+}
+.button{
+  background:#86A6A9;
+  font-size:18px !important;
+  font-family: $font2;
+  padding: 0px 20px !important;
+}
+.button:hover{
+  background: #537376;
+}
 
 /* RESPONSIVE */
 @media only screen

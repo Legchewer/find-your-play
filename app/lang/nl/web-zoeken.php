@@ -2,7 +2,7 @@
 
 return [
     // header
-    'breadcrumb' => 'Spel zoeken',
+    'breadcrumb' => 'Spellen',
     // search
     'search-game' => 'Spel soort',
     'search-age' => 'Leeftijd',

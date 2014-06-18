@@ -14,4 +14,9 @@
     $('#warning-accept').click(function(e) {
         location.href = route;
     });
+
+    $('#add_game').hide();
+    $('.margintopfix button').click(function(){
+        $('#add_game').slideDown();
+    });
 })(window);

@@ -18,7 +18,6 @@ class SearchController extends \BaseController {
     public function FilterIndex()
     {
         // alle spellen
-        //$games = Game::with('gameFunctions','gameType')->get();
         $games = Game::all();
 
         // nederlands
@@ -28,7 +27,7 @@ class SearchController extends \BaseController {
             $game_kinds = GameKind::where('game_kind_name_nl','!=','')->lists('game_kind_name_nl','game_kind_id');
             $game_difficulties = GameDifficulty::lists('game_difficulty_name_nl','game_difficulty_id');
             $game_themes = Theme::where('theme_name_nl','!=','')->lists('theme_name_nl','theme_id');
-            $game_functions = GameFunctionCategory::lists('game_function_category_name_nl','game_function_category_id');
+            $game_functions = GameFunction::lists('game_function_name_nl','game_function_id');
             $game_players = GamePlayers::lists('game_players_name_nl','game_players_id');
             $game_age = Game::groupBy('game_age_nl')->lists('game_age_nl','game_age_nl');
 
@@ -39,17 +38,23 @@ class SearchController extends \BaseController {
             {
                 // alle thema's ophalen die zoek query kan bevatten
                 $themes = Theme::where('theme_name_nl','like','%' . $search_index . '%')->get();
+                // alle tags ophalen die zoek query kan bevatten
+                $tags = GameTag::where('game_tag_value','like','%' . $search_index . '%')->get();
                 // id ophalen van thema van zoekquery
                 foreach($themes as $theme)
                 {
-                    $id = $theme->theme_id;
+                    $theme_id = $theme->theme_id;
+                }
+                foreach($tags as $tag)
+                {
+                    $tag_id = $tag->game_tag_id;
                 }
                 // als zoekquery thema was
                 if(!$themes->isEmpty())
                 {
                     foreach($games as $g)
                     {
-                        $game = $g->where('theme_id','=',$id)
+                        $game = $g->where('theme_id','=',$theme_id)
                             ->orWhere('game_title_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_description_nl','LIKE','%' . $search_index . '%')
                             ->orWhere('game_producer','LIKE','%' . $search_index . '%')
@@ -57,7 +62,21 @@ class SearchController extends \BaseController {
                             ->get();
                     }
                 }
-                // zoekquery was geen thema, zoek op title, description, producer
+                else if(!$tags->isEmpty())
+                {
+
+                    $tag = GameTag::find($tag_id);
+                    $taggedgames = $tag->games;
+
+                    foreach($taggedgames as $g){
+                        $game = $g->orWhere('game_title_nl','LIKE','%' . $search_index . '%')
+                                  ->orWhere('game_description_nl','LIKE','%' . $search_index . '%')
+                                  ->orWhere('game_producer','LIKE','%' . $search_index . '%')
+                                  ->select('game_id as game_id','game_title_nl as game_title','game_description_nl as game_description')
+                                  ->get();
+                    }
+                }
+                // zoekquery was geen thema of tag, zoek op title, description, producer
                 else
                 {
                     foreach($games as $g)
@@ -96,12 +115,10 @@ class SearchController extends \BaseController {
                 }
                 $array = array_combine($even,$odd);
                 var_dump($array);
-                $gamekind = GameType::where('game_kind_id','=',$array['kind'])->lists('game_type_id');
-                var_dump($gamekind);
 
                 foreach($games as $g)
                 {
-                   $game = /*$g->where(function($query)use($array)
+                   $game = $g->where(function($query)use($array)
                            {
                                if($array['difficulty'] != 'null'){
                                    $query->where('game_difficulty_id','=',$array['difficulty']);
@@ -112,29 +129,39 @@ class SearchController extends \BaseController {
                                if($array['theme'] != 'null'){
                                    $query->where('game_theme_id','=',$array['theme']);
                                }
-                               /*if($array['function'] != 'null'){
-                                   $query->where('gameFunctions.game_function_id','=',$array['function']);
-                               }*/
-                               /*if($array['budget'] != 'null'){
+                               if($array['budget'] != 'null'){
                                    $query->where('budget_group_id','=',$array['budget']);
                                }
                                if($array['players'] != 'null'){
-                                   $query->where('game_players','=',$array['players']);
+                                   $query->where('game_players_id','=',$array['players']);
                                }
                                if($array['age'] != 'null'){
                                    $query->where('game_age_nl','=',$array['age']);
                                }
-                           })*/
-                           /*$g->with(array('gameType' => function($query)use($array){
-                                if($array['kind'] != 'null'){
-                                    $query->where('game_function_id','=',$array['kind']);
-                                }
-                           }))*/
-                    $g->with(array('GameType' => function($query){
-                            $query->where('game_function_id','=',1);
-                        }))
-                             ->select("game_id,game_title_nl as game_title","game_description_nl as game_description")
-                             ->get();
+                               if($array['function'] != 'null'){
+                                   $function = GameFunction::find($array['function']);
+                                   $gamesWithFunctions = $function->games;
+
+                                   foreach($gamesWithFunctions as $ga){
+                                       $query->where('game_id','=',$ga->game_id);
+                                   }
+                               }
+                               if($array['kind'] != 'null'){
+                                   $kind = GameKind::find($array['kind']);
+                                   $gamesWithKinds = $kind->gameTypes;
+                                   $arrTypes = [];
+                                   foreach($gamesWithKinds as $gk)
+                                   {
+                                       array_push($arrTypes,$gk->game_type_id);
+                                   }
+                                   var_dump($arrTypes);
+                                   foreach($arrTypes as $gt){
+                                       var_dump($gt);
+                                       $query->where('game_type_id','=',$gt);
+                                   }
+                               }
+                           })->select('game_id as game_id','game_title_nl as game_title','game_description_nl as game_description')
+                             ->get();;
                 }
             }
 
@@ -153,7 +180,7 @@ class SearchController extends \BaseController {
             $game_kinds = GameKind::where('game_kind_name_en','!=','')->lists('game_kind_name_en','game_kind_id');
             $game_difficulties = GameDifficulty::lists('game_difficulty_name_en','game_difficulty_id');
             $game_themes = Theme::where('theme_name_en','!=','')->lists('theme_name_en','theme_id');
-            $game_functions = GameFunctionCategory::lists('game_function_category_name_en','game_function_category_id');
+            $game_functions = GameFunction::lists('game_function_name_en','game_function_id');
             $game_players = GamePlayers::lists('game_players_name_en','game_players_id');
             $game_age = Game::groupBy('game_age_en')->lists('game_age_en','game_age_en');
 
@@ -360,7 +387,7 @@ class SearchController extends \BaseController {
         if($game_themePOST == null){$gtheme = "null";}
 
         $game_functionPOST = Input::get('game_function');
-        $gf = GameFunctionCategory::where('game_function_category_id','=',$game_functionPOST)->lists('game_function_category_id');
+        $gf = GameFunction::where('game_function_id','=',$game_functionPOST)->lists('game_function_id');
         $gf = array_shift($gf);
         if($game_functionPOST == null){$gf = "null";}
 

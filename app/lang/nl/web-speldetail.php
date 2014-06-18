@@ -35,4 +35,8 @@ return [
     'game-price' => 'Richtprijs',
     'game-producer' => 'Producent',
     'game-availability' => 'Beschikbaarheid',
+    'button' => 'Toevoegen aan verlanglijst',
+    'button2' => 'Verwijderen van verlanglijst',
+    'button3' => 'Feedback toevoegen',
+    'fiche' => 'Therapeutische fiche'
 ];
