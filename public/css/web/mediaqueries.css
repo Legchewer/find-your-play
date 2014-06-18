@@ -106,7 +106,58 @@
 
   #panel5a .feedback:last-of-type {
     margin-bottom: 20px; } }
-@media screen and (min-width: 481px) and (max-width: 768px) {
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  #header #logo {
+    margin-left: 0; }
+
+  .intro .paddingfix img {
+    width: 100%; }
+
+  .spelzoeken {
+    background: #B9D9DC; }
+
+  .aanmelden {
+    background: #A2E1AC; }
+
+  .intro-about img {
+    width: 100% !important; }
+
+  #header h1 {
+    font-size: 3.5em;
+    left: 90px;
+    top: 47px;
+    width: 100%; }
+
+  #header .subnav {
+    padding-left: 0; }
+
+  .subnav ul {
+    margin-left: -11rem; }
+
+  .wishlist .button {
+    width: 100%; }
+
+  #panel5a form {
+    border-top: 1px solid #999999;
+    padding-top: 15px; }
+
+  #panel5a small {
+    float: right; }
+
+  #panel5a .feedback {
+    margin-bottom: 10px; }
+    #panel5a .feedback p {
+      margin-bottom: 5px; }
+
+  #panel5a .feedback:last-of-type {
+    margin-bottom: 20px; }
+
+  .infopanels {
+    margin-top: 0; }
+
+  .margintopfix .button {
+    margin-right: 15px; } }
+@media screen and (min-width: 601px) and (max-width: 768px) {
   #header #logo {
     margin-left: 0; }
 
