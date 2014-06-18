@@ -8,5 +8,6 @@
 </script>
 
 {{ HTML::script("js/web/main.js") }}
+{{ HTML::script("js/web/foundation-datepicker.js") }}
 
 @yield('userScripts')

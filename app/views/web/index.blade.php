@@ -22,10 +22,10 @@
             <h2>{{ Lang::get('web-index.search-header') }}</h2>
             <form>
                 <div class="row collapse">
-                    <div class="small-2 medium-1 columns">
+                    <div class="small-2 medium-2 large-1 columns">
                         <span class="prefix"><i class="fa fa-search"></i></span>
                     </div>
-                    <div class="small-10 medium-11 columns">
+                    <div class="small-10 medium-10 large-11 columns">
                         {{ Form::text('game','', ['placeholder' => Lang::get('web-index.search-placeholder')]) }}
                     </div>
                 </div>
@@ -46,10 +46,10 @@
                 {{ Form::open(['route' => 'web.auth']), PHP_EOL }}
 
                 <div class="row collapse">
-                    <div class="small-2 medium-1 columns">
+                    <div class="small-2 medium-2 large-1 columns">
                         <span class="prefix"><i class="fa fa-user"></i></span>
                     </div>
-                    <div class="small-10 medium-11 columns">
+                    <div class="small-10 medium-10 large-11 columns">
                         {{ Form::email('email', '', ['placeholder' => Lang::get('web-index.login-email-placeholder'),'class' => ($errors->has('email') ? 'error' : '' )]) }}
                         @if ($errors->has('email'))
                         {{ $errors->first('email', '<small class="error">:message</small>') }}
@@ -57,17 +57,17 @@
                     </div>
                 </div>
                 <div class="row collapse">
-                    <div class="small-2 medium-1 columns">
+                    <div class="small-2 medium-2 large-1 columns">
                         <span class="prefix"><i class="fa fa-lock"></i></span>
                     </div>
-                    <div class="small-10 medium-11 columns">
+                    <div class="small-10 medium-10 large-11 columns">
                         {{ Form::password('password', ['placeholder' => Lang::get('web-index.login-password-placeholder'),'class' => ($errors->has('password') ? 'error' : '' )]) }}
                         @if ($errors->has('password'))
                         {{ $errors->first('password', '<small class="error">:message</small>') }}
                         @endif
                     </div>
                 </div>
-                <p>{{ Lang::get('web-index.login-link-pretext') }} <a href="{{ URL::to('web/user/register')}}">{{ Lang::get('web-index.login-link') }}</a> {{ Form::submit('Inloggen', ['class' => 'button tiny right']), PHP_EOL }}</p>
+                <p>{{ Lang::get('web-index.login-link-pretext') }} <a href="{{ URL::to('web/user/register')}}">{{ Lang::get('web-index.login-link') }}</a> {{ Form::submit(Lang::get('web-registreren.aanmelden'), ['class' => 'button tiny right']), PHP_EOL }}</p>
 
                 {{ Form::close(), PHP_EOL }}
             </div>
@@ -80,10 +80,10 @@
                     <h2 class="show-for-medium-up">&nbsp;</h2>
                     {{ Form::open(['route' => 'web.index.post']), PHP_EOL }}
                         <div class="row collapse">
-                            <div class="small-2 medium-1 columns">
+                            <div class="small-2 medium-2 large-1 columns">
                                 <span class="prefix"><i class="fa fa-search"></i></span>
                             </div>
-                            <div class="small-10 medium-11 columns">
+                            <div class="small-10 medium-10 large-11 columns">
                                 {{ Form::text('game','', ['placeholder' => Lang::get('web-index.search-placeholder')]) }}
                             </div>
                         </div>
@@ -97,7 +97,7 @@
 @stop
 
 @section('contact')
-<div id="contact" class="row">
+<div id="contact" class="row paddingfix1024">
     <div class="medium-6 columns">
         <h2>{{ Lang::get('web-index.contact-header') }}</h2>
         <p>{{ Lang::get('web-index.contact-content') }}</p>

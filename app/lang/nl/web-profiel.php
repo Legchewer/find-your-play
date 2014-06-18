@@ -3,6 +3,7 @@
 return [
     // header
     'breadcrumb' => 'Profiel',
+    'breadcrumb-players' => 'Spelers',
     // form
     'form-header' => 'Wijzig uw gegevens',
     'form-firstname' => 'Voornaam',
@@ -11,5 +12,7 @@ return [
     'form-button' => 'Wijzigen',
     // content
     'fiches-header' => 'Fiches',
-    'wishlist-header' => 'Verlanglijst'
+    'wishlist-header' => 'Verlanglijst',
+    'title' => 'Spelletjes',
+    'experience' => 'Ervaring'
 ];

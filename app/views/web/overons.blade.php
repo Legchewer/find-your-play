@@ -9,7 +9,7 @@
         </ul>
     </div>
 </div>
-<div class="intro row">
+<div class="intro intro-about row">
     <div class="medium-8 columns">
         <p>{{ Lang::get('web-about.intro-part1')}}</p>
     </div>
@@ -17,7 +17,7 @@
         {{ HTML::image('http://lorempixel.com/400/200', 'Find your Play', array('id' => 'intro_img')) }}
     </div>
 </div>
-<div class="intro row">
+<div class="intro intro-about row">
     <div class="medium-8 columns">
         <p>{{ Lang::get('web-about.intro-part2')}}</p>
     </div>
@@ -25,7 +25,7 @@
         {{ HTML::image('http://lorempixel.com/400/200', 'Find your Play', array('id' => 'intro_img')) }}
     </div>
 </div>
-<div class="intro row">
+<div class="intro intro-about row">
     <div class="medium-8 columns">
         <p>{{ Lang::get('web-about.intro-part3')}}</p>
     </div>

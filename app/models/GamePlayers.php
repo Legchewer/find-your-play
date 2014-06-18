@@ -21,16 +21,6 @@ class GamePlayers extends Eloquent {
      */
     public $timestamps = false;
 
-    /*
-     * The variables that are mass-fillable
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'game__players_name_nl',
-        'game__players_name_en'
-    ];
-
     /**
      * @return array
      */

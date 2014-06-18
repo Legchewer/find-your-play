@@ -2,7 +2,7 @@
 
 return [
     // header
-    'breadcrumb' => 'Spel zoeken',
+    'breadcrumb' => 'Spellen',
     // search
     'search-game' => 'Spel soort',
     'search-age' => 'Leeftijd',
@@ -14,5 +14,5 @@ return [
     'search-functions' => 'Functie',
     'search-button' => 'Zoeken',
     'search-option' => 'Maak uw keuze..',
-    'search-error' => 'Er werden geen spellen gevonden.. Probeer een andere zoekmogelijkeheid.'
+    'search-error' => 'Er werden geen spellen gevonden.. Probeer een andere zoekmogelijkheid.'
 ];

@@ -10,4 +10,6 @@
     {{ HTML::style("////cdnjs.cloudflare.com/ajax/libs/font-awesome/{$version['fontawesome']}/css/font-awesome.css") }}
 
     {{ HTML::style("css/web/main.css") }}
+    {{ HTML::style("css/web/mediaqueries.css") }}
+    {{ HTML::style("css/web/foundation-datepicker.css") }}
 </head>

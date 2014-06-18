@@ -2,7 +2,7 @@
 
 return [
     // header
-    'breadcrumb' => 'Find a game',
+    'breadcrumb' => 'Games',
     // search
     'search-game' => 'Game type',
     'search-age' => 'Age',

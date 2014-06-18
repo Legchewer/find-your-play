@@ -22,63 +22,46 @@ Route::group(['prefix' => 'web'], function() {
 
     Route::get('/language/{lang}', function($lang)
     {
-
         Session::put('my.locale', $lang);
 
-
-         return Redirect::back();
-
+        return Redirect::back();
     });
 
-    Route::get('/',['as' => 'web.index',function()
-    {
-        return View::make('web.index');
-    }]);
+    Route::get('/',['as' => 'web.index','uses' => 'UserController@Index']);
+    Route::get('/about',['as' => 'web.about','uses' => 'UserController@About']);
+    Route::get('/search',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
+    Route::get('/game/{id}',['as' => 'web.game','uses' => 'GameController@Index']);
+    Route::get('/signin',['as' => 'web.index','uses' => 'UserController@SignInIndex']);
 
     Route::post('/',['as' => 'web.index.post','uses' => 'SearchController@SearchFormIndex']);
+    Route::post('/search',['as' => 'web.search.post','uses' => 'SearchController@SearchFormSearch']);
+    Route::post('/game/{id}',['as' => 'web.game.post','uses' => 'GameController@AddToWishlist']);
+    Route::post('/game/{id}/remove',['as' => 'web.game.post.remove','uses' => 'GameController@RemoveFromWishlist']);
+    Route::post('/game/{id}/feedback',['as' => 'web.game.post.feedback','uses' => 'GameController@Feedback']);
 
-    Route::get('/about',function()
-    {
-        return View::make('web.overons');
-    });
 
     Route::group(['prefix' => 'user'], function() {
-        Route::get('/register',function()
-        {
-            if (App::getLocale() == 'nl')
-            {
-                $roles = Role::where('role_id','!=',1)->lists('role_name_nl','role_id');
+        Route::get('/register', ['as' => 'web.register', 'uses' => 'UserController@RegisterIndex']);
+        Route::post('/register',['as' => 'web.register', 'uses' => 'UserController@Register']);
 
-            }
-            else
-            {
-                $roles = Role::where('role_id','!=',1)->lists('role_name_en','role_id');
+        Route::group(['prefix' => 'profile'],function(){
+            Route::get('/', ['as' => 'web.profile', 'uses' => 'UserController@ProfileIndex']);
+            Route::get('/register/client',['as' => 'web.client', 'uses' => 'ClientController@RegisterIndex']);
+            Route::get('/player/{id}',['as' => 'web.player', 'uses' => 'UserController@ClientGamesIndex']);
+            Route::get('/player/{player_id}/edit/{game_id}/',['as' => 'web.player.edit', 'uses' => 'UserController@ClientGamesEditIndex']);
 
-            }
-
-            return View::make('web.registreren',compact('roles'));
+            Route::post('/',['as' => 'web.edit','uses' => 'UserController@Profile']);
+            Route::post('/register/client',['as' => 'web.register.client', 'uses' => 'ClientController@Register']);
+            Route::post('/player/{id}',['as' => 'web.player.add.game', 'uses' => 'UserController@ClientGames']);
+            Route::post('/player/{player_id}/edit/{game_id}/',['as' => 'web.player.edit.post', 'uses' => 'UserController@ClientGamesEdit']);
         });
-
-        Route::post('/register',['as' => 'web.register', 'uses' => 'UserController@register']);
-
-        Route::get('/profile',function()
-        {
-            $user = Auth::user()->person;
-            return View::make('web.profiel', ['user' => $user]);
-        });
-
-        Route::post('/profile',['as' => 'web.edit','uses' => 'UserController@edit']);
-
     });
 
-    Route::get('/search/{string?}',['as' =>'web.search', 'uses' => 'SearchController@FilterIndex']);
 
-    Route::post('/search/{string?}',['as' => 'web.search.post','uses' => 'SearchController@FilterSearch']);
 
-    Route::get('/game',function()
-    {
-        return View::make('web.speldetail');
-    });
+
+
+
 
     /*
      * Authentication

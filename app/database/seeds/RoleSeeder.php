@@ -5,20 +5,23 @@ class RoleSeeder extends Seeder{
     public function run(){
 
         Role::create([
-            'role_name_nl' => 'admin',
-            'role_name_en' => 'admin'
+            'role_name_nl' => 'Admin',
+            'role_name_en' => 'Admin'
         ]);
 
         Role::create([
-            'role_name_nl' => 'therapeut',
-            'role_name_en' => 'therapist'
+            'role_name_nl' => 'Therapeut',
+            'role_name_en' => 'Therapist'
         ]);
 
         Role::create([
-            'role_name_nl' => 'ouder',
-            'role_name_en' => 'parent'
+            'role_name_nl' => 'Ouder',
+            'role_name_en' => 'Parent'
         ]);
-
+        Role::create([
+            'role_name_nl' => 'Begeleider',
+            'role_name_en' => 'Supervisor'
+        ]);
     }
 
 } 
